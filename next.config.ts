@@ -16,7 +16,7 @@ const nextConfig = {
   },
   experimental: {
     webpackBuildWorker: true,
-    turbo: true,
+    turbo: {},
   },
 }
 
