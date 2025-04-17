@@ -3,7 +3,19 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { BarChart3, Calendar, ChevronDown, Filter, LayoutGrid, List, Plus, Search, Trophy, Users } from "lucide-react"
+import {
+  BarChart3,
+  Calendar,
+  ChevronDown,
+  CreditCard,
+  Filter,
+  LayoutGrid,
+  List,
+  Plus,
+  Search,
+  Trophy,
+  Users,
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -141,6 +153,42 @@ export default function AdminDashboard() {
                 <p className="text-xs text-gray-500">22.6% conversion rate</p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="grid gap-4 md:grid-cols-4">
+            <Link href="/admin/challenges/create">
+              <Card className="hover:bg-gray-50">
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <Trophy className="mb-2 h-8 w-8 text-pink-500" />
+                  <p className="text-center font-medium">New Challenge</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/admin/subscriptions">
+              <Card className="hover:bg-gray-50">
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <CreditCard className="mb-2 h-8 w-8 text-pink-500" />
+                  <p className="text-center font-medium">Manage Subscriptions</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/admin/users">
+              <Card className="hover:bg-gray-50">
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <Users className="mb-2 h-8 w-8 text-pink-500" />
+                  <p className="text-center font-medium">User Management</p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/admin/reports">
+              <Card className="hover:bg-gray-50">
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <BarChart3 className="mb-2 h-8 w-8 text-pink-500" />
+                  <p className="text-center font-medium">View Reports</p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
 
           <Tabs defaultValue="challenges" className="space-y-4">
