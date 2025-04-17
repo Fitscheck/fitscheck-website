@@ -15,33 +15,24 @@ import PremiumButton from "./ui/premium-button";
 import LoginButton from "./ui/login-button";
 
 export function AuthButtons() {
-  // In a real app, you would check for authentication status from a context or API
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Simulate checking auth status
   useEffect(() => {
-    // Check if user is logged in (e.g., by checking for a token in localStorage)
     const checkAuth = () => {
-      // This is just a placeholder. In a real app, you would check for a token or session
       const hasToken = localStorage.getItem("auth_token");
       setIsLoggedIn(!!hasToken);
     };
 
     checkAuth();
-
-    // Set up an interval to check auth status periodically
     const interval = setInterval(checkAuth, 1000);
 
-    // For demo purposes, let's add a way to toggle login state with a key combination
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === "l") {
         setIsLoggedIn((prev) => {
           const newState = !prev;
-          if (newState) {
-            localStorage.setItem("auth_token", "demo_token");
-          } else {
-            localStorage.removeItem("auth_token");
-          }
+          newState
+            ? localStorage.setItem("auth_token", "demo_token")
+            : localStorage.removeItem("auth_token");
           return newState;
         });
       }
@@ -58,21 +49,43 @@ export function AuthButtons() {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-2 px-3 text-sm font-medium text-gray-700 hover:border-pink-500 hover:text-pink-600"
+          >
             <User className="h-4 w-4" />
-            <span>Account</span>
+            Account
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent
+          align="end"
+          className="rounded-xl shadow-lg border border-gray-100 animate-fadeIn"
+        >
           <DropdownMenuItem asChild>
-            <Link href="/account">My Account</Link>
+            <Link
+              href="/account"
+              className="w-full px-2 py-1.5 text-sm hover:text-pink-600"
+            >
+              My Account
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/premium">Upgrade to Premium</Link>
+            <Link
+              href="/premium"
+              className="w-full px-2 py-1.5 text-sm hover:text-pink-600"
+            >
+              Upgrade to Premium
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link href="/logout">Log Out</Link>
+            <Link
+              href="/logout"
+              className="w-full px-2 py-1.5 text-sm hover:text-red-500"
+            >
+              Log Out
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

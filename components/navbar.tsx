@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -83,9 +84,11 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Nav Menu */}
       {isMenuOpen && (
-        <div className="container md:hidden">
-          <nav className="flex flex-col gap-4 p-4">
+        <div className="md:hidden border-t border-gray-100 bg-white shadow-sm">
+          <div className="container flex flex-col gap-4 p-4">
             <Link
               href="/"
               className={`text-sm font-medium ${
@@ -97,29 +100,25 @@ export default function Navbar() {
             </Link>
             <Link
               href="#features"
-              className="text-sm font-medium text-gray-500"
               onClick={() => setIsMenuOpen(false)}
+              className="text-sm font-medium text-gray-600 hover:text-pink-500"
             >
               Features
             </Link>
             <Link
               href="#pricing"
-              className="text-sm font-medium text-gray-500"
               onClick={() => setIsMenuOpen(false)}
+              className="text-sm font-medium text-gray-600 hover:text-pink-500"
             >
               Pricing
             </Link>
-            <Link
-              href="/admin"
-              className={`text-sm font-medium ${
-                isActive("/admin") ? "text-pink-500" : "text-gray-500"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
+            {/* <Link href="/admin" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-gray-600 hover:text-pink-500">
               Admin
-            </Link>
-            <AuthButtons />
-          </nav>
+            </Link> */}
+            <div className="pt-2">
+              <AuthButtons />
+            </div>
+          </div>
         </div>
       )}
     </header>

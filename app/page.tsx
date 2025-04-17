@@ -46,6 +46,7 @@ export default function Home() {
                 >
                   Learn More
                 </Link>
+
               </div>
             </div>
             <div className="flex items-center justify-center ">
@@ -58,7 +59,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-white py-20">
+      <section id="features" className="bg-white py-20 font-sans">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -170,6 +171,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* How It Works */}
       <section className="bg-gray-50 py-20">
         <div className="container px-4 md:px-6">
@@ -242,117 +244,97 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Pricing Section */}
-      <section id="pricing" className="bg-white py-20">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+
+      <section id="pricing" className="bg-white py-20 font-sans">
+        <div className="container px-4 md:px-6 text-center space-y-4">
+          <span className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-medium text-pink-600">
+            Pricing
+          </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+            Choose Your Style Journey
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            Start for free or upgrade to Premium for unlimited access and monetization opportunities.
+          </p>
+        </div>
+
+        <div className="mt-12 grid max-w-5xl mx-auto gap-8 md:grid-cols-2">
+          {/* Free Plan */}
+          <div className="flex flex-col rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
-                Pricing
-              </div>
-              <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Choose Your Style Journey
-              </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Start for free or upgrade to Premium for unlimited access and
-                monetization opportunities.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900">Free</h3>
+              <p className="text-gray-500">Perfect for casual style enthusiasts</p>
+            </div>
+            <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
+              <span className="text-2xl font-extrabold text-pink-600">$0</span>
+              <span className="font-medium text-pink-400">/month</span>
+            </div>
+            <ul className="mt-6 space-y-4 text-left">
+              {[
+                "Post up to 5 fits",
+                "Vote, comment, and follow",
+                "Join up to 2 challenges",
+                "Earn style points",
+                "Appear on leaderboards",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start text-gray-700 font-medium">
+                  <Check className="mr-2 h-5 w-5 text-green-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
+              <Link href="/login">
+                <button className="w-full h-10 rounded-md bg-gray-900 text-white font-medium text-sm hover:bg-gray-700 transition">
+                  Get Started
+                </button>
+              </Link>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2">
-            <div className="flex flex-col rounded-lg border border-gray-200 p-6 shadow-sm">
-              <div className="space-y-2">
-                <h3 className="text-black text-2xl font-bold">Free</h3>
-                <p className="text-gray-500">
-                  Perfect for casual style enthusiasts
-                </p>
-              </div>
-              <div className="mt-4 flex items-baseline text-gray-900">
-                <span className="text-4xl font-bold">$0</span>
-                <span className="ml-1 text-gray-500">/month</span>
-              </div>
-              <ul className="text-black mt-6 space-y-4">
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Post up to 5 fits</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Vote, comment, and follow</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Join up to 2 challenges</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Earn style points</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Appear on leaderboards</span>
-                </li>
-              </ul>
-              <div className="mt-6">
-                <Link
-                  href="/login"
-                  className="inline-flex h-10 w-full items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
-                >
-                  Get Started
-                </Link>
-              </div>
+
+          {/* Premium Plan */}
+          <div className="relative flex flex-col rounded-xl border border-pink-200 bg-pink-50 p-6 shadow-md hover:shadow-lg transition">
+            <div className="absolute -top-4 right-4 rounded-full bg-pink-500 px-3 py-1 text-xs font-semibold text-white shadow">
+              Popular
             </div>
-            <div className="relative flex flex-col rounded-lg border border-pink-200 bg-pink-50 p-6 shadow-sm">
-              <div className="absolute -top-4 right-4 rounded-full bg-pink-500 px-3 py-1 text-xs font-semibold text-white">
-                Popular
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-black text-2xl font-bold">Premium</h3>
-                <p className="text-gray-500">For serious style influencers</p>
-              </div>
-              <div className="mt-4 flex items-baseline text-gray-900">
-                <span className="text-4xl font-bold">$4.99</span>
-                <span className="ml-1 text-gray-500">/month</span>
-              </div>
-              <ul className="text-black mt-6 space-y-4">
-                <li className="flex items-start">
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-gray-900">Premium</h3>
+              <p className="text-gray-500">For serious style influencers</p>
+            </div>
+            <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
+              <span className="text-2xl font-extrabold text-pink-600">$4.99</span>
+              <span className="font-medium text-pink-400">/month</span>
+            </div>
+            <ul className="mt-6 space-y-4 text-left">
+              {[
+                "Unlimited fit posts",
+                "Add affiliate links to earn commission",
+                "Unlimited challenge entries",
+                "All free features included",
+                "Premium badge on profile",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start text-gray-700 font-medium">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">Unlimited fit posts</span>
+                  {item}
                 </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">
-                    Add affiliate links to earn commission
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">Unlimited challenge entries</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>All free features included</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Premium badge on profile</span>
-                </li>
-              </ul>
-              <div className="mt-6">
-                <Link
-                  href="/premium"
-                  className="inline-flex h-10 w-full items-center justify-center rounded-md bg-pink-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-500"
-                >
+              ))}
+            </ul>
+            <div className="mt-6">
+              <Link href="/premium">
+                <button className="w-full h-10 rounded-md bg-pink-500 text-white font-medium text-sm hover:bg-pink-600 transition">
                   Upgrade to Premium
-                </Link>
-              </div>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+
       {/* App Preview */}
-      <section className="bg-gradient-to-b from-white to-pink-50 py-20">
+      <section className="bg-gradient-to-b from-white to-pink-50 py-20 font-sans">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -396,12 +378,13 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* CTA Section */}
       <section className="bg-pink-500 py-20 text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
                 Ready to Showcase Your Style?
               </h2>
               <p className="max-w-[900px] text-pink-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
