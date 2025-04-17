@@ -32,7 +32,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/ubuntu/apps/frontend
+            cd /home/ubuntu/apps/frontend/fitscheck-website
             git pull origin main
             npm ci
             npm run build
