@@ -81,7 +81,7 @@ export default function Home() {
               { icon: <Star className="h-6 w-6" />, title: "Style Points", desc: "Engage to earn points and rise on the leaderboard." },
               { icon: <Users className="h-6 w-6" />, title: "Fashion Community", desc: "Follow, connect, and grow your style circle." },
               { icon: <Users className="h-6 w-6" />, title: "Feedback & Comments", desc: "Get helpful tips and detailed feedback from others." },
-              { icon: <svg className="h-6 w-6" /* affiliate icon */ />, title: "Affiliate Links", desc: "Add links to earn from your influence (premium)." },
+              { icon: <Users className="h-6 w-6"/>, title: "Affiliate Links", desc: "Add links to earn from your influence (premium)." },
             ].map((feature, i) => (
               <div key={i} className="rounded-xl border border-gray-200 p-6 shadow hover:shadow-md transition">
                 <div className="mb-4 flex items-center justify-center h-12 w-12 rounded-full bg-pink-100 text-pink-500">

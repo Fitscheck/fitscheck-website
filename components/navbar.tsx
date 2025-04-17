@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter} from "next/navigation";
 import { AuthButtons } from "@/components/auth-buttons"
 
 export default function Navbar() {
@@ -11,6 +11,21 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const isActive = (path: string) => pathname === path
+
+    const router = useRouter();
+    
+    const handleNavClick = (id: string) => {
+      if (pathname === "/") {
+        // Already on home, just scroll
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to home with hash
+        router.push(`/#${id}`);
+      }
+    };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm font-sans">
@@ -25,8 +40,8 @@ export default function Navbar() {
           <Link href="/" className={isActive("/") ? "text-pink-500 font-semibold" : "hover:text-pink-500"}>
             Home
           </Link>
-          <Link href="#features" className="hover:text-pink-500">Features</Link>
-          <Link href="#pricing" className="hover:text-pink-500">Pricing</Link>
+          <Link href="#features" className="hover:text-pink-500" onClick={() => handleNavClick("features")}>Features</Link>
+          <Link href="#pricing" className="hover:text-pink-500" onClick={() => handleNavClick("pricing")}>Pricing</Link>
         </nav>
 
         {/* Buttons */}
