@@ -132,9 +132,9 @@ export default function PremiumPage() {
                     <h3 className="text-lg font-medium">Free vs Premium</h3>
                     <p className="text-sm text-gray-500">See what you're missing out on</p>
                   </div>
-                  <Button variant="outline" size="sm">
+                  {/* <Button variant="outline" size="sm">
                     View Full Comparison
-                  </Button>
+                  </Button> */}
                 </div>
 
                 <div className="mt-4 space-y-2">
@@ -202,7 +202,7 @@ export default function PremiumPage() {
                     <div className="rounded-lg bg-gray-50 p-4">
                       <div className="flex justify-between">
                         <span>Premium Plan ({billingCycle === "monthly" ? "Monthly" : "Annual"})</span>
-                        <span>{pricingPlans[billingCycle].price}</span>
+                        {/* <span>{pricingPlans[billingCycle].price}</span> */}
                       </div>
                       <div className="mt-2 text-sm text-gray-500">
                         {billingCycle === "monthly"
