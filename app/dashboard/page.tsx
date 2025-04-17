@@ -1,24 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Bell, Filter, Heart, MessageCircle, MoreHorizontal, Plus, Search, Settings, User } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import {
+  Bell,
+  Filter,
+  Heart,
+  MessageCircle,
+  MoreHorizontal,
+  Plus,
+  Search,
+  Settings,
+  User,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 // Sample data for posts
 const posts = [
@@ -29,7 +44,8 @@ const posts = [
       username: "jess_style",
       avatar: "/placeholder.svg?height=40&width=40&query=woman fashion profile",
     },
-    image: "/placeholder.svg?height=600&width=400&query=woman in summer dress outfit",
+    image:
+      "/placeholder.svg?height=600&width=400&query=woman in summer dress outfit",
     title: "Summer Vibes",
     description: "My go-to outfit for beach days! What do you think?",
     likes: 128,
@@ -43,7 +59,8 @@ const posts = [
       username: "marcus_fits",
       avatar: "/placeholder.svg?height=40&width=40&query=man fashion profile",
     },
-    image: "/placeholder.svg?height=600&width=400&query=man in business casual outfit",
+    image:
+      "/placeholder.svg?height=600&width=400&query=man in business casual outfit",
     title: "Office Ready",
     description: "Business casual for a big meeting today. Feeling confident!",
     likes: 95,
@@ -55,16 +72,18 @@ const posts = [
     user: {
       name: "Zoe Williams",
       username: "zoe_style",
-      avatar: "/placeholder.svg?height=40&width=40&query=woman fashion profile with short hair",
+      avatar:
+        "/placeholder.svg?height=40&width=40&query=woman fashion profile with short hair",
     },
-    image: "/placeholder.svg?height=600&width=400&query=woman in streetwear outfit",
+    image:
+      "/placeholder.svg?height=600&width=400&query=woman in streetwear outfit",
     title: "Street Style",
     description: "Trying out a new streetwear look. Thoughts?",
     likes: 210,
     comments: 42,
     tags: ["streetwear", "urban", "casual"],
   },
-]
+];
 
 // Sample data for challenges
 const challenges = [
@@ -73,26 +92,29 @@ const challenges = [
     title: "Summer Vacation Fits",
     entries: 124,
     daysLeft: 5,
-    image: "/placeholder.svg?height=200&width=200&query=summer vacation outfits collage",
+    image:
+      "/placeholder.svg?height=200&width=200&query=summer vacation outfits collage",
   },
   {
     id: 2,
     title: "Office Chic",
     entries: 87,
     daysLeft: 10,
-    image: "/placeholder.svg?height=200&width=200&query=office professional outfits collage",
+    image:
+      "/placeholder.svg?height=200&width=200&query=office professional outfits collage",
   },
   {
     id: 3,
     title: "Festival Fashion",
     entries: 56,
     daysLeft: 15,
-    image: "/placeholder.svg?height=200&width=200&query=music festival fashion outfits collage",
+    image:
+      "/placeholder.svg?height=200&width=200&query=music festival fashion outfits collage",
   },
-]
+];
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState("feed")
+  const [activeTab, setActiveTab] = useState("feed");
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -107,7 +129,10 @@ export default function Dashboard() {
                 <CardHeader className="flex flex-row items-center justify-between p-4">
                   <div className="flex items-center gap-3">
                     <Avatar className="h-10 w-10">
-                      <AvatarImage src="/placeholder.svg?height=40&width=40&query=fashion profile" alt="@username" />
+                      <AvatarImage
+                        src="/placeholder.svg?height=40&width=40&query=fashion profile"
+                        alt="@username"
+                      />
                       <AvatarFallback>UN</AvatarFallback>
                     </Avatar>
                     <div>
@@ -115,7 +140,9 @@ export default function Dashboard() {
                       <div className="text-sm text-gray-500">@username</div>
                     </div>
                   </div>
-                  <Badge className="bg-pink-500 hover:bg-pink-600">Premium</Badge>
+                  <Badge className="bg-pink-500 hover:bg-pink-600">
+                    Premium
+                  </Badge>
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
                   <div className="grid grid-cols-3 gap-4 text-center">
@@ -137,7 +164,9 @@ export default function Dashboard() {
                   <div className="flex items-center justify-between w-full">
                     <div>
                       <div className="text-sm font-medium">Style Points</div>
-                      <div className="text-2xl font-bold text-pink-500">2,456</div>
+                      <div className="text-2xl font-bold text-pink-500">
+                        2,456
+                      </div>
                     </div>
                     <div className="text-right">
                       <div className="text-sm font-medium">Rank</div>
@@ -154,7 +183,10 @@ export default function Dashboard() {
                 <CardContent className="p-4 pt-0">
                   <div className="space-y-4">
                     {challenges.map((challenge) => (
-                      <div key={challenge.id} className="flex items-center gap-3">
+                      <div
+                        key={challenge.id}
+                        className="flex items-center gap-3"
+                      >
                         <div className="relative h-12 w-12 overflow-hidden rounded-md">
                           <Image
                             src={challenge.image || "/placeholder.svg"}
@@ -164,7 +196,9 @@ export default function Dashboard() {
                           />
                         </div>
                         <div>
-                          <div className="font-medium line-clamp-1">{challenge.title}</div>
+                          <div className="font-medium line-clamp-1">
+                            {challenge.title}
+                          </div>
                           <div className="flex items-center gap-2 text-xs text-gray-500">
                             <span>{challenge.entries} entries</span>
                             <span>•</span>
@@ -176,7 +210,9 @@ export default function Dashboard() {
                   </div>
                 </CardContent>
                 <CardFooter className="border-t p-4">
-                  <Button className="w-full bg-pink-500 hover:bg-pink-600">View All Challenges</Button>
+                  <Button className="w-full bg-pink-500 hover:bg-pink-600">
+                    View All Challenges
+                  </Button>
                 </CardFooter>
               </Card>
             </div>
@@ -184,7 +220,11 @@ export default function Dashboard() {
 
           {/* Main Content */}
           <div className="lg:col-span-6">
-            <Tabs defaultValue="feed" className="space-y-6" onValueChange={setActiveTab}>
+            <Tabs
+              defaultValue="feed"
+              className="space-y-6"
+              onValueChange={setActiveTab}
+            >
               <div className="flex items-center justify-between">
                 <TabsList>
                   <TabsTrigger value="feed">Feed</TabsTrigger>
@@ -210,7 +250,10 @@ export default function Dashboard() {
               <div className="flex items-center gap-2">
                 <div className="relative flex-1">
                   <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-                  <Input placeholder="Search posts, users, or tags..." className="pl-9" />
+                  <Input
+                    placeholder="Search posts, users, or tags..."
+                    className="pl-9"
+                  />
                 </div>
                 <Button variant="outline" size="icon" className="h-9 w-9">
                   <Filter className="h-4 w-4" />
@@ -224,17 +267,28 @@ export default function Dashboard() {
                     <CardHeader className="flex flex-row items-center justify-between p-4">
                       <div className="flex items-center gap-3">
                         <Avatar>
-                          <AvatarImage src={post.user.avatar || "/placeholder.svg"} alt={post.user.name} />
-                          <AvatarFallback>{post.user.name.charAt(0)}</AvatarFallback>
+                          <AvatarImage
+                            src={post.user.avatar || "/placeholder.svg"}
+                            alt={post.user.name}
+                          />
+                          <AvatarFallback>
+                            {post.user.name.charAt(0)}
+                          </AvatarFallback>
                         </Avatar>
                         <div>
                           <div className="font-medium">{post.user.name}</div>
-                          <div className="text-sm text-gray-500">@{post.user.username}</div>
+                          <div className="text-sm text-gray-500">
+                            @{post.user.username}
+                          </div>
                         </div>
                       </div>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                          >
                             <MoreHorizontal className="h-4 w-4" />
                             <span className="sr-only">More options</span>
                           </Button>
@@ -250,17 +304,30 @@ export default function Dashboard() {
                     </CardHeader>
                     <CardContent className="p-0">
                       <div className="relative aspect-square w-full overflow-hidden">
-                        <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
+                        <Image
+                          src={post.image || "/placeholder.svg"}
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                     </CardContent>
                     <CardFooter className="flex flex-col items-start p-4">
                       <div className="flex w-full items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                          >
                             <Heart className="h-4 w-4" />
                             <span className="sr-only">Like</span>
                           </Button>
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                          >
                             <MessageCircle className="h-4 w-4" />
                             <span className="sr-only">Comment</span>
                           </Button>
@@ -271,11 +338,17 @@ export default function Dashboard() {
                       </div>
                       <div className="mt-3">
                         <div className="font-medium">{post.title}</div>
-                        <p className="mt-1 text-sm text-gray-500">{post.description}</p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          {post.description}
+                        </p>
                       </div>
                       <div className="mt-3 flex flex-wrap gap-1">
                         {post.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="text-xs">
+                          <Badge
+                            key={tag}
+                            variant="secondary"
+                            className="text-xs"
+                          >
                             #{tag}
                           </Badge>
                         ))}
@@ -289,8 +362,12 @@ export default function Dashboard() {
                 <div className="flex h-[400px] items-center justify-center rounded-lg border border-dashed">
                   <div className="flex flex-col items-center text-center">
                     <Search className="h-10 w-10 text-gray-400" />
-                    <h3 className="mt-4 text-lg font-medium">Discover New Fits</h3>
-                    <p className="mt-2 text-sm text-gray-500">Find trending outfits and popular users.</p>
+                    <h3 className="mt-4 text-lg font-medium">
+                      Discover New Fits
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-500">
+                      Find trending outfits and popular users.
+                    </p>
                   </div>
                 </div>
               </TabsContent>
@@ -300,7 +377,9 @@ export default function Dashboard() {
                   <div className="flex flex-col items-center text-center">
                     <User className="h-10 w-10 text-gray-400" />
                     <h3 className="mt-4 text-lg font-medium">Following Feed</h3>
-                    <p className="mt-2 text-sm text-gray-500">See posts from users you follow.</p>
+                    <p className="mt-2 text-sm text-gray-500">
+                      See posts from users you follow.
+                    </p>
                   </div>
                 </div>
               </TabsContent>
@@ -332,7 +411,9 @@ export default function Dashboard() {
                           <div className="text-sm font-medium">User{i}</div>
                           <div className="text-xs text-gray-500">@user{i}</div>
                         </div>
-                        <div className="text-sm font-medium">{10000 - i * 500}</div>
+                        <div className="text-sm font-medium">
+                          {10000 - i * 500}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -360,8 +441,12 @@ export default function Dashboard() {
                           <AvatarFallback>S{i}</AvatarFallback>
                         </Avatar>
                         <div className="flex-1">
-                          <div className="text-sm font-medium">SuggestedUser{i}</div>
-                          <div className="text-xs text-gray-500">@suggested{i}</div>
+                          <div className="text-sm font-medium">
+                            SuggestedUser{i}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            @suggested{i}
+                          </div>
                         </div>
                         <Button variant="outline" size="sm" className="h-8">
                           Follow
@@ -389,15 +474,11 @@ export default function Dashboard() {
                       "accessories",
                       "shoes",
                       "denim",
-                    ].map(
-                      (tag) =>
-                        (
-                          <Badge key={tag} variant="secondary" className="text-xs  => (
-                      <Badge key={tag} variant="secondary\" className="text-xs">
+                    ].map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
                         #{tag}
                       </Badge>
-                        ),
-                    )}
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -408,5 +489,5 @@ export default function Dashboard() {
 
       <Footer />
     </div>
-  )
+  );
 }
