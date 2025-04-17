@@ -146,90 +146,90 @@ export default function Home() {
 
       {/* Pricing Section */}
 
-<section id="pricing" className="bg-white py-20 font-sans">
-  <div className="container px-4 md:px-6 text-center space-y-4">
-    <span className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-medium text-pink-600">
-      Pricing
-    </span>
-    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-      Choose Your Style Journey
-    </h2>
-    <p className="max-w-2xl mx-auto text-lg text-gray-600">
-      Start for free or upgrade to Premium for unlimited access and monetization opportunities.
-    </p>
-  </div>
+      <section id="pricing" className="bg-white py-20 font-sans">
+        <div className="container px-4 md:px-6 text-center space-y-4">
+          <span className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-medium text-pink-600">
+            Pricing
+          </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+            Choose Your Style Journey
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            Start for free or upgrade to Premium for unlimited access and monetization opportunities.
+          </p>
+        </div>
 
-  <div className="mt-12 grid max-w-5xl mx-auto gap-8 md:grid-cols-2">
-    {/* Free Plan */}
-    <div className="flex flex-col rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
-      <div className="space-y-2">
-        <h3 className="text-xl font-bold text-gray-900">Free</h3>
-        <p className="text-gray-500">Perfect for casual style enthusiasts</p>
-      </div>
-      <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
-        <span className="text-2xl font-extrabold text-pink-600">$0</span>
-        <span className="font-medium text-pink-400">/month</span>
-      </div>
-      <ul className="mt-6 space-y-4 text-left">
-        {[
-          "Post up to 5 fits",
-          "Vote, comment, and follow",
-          "Join up to 2 challenges",
-          "Earn style points",
-          "Appear on leaderboards",
-        ].map((item, i) => (
-          <li key={i} className="flex items-start text-gray-700 font-medium">
-            <Check className="mr-2 h-5 w-5 text-green-500" />
-            {item}
-          </li>
-        ))}
-      </ul>
-      <div className="mt-6">
-        <Link href="/login">
-          <button className="w-full h-10 rounded-md bg-gray-900 text-white font-medium text-sm hover:bg-gray-700 transition">
-            Get Started
-          </button>
-        </Link>
-      </div>
-    </div>
+        <div className="mt-12 grid max-w-5xl mx-auto gap-8 md:grid-cols-2">
+          {/* Free Plan */}
+          <div className="flex flex-col rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-gray-900">Free</h3>
+              <p className="text-gray-500">Perfect for casual style enthusiasts</p>
+            </div>
+            <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
+              <span className="text-2xl font-extrabold text-pink-600">$0</span>
+              <span className="font-medium text-pink-400">/month</span>
+            </div>
+            <ul className="mt-6 space-y-4 text-left">
+              {[
+                "Post up to 5 fits",
+                "Vote, comment, and follow",
+                "Join up to 2 challenges",
+                "Earn style points",
+                "Appear on leaderboards",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start text-gray-700 font-medium">
+                  <Check className="mr-2 h-5 w-5 text-green-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
+              <Link href="/login">
+                <button className="w-full h-10 rounded-md bg-gray-900 text-white font-medium text-sm hover:bg-gray-700 transition">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
 
-    {/* Premium Plan */}
-    <div className="relative flex flex-col rounded-xl border border-pink-200 bg-pink-50 p-6 shadow-md hover:shadow-lg transition">
-      <div className="absolute -top-4 right-4 rounded-full bg-pink-500 px-3 py-1 text-xs font-semibold text-white shadow">
-        Popular
-      </div>
-      <div className="space-y-2">
-        <h3 className="text-xl font-bold text-gray-900">Premium</h3>
-        <p className="text-gray-500">For serious style influencers</p>
-      </div>
-      <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
-        <span className="text-2xl font-extrabold text-pink-600">$4.99</span>
-        <span className="font-medium text-pink-400">/month</span>
-      </div>
-      <ul className="mt-6 space-y-4 text-left">
-        {[
-          "Unlimited fit posts",
-          "Add affiliate links to earn commission",
-          "Unlimited challenge entries",
-          "All free features included",
-          "Premium badge on profile",
-        ].map((item, i) => (
-          <li key={i} className="flex items-start text-gray-700 font-medium">
-            <Check className="mr-2 h-5 w-5 text-green-500" />
-            {item}
-          </li>
-        ))}
-      </ul>
-      <div className="mt-6">
-        <Link href="/premium">
-          <button className="w-full h-10 rounded-md bg-pink-500 text-white font-medium text-sm hover:bg-pink-600 transition">
-            Upgrade to Premium
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+          {/* Premium Plan */}
+          <div className="relative flex flex-col rounded-xl border border-pink-200 bg-pink-50 p-6 shadow-md hover:shadow-lg transition">
+            <div className="absolute -top-4 right-4 rounded-full bg-pink-500 px-3 py-1 text-xs font-semibold text-white shadow">
+              Popular
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-gray-900">Premium</h3>
+              <p className="text-gray-500">For serious style influencers</p>
+            </div>
+            <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
+              <span className="text-2xl font-extrabold text-pink-600">$4.99</span>
+              <span className="font-medium text-pink-400">/month</span>
+            </div>
+            <ul className="mt-6 space-y-4 text-left">
+              {[
+                "Unlimited fit posts",
+                "Add affiliate links to earn commission",
+                "Unlimited challenge entries",
+                "All free features included",
+                "Premium badge on profile",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start text-gray-700 font-medium">
+                  <Check className="mr-2 h-5 w-5 text-green-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
+              <Link href="/premium">
+                <button className="w-full h-10 rounded-md bg-pink-500 text-white font-medium text-sm hover:bg-pink-600 transition">
+                  Upgrade to Premium
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* App Preview */}

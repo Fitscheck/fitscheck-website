@@ -32,8 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+      {children}
         </ThemeProvider>
       </body>
     </html>
