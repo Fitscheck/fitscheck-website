@@ -56,7 +56,7 @@ export function AuthButtons() {
             Account
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="rounded-xl shadow-lg border border-gray-100">
+        <DropdownMenuContent align="end" className="rounded-xl shadow-lg border border-gray-100 animate-fadeIn">
           <DropdownMenuItem asChild>
             <Link href="/account" className="w-full px-2 py-1.5 text-sm hover:text-pink-600">My Account</Link>
           </DropdownMenuItem>
