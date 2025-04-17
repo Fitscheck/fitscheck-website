@@ -23,11 +23,11 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2 text-center md:text-start">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  Share Your <span className="text-pink-500">Fits</span>, Get Feedback, Earn Points
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-900">
+              Share Your <span className="text-pink-500">Fits</span>, Get Feedback, Earn Points
                 </h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  FitsCheck is the social fashion platform where you can showcase your outfits, receive community
+                <p className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                FitsCheck is the social fashion platform where you can showcase your outfits, receive community
                   feedback, and participate in style challenges.
                 </p>
               </div>
@@ -39,11 +39,12 @@ export default function Home() {
                   Get Started
                 </Link>
                 <Link
-                  href="#features"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
-                >
-                  Learn More
-                </Link>
+  href="#features"
+  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+>
+  Learn More
+</Link>
+
               </div>
             </div>
             <div className="flex items-center justify-center ">
@@ -64,8 +65,8 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">Features</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Everything You Need to Showcase Your Style
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
+              Everything You Need to Showcase Your Style
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 FitsCheck combines social networking with fashion feedback to create a unique platform for style
@@ -78,7 +79,7 @@ export default function Home() {
               <div className="rounded-full bg-pink-100 p-3">
                 <Vote className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Community Voting</h3>
+              <h3 className="text-xl font-bold text-gray-900">Community Voting</h3>
               <p className="text-center text-gray-500">
                 Get instant feedback on your outfits with simple Hot/Not voting from the community.
               </p>
@@ -87,7 +88,7 @@ export default function Home() {
               <div className="rounded-full bg-pink-100 p-3">
                 <Trophy className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Style Challenges</h3>
+              <h3 className="text-xl font-bold text-gray-900">Style Challenges</h3>
               <p className="text-center text-gray-500">
                 Participate in themed challenges to showcase your creativity and win style points.
               </p>
@@ -96,7 +97,7 @@ export default function Home() {
               <div className="rounded-full bg-pink-100 p-3">
                 <Star className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Style Points</h3>
+              <h3 className="text-xl font-bold text-gray-900">Style Points</h3>
               <p className="text-center text-gray-500">
                 Earn points for engagement and climb the leaderboard to become a style influencer.
               </p>
@@ -105,7 +106,7 @@ export default function Home() {
               <div className="rounded-full bg-pink-100 p-3">
                 <Users className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Fashion Community</h3>
+              <h3 className="text-xl font-bold text-gray-900">Fashion Community</h3>
               <p className="text-center text-gray-500">
                 Connect with other fashion enthusiasts, follow your favorites, and build your audience.
               </p>
@@ -129,7 +130,7 @@ export default function Home() {
                   <path d="M22 17.8a11.5 11.5 0 0 0-5-7.8" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Feedback & Comments</h3>
+              <h3 className="text-xl font-bold text-gray-900">Feedback & Comments</h3>
               <p className="text-center text-gray-500">
                 Receive detailed comments and suggestions to improve your style game.
               </p>
@@ -152,7 +153,7 @@ export default function Home() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Affiliate Links</h3>
+              <h3 className="text-xl font-bold text-gray-900">Affiliate Links</h3>
               <p className="text-center text-gray-500">
                 Premium users can add affiliate links to their outfits and earn commission on purchases.
               </p>
@@ -167,8 +168,8 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">How It Works</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Simple, Fun, and Rewarding
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
+              Simple, Fun, and Rewarding
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 FitsCheck makes sharing your style and getting feedback easier than ever.
@@ -180,7 +181,7 @@ export default function Home() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
                 1
               </div>
-              <h3 className="text-xl font-bold">Post Your Fit</h3>
+              <h3 className="text-xl font-bold text-gray-900">Post Your Fit</h3>
               <p className="text-center text-gray-500">
                 Take a photo of your outfit, add a title, description, and relevant tags.
               </p>
@@ -190,7 +191,7 @@ export default function Home() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
                 2
               </div>
-              <h3 className="text-xl font-bold">Get Feedback</h3>
+              <h3 className="text-xl font-bold text-gray-900">Get Feedback</h3>
               <p className="text-center text-gray-500">Receive votes and comments from the community on your outfit.</p>
               <Image
                 src="/mobile-voting-interface.png"
@@ -204,7 +205,7 @@ export default function Home() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
                 3
               </div>
-              <h3 className="text-xl font-bold">Earn & Grow</h3>
+              <h3 className="text-xl font-bold text-gray-900">Earn & Grow</h3>
               <p className="text-center text-gray-500">
                 Earn style points, join challenges, and build your fashion influence.
               </p>
@@ -226,7 +227,8 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">Pricing</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Choose Your Style Journey</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
+              Choose Your Style Journey</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Start for free or upgrade to Premium for unlimited access and monetization opportunities.
               </p>
@@ -235,33 +237,33 @@ export default function Home() {
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2">
             <div className="flex flex-col rounded-lg border border-gray-200 p-6 shadow-sm">
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold">Free</h3>
+              <h3 className="text-xl font-bold text-gray-900">Free</h3>
                 <p className="text-gray-500">Perfect for casual style enthusiasts</p>
               </div>
               <div className="mt-4 flex items-baseline text-gray-900">
-                <span className="text-4xl font-bold">$0</span>
-                <span className="ml-1 text-gray-500">/month</span>
+              <span className="font-bold text-pink-900">$0</span>
+              <span className="font-bold text-pink-900">/month</span>
               </div>
               <ul className="mt-6 space-y-4">
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Post up to 5 fits</span>
+                  <span className="font-bold text-pink-900">Post up to 5 fits</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Vote, comment, and follow</span>
+                  <span className="font-bold text-pink-900">Vote, comment, and follow</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Join up to 2 challenges</span>
+                  <span className="font-bold text-pink-900">Join up to 2 challenges</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Earn style points</span>
+                  <span className="font-bold text-pink-900">Earn style points</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Appear on leaderboards</span>
+                  <span className="font-bold text-pink-900">Appear on leaderboards</span>
                 </li>
               </ul>
               <div className="mt-6">
@@ -278,33 +280,33 @@ export default function Home() {
                 Popular
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold">Premium</h3>
+              <h3 className="text-xl font-bold text-gray-900">Premium</h3>
                 <p className="text-gray-500">For serious style influencers</p>
               </div>
               <div className="mt-4 flex items-baseline text-gray-900">
-                <span className="text-4xl font-bold">$4.99</span>
-                <span className="ml-1 text-gray-500">/month</span>
+              <span className="font-bold text-pink-900">$4.99</span>
+              <span className="font-bold text-pink-900">/month</span>
               </div>
               <ul className="mt-6 space-y-4">
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">Unlimited fit posts</span>
+                  <span className="font-bold text-pink-900">Unlimited fit posts</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">Add affiliate links to earn commission</span>
+                  <span className="font-bold text-pink-900">Add affiliate links to earn commission</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">Unlimited challenge entries</span>
+                  <span className="font-bold text-pink-900">Unlimited challenge entries</span>
+                </li>
+                <li className="flex items-start">
+                <Check className="mr-2 h-5 w-5 text-green-500" />
+                <span className="font-bold text-pink-900">All free features included</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>All free features included</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span>Premium badge on profile</span>
+                  <span className="font-bold text-pink-900">Premium badge on profile</span>
                 </li>
               </ul>
               <div className="mt-6">
@@ -326,7 +328,8 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">App Preview</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">See FitsCheck in Action</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
+              See FitsCheck in Action</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Take a look at the FitsCheck mobile experience.
               </p>
@@ -361,7 +364,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900">
                 Ready to Showcase Your Style?
               </h2>
               <p className="max-w-[900px] text-pink-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">

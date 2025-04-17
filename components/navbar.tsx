@@ -19,8 +19,8 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center px-4 md:px-6 justify-between">
+<header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+<div className="container flex h-16 items-center px-4 md:px-6 justify-between">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl font-bold text-pink-500">FitsCheck</span>
         </Link>
@@ -28,8 +28,8 @@ export default function Navbar() {
 
           <Link
             href="/"
-            className={`text-sm font-medium ${isActive("/") ? "text-pink-500" : "text-gray-700 hover:text-gray-900"}`}
-          >
+            className={`text-sm font-semibold tracking-tight transition-colors ${isActive("/") ? "text-pink-500" : "text-gray-700 hover:text-pink-500"}`}
+            >
             Home
           </Link>
           <Link href="#features" className="text-sm font-medium text-gray-700 hover:text-gray-900">
@@ -47,8 +47,8 @@ export default function Navbar() {
         </nav>
         {/* Replace the login/premium buttons with the AuthButtons component */}
         <div className="ml-auto flex items-center gap-6 md:ml-0">
-          <div className="hidden md:block gap-6">
-            <AuthButtons />
+        <div className="hidden md:flex items-center gap-3">
+        <AuthButtons />
           </div>
           <div className="flex items-center justify-center md:hidden h-10 w-10 rounded-xl  hover:bg-gray-100 cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
@@ -58,8 +58,8 @@ export default function Navbar() {
 
       </div>
       {isMenuOpen && (
-        <div className="container md:hidden">
-          <nav className="flex flex-col gap-4 p-4">
+ <div className="container md:hidden border-t border-gray-200 bg-white shadow-sm">
+  <nav className="flex flex-col gap-4 p-4">
             <Link
               href="/"
               className={`text-sm font-medium ${isActive("/") ? "text-pink-500" : "text-gray-500"}`}
