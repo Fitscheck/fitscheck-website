@@ -78,17 +78,17 @@ export function AuthButtons() {
   }
 
   return (
-    <>
-      <Link href="/login" className="hidden md:block">
+    <div className="flex flex-col md:flex-row md:items-center gap-4">
+      <Link href="/login" className="">
         <Button variant="outline" size="sm">
           Log In
         </Button>
       </Link>
-      <Link href="/premium" className="hidden md:block">
+      <Link href="/" className="">
         <Button size="sm" className="bg-pink-500 hover:bg-pink-600">
           Upgrade to Premium
         </Button>
       </Link>
-    </>
+    </div>
   )
 }

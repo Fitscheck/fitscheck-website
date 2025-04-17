@@ -119,7 +119,6 @@ export default function SubscriptionManagement() {
           <TabsList>
             <TabsTrigger value="plans">Subscription Plans</TabsTrigger>
             <TabsTrigger value="subscribers">Subscribers</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="plans" className="space-y-6">
@@ -380,52 +379,6 @@ export default function SubscriptionManagement() {
             </div>
           </TabsContent>
 
-          <TabsContent value="settings" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Stripe Integration</CardTitle>
-                <CardDescription>Configure your Stripe payment settings</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="stripe-public-key">Stripe Public Key</Label>
-                    <Input id="stripe-public-key" defaultValue="pk_test_51..." type="password" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="stripe-secret-key">Stripe Secret Key</Label>
-                    <Input id="stripe-secret-key" defaultValue="sk_test_51..." type="password" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="webhook-url">Webhook URL</Label>
-                  <div className="flex gap-2">
-                    <Input
-                      id="webhook-url"
-                      defaultValue="https://fitscheck.com/api/webhooks/stripe"
-                      readOnly
-                      className="bg-gray-50"
-                    />
-                    <Button variant="outline">Copy</Button>
-                  </div>
-                  <p className="text-xs text-gray-500">
-                    Add this URL to your Stripe dashboard to receive payment events
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between rounded-lg border p-4">
-                  <div>
-                    <h3 className="font-medium">Test Mode</h3>
-                    <p className="text-sm text-gray-500">When enabled, all payments will use Stripe test mode</p>
-                  </div>
-                  <Switch defaultChecked />
-                </div>
-
-                <Button className="bg-pink-500 hover:bg-pink-600">Save Settings</Button>
-              </CardContent>
-            </Card>
-          </TabsContent>
         </Tabs>
       </div>
 

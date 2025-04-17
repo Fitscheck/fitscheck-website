@@ -3,18 +3,26 @@ import Image from "next/image"
 import { Check, Star, Trophy, Users, Vote } from "lucide-react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import ImageCarousel from "@/components/imageCarousel"
 
 export default function Home() {
+
+  const slides = [
+    { src: '/slide1.webp', alt: 'First Slide' },
+    { src: '/slide2.webp', alt: 'Second Slide' },
+    { src: '/slide3.webp', alt: 'Third Slide' },
+    { src: '/slide4.webp', alt: 'fourth Slide' },
+  ];
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-white py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-white py-14 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
             <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
+              <div className="space-y-2 text-center md:text-start">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                   Share Your <span className="text-pink-500">Fits</span>, Get Feedback, Earn Points
                 </h1>
@@ -23,7 +31,7 @@ export default function Home() {
                   feedback, and participate in style challenges.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <div className="flex flex-col gap-2 md:flex-row">
                 <Link
                   href="/login"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-pink-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-500"
@@ -38,15 +46,12 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-center">
-              <div className="relative h-[500px] w-[300px] overflow-hidden rounded-xl shadow-2xl">
-                <Image
-                  src="/fashion-app-outfits.png"
-                  alt="FitsCheck App Preview"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+            <div className="flex items-center justify-center ">
+              <div className="relative h-[500px] w-full rounded-xl shadow-2xl">
+                <ImageCarousel
+                  images={slides}
+                  autoPlayInterval={5000} 
+                  />
               </div>
             </div>
           </div>
@@ -333,7 +338,7 @@ export default function Home() {
             </div>
             <div className="relative h-[500px] w-[250px] overflow-hidden rounded-xl shadow-xl">
               <Image
-                src="/placeholder.svg?height=1000&width=500&query=fashion app profile screen with style points"
+                src="fashion-app-feed.png"
                 alt="FitsCheck Profile"
                 fill
                 className="object-cover"
@@ -341,7 +346,7 @@ export default function Home() {
             </div>
             <div className="relative h-[500px] w-[250px] overflow-hidden rounded-xl shadow-xl">
               <Image
-                src="/placeholder.svg?height=1000&width=500&query=fashion app challenge screen with entries"
+                src="fashion-app-feed.png"
                 alt="FitsCheck Challenges"
                 fill
                 className="object-cover"
