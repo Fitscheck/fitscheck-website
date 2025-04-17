@@ -116,19 +116,19 @@ export default function Home() {
               step: "1",
               title: "Post Your Fit",
               desc: "Snap your look, add tags and descriptions.",
-              img: "/mirrored-style.png",
+              img: "/section1.png",
             },
             {
               step: "2",
               title: "Get Feedback",
               desc: "Receive community votes and comments.",
-              img: "/mobile-voting-interface.png",
+              img: "/section2.png",
             },
             {
               step: "3",
               title: "Earn & Grow",
               desc: "Collect style points and build your following.",
-              img: "/stylized-leaderboard.png",
+              img: "/section3.png",
             },
           ].map(({ step, title, desc, img }) => (
             <div key={step} className="flex flex-col items-center space-y-4">
