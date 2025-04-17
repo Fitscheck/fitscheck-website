@@ -46,9 +46,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="hover:text-white">
+                {/* <Link href="/login" className="hover:text-white">
                   Log In
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link href="/premium" className="hover:text-white">
@@ -61,22 +61,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-white">Legal</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="/terms" className="hover:text-white">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="/privacy" className="hover:text-white">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="/cookies" className="hover:text-white">
                   Cookie Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="/gdpr" className="hover:text-white">
                   GDPR
                 </Link>
               </li>
@@ -91,12 +91,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="/help" className="hover:text-white">
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="/report" className="hover:text-white">
                   Report an Issue
                 </Link>
               </li>
