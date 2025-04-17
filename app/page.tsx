@@ -1,17 +1,17 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Check, Star, Trophy, Users, Vote } from "lucide-react"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import ImageCarousel from "@/components/imageCarousel"
+import Link from "next/link";
+import Image from "next/image";
+import { Check, Star, Trophy, Users, Vote } from "lucide-react";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import ImageCarousel from "@/components/imageCarousel";
 
 export default function Home() {
-
   const slides = [
-    { src: '/slide1.webp', alt: 'First Slide' },
-    { src: '/slide2.webp', alt: 'Second Slide' },
-    { src: '/slide3.webp', alt: 'Third Slide' },
-    { src: '/slide4.webp', alt: 'fourth Slide' },
+    { src: "/slide1.jpg", alt: "First Slide" },
+    { src: "/slide2.jpeg", alt: "Second Slide" },
+    { src: "/slide3.jpg", alt: "Third Slide" },
+    { src: "/slide4.jpg", alt: "fourth Slide" },
+    { src: "/slide5.jpg", alt: "fifth Slide" },
   ];
   return (
     <div className="flex min-h-screen flex-col">
@@ -23,12 +23,14 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2 text-center md:text-start">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  Share Your <span className="text-pink-500">Fits</span>, Get Feedback, Earn Points
+                <h1 className="text-black text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                  Share Your <span className="text-pink-500">Fits</span>, Get
+                  Feedback, Earn Points
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  FitsCheck is the social fashion platform where you can showcase your outfits, receive community
-                  feedback, and participate in style challenges.
+                  FitsCheck is the social fashion platform where you can
+                  showcase your outfits, receive community feedback, and
+                  participate in style challenges.
                 </p>
               </div>
               <div className="flex flex-col gap-2 md:flex-row">
@@ -40,7 +42,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="#features"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 text-black bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
                 >
                   Learn More
                 </Link>
@@ -48,10 +50,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center ">
               <div className="relative h-[500px] w-full rounded-xl shadow-2xl">
-                <ImageCarousel
-                  images={slides}
-                  autoPlayInterval={5000} 
-                  />
+                <ImageCarousel images={slides} autoPlayInterval={5000} />
               </div>
             </div>
           </div>
@@ -63,13 +62,15 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">Features</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+                Features
+              </div>
+              <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Everything You Need to Showcase Your Style
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                FitsCheck combines social networking with fashion feedback to create a unique platform for style
-                enthusiasts.
+                FitsCheck combines social networking with fashion feedback to
+                create a unique platform for style enthusiasts.
               </p>
             </div>
           </div>
@@ -78,36 +79,42 @@ export default function Home() {
               <div className="rounded-full bg-pink-100 p-3">
                 <Vote className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Community Voting</h3>
+              <h3 className="text-black text-xl font-bold">Community Voting</h3>
               <p className="text-center text-gray-500">
-                Get instant feedback on your outfits with simple Hot/Not voting from the community.
+                Get instant feedback on your outfits with simple Hot/Not voting
+                from the community.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border border-gray-200 p-6 shadow-sm">
               <div className="rounded-full bg-pink-100 p-3">
                 <Trophy className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Style Challenges</h3>
+              <h3 className="text-black text-xl font-bold">Style Challenges</h3>
               <p className="text-center text-gray-500">
-                Participate in themed challenges to showcase your creativity and win style points.
+                Participate in themed challenges to showcase your creativity and
+                win style points.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border border-gray-200 p-6 shadow-sm">
               <div className="rounded-full bg-pink-100 p-3">
                 <Star className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Style Points</h3>
+              <h3 className="text-black text-xl font-bold">Style Points</h3>
               <p className="text-center text-gray-500">
-                Earn points for engagement and climb the leaderboard to become a style influencer.
+                Earn points for engagement and climb the leaderboard to become a
+                style influencer.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border border-gray-200 p-6 shadow-sm">
               <div className="rounded-full bg-pink-100 p-3">
                 <Users className="h-6 w-6 text-pink-500" />
               </div>
-              <h3 className="text-xl font-bold">Fashion Community</h3>
+              <h3 className="text-black text-xl font-bold">
+                Fashion Community
+              </h3>
               <p className="text-center text-gray-500">
-                Connect with other fashion enthusiasts, follow your favorites, and build your audience.
+                Connect with other fashion enthusiasts, follow your favorites,
+                and build your audience.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border border-gray-200 p-6 shadow-sm">
@@ -129,9 +136,10 @@ export default function Home() {
                   <path d="M22 17.8a11.5 11.5 0 0 0-5-7.8" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Feedback & Comments</h3>
+              <h3 className="text-black text-xl font-bold">Feedback & Comments</h3>
               <p className="text-center text-gray-500">
-                Receive detailed comments and suggestions to improve your style game.
+                Receive detailed comments and suggestions to improve your style
+                game.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border border-gray-200 p-6 shadow-sm">
@@ -152,9 +160,10 @@ export default function Home() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Affiliate Links</h3>
+              <h3 className="text-black text-xl font-bold">Affiliate Links</h3>
               <p className="text-center text-gray-500">
-                Premium users can add affiliate links to their outfits and earn commission on purchases.
+                Premium users can add affiliate links to their outfits and earn
+                commission on purchases.
               </p>
             </div>
           </div>
@@ -166,12 +175,15 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">How It Works</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+                How It Works
+              </div>
+              <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Simple, Fun, and Rewarding
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                FitsCheck makes sharing your style and getting feedback easier than ever.
+                FitsCheck makes sharing your style and getting feedback easier
+                than ever.
               </p>
             </div>
           </div>
@@ -180,23 +192,32 @@ export default function Home() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
                 1
               </div>
-              <h3 className="text-xl font-bold">Post Your Fit</h3>
+              <h3 className="text-black text-xl font-bold">Post Your Fit</h3>
               <p className="text-center text-gray-500">
-                Take a photo of your outfit, add a title, description, and relevant tags.
+                Take a photo of your outfit, add a title, description, and
+                relevant tags.
               </p>
-              <Image src="/mirrored-style.png" alt="Post Your Fit" width={200} height={200} className="rounded-lg" />
+              <Image
+                src="/mirrored-style.jpg"
+                alt="Post Your Fit"
+                width={500}
+                height={500}
+                className="rounded-lg"
+              />
             </div>
             <div className="flex flex-col items-center space-y-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
                 2
               </div>
-              <h3 className="text-xl font-bold">Get Feedback</h3>
-              <p className="text-center text-gray-500">Receive votes and comments from the community on your outfit.</p>
+              <h3 className="text-black text-xl font-bold">Get Feedback</h3>
+              <p className="text-center text-gray-500">
+                Receive votes and comments from the community on your outfit.
+              </p>
               <Image
                 src="/mobile-voting-interface.png"
                 alt="Get Feedback"
-                width={200}
-                height={200}
+                width={250}
+                height={250}
                 className="rounded-lg"
               />
             </div>
@@ -204,15 +225,16 @@ export default function Home() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
                 3
               </div>
-              <h3 className="text-xl font-bold">Earn & Grow</h3>
+              <h3 className="text-black text-xl font-bold">Earn & Grow</h3>
               <p className="text-center text-gray-500">
-                Earn style points, join challenges, and build your fashion influence.
+                Earn style points, join challenges, and build your fashion
+                influence.
               </p>
               <Image
-                src="/stylized-leaderboard.png"
+                src="/stylized-leaderboard.jpg"
                 alt="Earn & Grow"
-                width={200}
-                height={200}
+                width={500}
+                height={500}
                 className="rounded-lg"
               />
             </div>
@@ -225,24 +247,31 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">Pricing</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Choose Your Style Journey</h2>
+              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+                Pricing
+              </div>
+              <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Choose Your Style Journey
+              </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Start for free or upgrade to Premium for unlimited access and monetization opportunities.
+                Start for free or upgrade to Premium for unlimited access and
+                monetization opportunities.
               </p>
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2">
             <div className="flex flex-col rounded-lg border border-gray-200 p-6 shadow-sm">
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold">Free</h3>
-                <p className="text-gray-500">Perfect for casual style enthusiasts</p>
+                <h3 className="text-black text-2xl font-bold">Free</h3>
+                <p className="text-gray-500">
+                  Perfect for casual style enthusiasts
+                </p>
               </div>
               <div className="mt-4 flex items-baseline text-gray-900">
                 <span className="text-4xl font-bold">$0</span>
                 <span className="ml-1 text-gray-500">/month</span>
               </div>
-              <ul className="mt-6 space-y-4">
+              <ul className="text-black mt-6 space-y-4">
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
                   <span>Post up to 5 fits</span>
@@ -278,21 +307,23 @@ export default function Home() {
                 Popular
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold">Premium</h3>
+                <h3 className="text-black text-2xl font-bold">Premium</h3>
                 <p className="text-gray-500">For serious style influencers</p>
               </div>
               <div className="mt-4 flex items-baseline text-gray-900">
                 <span className="text-4xl font-bold">$4.99</span>
                 <span className="ml-1 text-gray-500">/month</span>
               </div>
-              <ul className="mt-6 space-y-4">
+              <ul className="text-black mt-6 space-y-4">
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
                   <span className="font-bold">Unlimited fit posts</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
-                  <span className="font-bold">Add affiliate links to earn commission</span>
+                  <span className="font-bold">
+                    Add affiliate links to earn commission
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="mr-2 h-5 w-5 text-green-500" />
@@ -325,8 +356,12 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">App Preview</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">See FitsCheck in Action</h2>
+              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+                App Preview
+              </div>
+              <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                See FitsCheck in Action
+              </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Take a look at the FitsCheck mobile experience.
               </p>
@@ -334,7 +369,12 @@ export default function Home() {
           </div>
           <div className="mx-auto mt-12 flex max-w-5xl flex-wrap items-center justify-center gap-8">
             <div className="relative h-[500px] w-[250px] overflow-hidden rounded-xl shadow-xl">
-              <Image src="/fashion-app-feed.png" alt="FitsCheck Feed" fill className="object-cover" />
+              <Image
+                src="/fashion-app-feed.png"
+                alt="FitsCheck Feed"
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="relative h-[500px] w-[250px] overflow-hidden rounded-xl shadow-xl">
               <Image
@@ -388,5 +428,5 @@ export default function Home() {
 
       <Footer />
     </div>
-  )
+  );
 }

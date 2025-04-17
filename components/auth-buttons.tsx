@@ -1,56 +1,58 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { User } from "lucide-react"
+} from "@/components/ui/dropdown-menu";
+import { User } from "lucide-react";
+import PremiumButton from "./ui/premium-button";
+import LoginButton from "./ui/login-button";
 
 export function AuthButtons() {
   // In a real app, you would check for authentication status from a context or API
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Simulate checking auth status
   useEffect(() => {
     // Check if user is logged in (e.g., by checking for a token in localStorage)
     const checkAuth = () => {
       // This is just a placeholder. In a real app, you would check for a token or session
-      const hasToken = localStorage.getItem("auth_token")
-      setIsLoggedIn(!!hasToken)
-    }
+      const hasToken = localStorage.getItem("auth_token");
+      setIsLoggedIn(!!hasToken);
+    };
 
-    checkAuth()
+    checkAuth();
 
     // Set up an interval to check auth status periodically
-    const interval = setInterval(checkAuth, 1000)
+    const interval = setInterval(checkAuth, 1000);
 
     // For demo purposes, let's add a way to toggle login state with a key combination
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === "l") {
         setIsLoggedIn((prev) => {
-          const newState = !prev
+          const newState = !prev;
           if (newState) {
-            localStorage.setItem("auth_token", "demo_token")
+            localStorage.setItem("auth_token", "demo_token");
           } else {
-            localStorage.removeItem("auth_token")
+            localStorage.removeItem("auth_token");
           }
-          return newState
-        })
+          return newState;
+        });
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyDown)
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-      clearInterval(interval)
-    }
-  }, [])
+      window.removeEventListener("keydown", handleKeyDown);
+      clearInterval(interval);
+    };
+  }, []);
 
   if (isLoggedIn) {
     return (
@@ -74,21 +76,17 @@ export function AuthButtons() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    )
+    );
   }
 
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-4">
       <Link href="/login" className="">
-        <Button variant="outline" size="sm">
-          Log In
-        </Button>
+        <LoginButton />
       </Link>
-      <Link href="/" className="">
-        <Button size="sm" className="bg-pink-500 hover:bg-pink-600">
-          Upgrade to Premium
-        </Button>
+      <Link href="/premium" className="">
+        <PremiumButton />
       </Link>
     </div>
-  )
+  );
 }
