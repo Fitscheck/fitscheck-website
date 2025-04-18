@@ -96,7 +96,7 @@ export function AuthButtons() {
           Log In
         </Button>
       </Link>
-      <Link href="/premium">
+      <Link href="/login">
         <Button
           size="sm"
           className="bg-pink-500 hover:bg-pink-600 text-white text-sm px-4"

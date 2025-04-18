@@ -300,10 +300,11 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            {/* Free Plan Button */}
             <div className="mt-6">
-              <Link href="/login">
+              <Link href={isLoggedIn ? "/account" : "/login"}>
                 <button className="w-full h-10 rounded-md bg-gray-900 text-white font-medium text-sm hover:bg-gray-700 transition">
-                  Get Started
+                  {isLoggedIn ? "Go to Account" : "Get Started"}
                 </button>
               </Link>
             </div>
@@ -341,8 +342,9 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            {/* Premium Plan Button */}
             <div className="mt-6">
-              <Link href="/premium">
+              <Link href={isLoggedIn ? "/premium" : "/login"}>
                 <button className="w-full h-10 rounded-md bg-pink-500 text-white font-medium text-sm hover:bg-pink-600 transition">
                   Upgrade to Premium
                 </button>
