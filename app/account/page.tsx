@@ -15,6 +15,9 @@ import {
   Clock,
   Receipt,
 } from "lucide-react"
+import { logout } from "@/lib/auth"
+import toast from "react-hot-toast"
+
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -55,14 +58,15 @@ export default function AccountPage() {
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [])
-
-  const handleLogout = () => {
-    // In a real app, you would clear tokens, cookies, etc.
-    localStorage.removeItem("auth_token")
-    localStorage.removeItem("premium_subscription")
-
-    // Redirect to home page
-    router.push("/logout")
+  const handleLogout = async () => {
+    try {
+      await logout()
+      toast.success("Logged out successfully")
+      router.push("/")
+    } catch (err: any) {
+      toast.error("Something went wrong during logout")
+      router.push("/") // optional fallback
+    }
   }
 
   return (

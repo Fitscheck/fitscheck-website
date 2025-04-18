@@ -17,6 +17,8 @@ import { User } from "lucide-react"
 export function AuthButtons() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const router = useRouter()
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+
 
   useEffect(() => {
     const checkAuth = () => {
@@ -75,15 +77,18 @@ export function AuthButtons() {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            onClick={() => {
+            disabled={isLoggingOut}
+            onClick={async () => {
+              setIsLoggingOut(true)
               localStorage.removeItem("auth_token")
               toast.success("Logged out successfully")
               router.push("/")
             }}
             className="cursor-pointer w-full px-2 py-1.5 text-sm hover:text-red-500"
           >
-            Log Out
+            {isLoggingOut ? "Logging out..." : "Log Out"}
           </DropdownMenuItem>
+
         </DropdownMenuContent>
       </DropdownMenu>
     )

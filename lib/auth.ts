@@ -34,6 +34,27 @@ export async function verifyMagicCode(
 }
 
 export async function logout(): Promise<{ message: string }> {
-  const res = await api.post(API_ROUTES.AUTH.LOGOUT);
-  return res.data;
+  const token = localStorage.getItem("auth_token")
+  if (!token) {
+    return { message: "No token to log out with." }
+  }
+
+  try {
+    const res = await api.post(API_ROUTES.AUTH.LOGOUT, null, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+
+    // Clear localStorage after successful logout
+    localStorage.removeItem("auth_token")
+    localStorage.removeItem("premium_subscription")
+
+    return res.data
+  } catch (err) {
+    // Still remove token on failure to avoid getting stuck
+    localStorage.removeItem("auth_token")
+    localStorage.removeItem("premium_subscription")
+    throw err
+  }
 }
