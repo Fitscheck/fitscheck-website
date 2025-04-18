@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 import toast from "react-hot-toast"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,43 +13,26 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { User } from "lucide-react"
+import { useAuth } from "@/lib/hooks/useAuth"
+import { logout } from "@/lib/auth"
 
 export function AuthButtons() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { isAuthenticated: isLoggedIn } = useAuth()
   const router = useRouter()
   const [isLoggingOut, setIsLoggingOut] = useState(false)
 
-
-  useEffect(() => {
-    const checkAuth = () => {
-      const hasToken = localStorage.getItem("auth_token")
-      setIsLoggedIn(!!hasToken)
+  const handleLogout = async () => {
+    setIsLoggingOut(true)
+    try {
+      await logout()
+      toast.success("Logged out successfully")
+      router.push("/")
+    } catch {
+      toast.error("Logout failed")
+    } finally {
+      setIsLoggingOut(false)
     }
-
-    checkAuth()
-    const handleStorageChange = () => checkAuth()
-    window.addEventListener("storage", handleStorageChange)
-
-    // Dev shortcut: Ctrl + L to toggle login
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.key === "l") {
-        setIsLoggedIn((prev) => {
-          const newState = !prev
-          newState
-            ? localStorage.setItem("auth_token", "demo_token")
-            : localStorage.removeItem("auth_token")
-          return newState
-        })
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown)
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange)
-      window.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [])
+  }
 
   if (isLoggedIn) {
     return (
@@ -78,17 +61,11 @@ export function AuthButtons() {
           <DropdownMenuSeparator />
           <DropdownMenuItem
             disabled={isLoggingOut}
-            onClick={async () => {
-              setIsLoggingOut(true)
-              localStorage.removeItem("auth_token")
-              toast.success("Logged out successfully")
-              router.push("/")
-            }}
+            onClick={handleLogout}
             className="cursor-pointer w-full px-2 py-1.5 text-sm hover:text-red-500"
           >
             {isLoggingOut ? "Logging out..." : "Log Out"}
           </DropdownMenuItem>
-
         </DropdownMenuContent>
       </DropdownMenu>
     )

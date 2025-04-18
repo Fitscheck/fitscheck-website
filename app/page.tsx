@@ -8,15 +8,12 @@ import { Check, Star, Trophy, Users, Vote } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ImageCarousel from "@/components/imageCarousel";
+import { useAuth } from "@/lib/hooks/useAuth"
 
 export default function Home() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem("auth_token");
-    setIsLoggedIn(!!token);
-  }, []);
-
+  const { isAuthenticated: isLoggedIn } = useAuth()
+  
   const slides = [
     { src: "/slide1.jpg", alt: "First Slide" },
     { src: "/slide2.jpeg", alt: "Second Slide" },
