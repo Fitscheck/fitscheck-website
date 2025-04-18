@@ -87,7 +87,7 @@ export default function PremiumPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Unlimited Fit Posts</h3>
-                    <p className="text-sm text-gray-500">Post as many outfits as you want, no more 5-post limit.</p>
+                    <p className="text-sm text-gray-500">Post as many outfits as you want, no more than 100-post limit.</p>
                   </div>
                 </div>
 
@@ -110,7 +110,7 @@ export default function PremiumPage() {
                   <div>
                     <h3 className="font-medium">Unlimited Challenge Entries</h3>
                     <p className="text-sm text-gray-500">
-                      Join as many challenges as you want, no more 2-challenge limit.
+                      Join as many challenges as you want, no more 50-challenge limit.
                     </p>
                   </div>
                 </div>
@@ -140,13 +140,13 @@ export default function PremiumPage() {
                 <div className="mt-4 space-y-2">
                   <div className="grid grid-cols-3 items-center rounded-lg bg-white p-3">
                     <div className="text-sm">Fit Posts</div>
-                    <div className="text-center text-sm">5 max</div>
+                    <div className="text-center text-sm">50 max</div>
                     <div className="text-center text-sm font-medium text-pink-500">Unlimited</div>
                   </div>
 
                   <div className="grid grid-cols-3 items-center rounded-lg bg-white p-3">
                     <div className="text-sm">Challenge Entries</div>
-                    <div className="text-center text-sm">2 max</div>
+                    <div className="text-center text-sm">50 max</div>
                     <div className="text-center text-sm font-medium text-pink-500">Unlimited</div>
                   </div>
 
