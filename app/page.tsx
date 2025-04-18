@@ -46,7 +46,6 @@ export default function Home() {
                 >
                   Learn More
                 </Link>
-
               </div>
             </div>
             <div className="flex items-center justify-center ">
@@ -137,7 +136,9 @@ export default function Home() {
                   <path d="M22 17.8a11.5 11.5 0 0 0-5-7.8" />
                 </svg>
               </div>
-              <h3 className="text-black text-xl font-bold">Feedback & Comments</h3>
+              <h3 className="text-black text-xl font-bold">
+                Feedback & Comments
+              </h3>
               <p className="text-center text-gray-500">
                 Receive detailed comments and suggestions to improve your style
                 game.
@@ -171,7 +172,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* How It Works */}
       <section className="bg-gray-50 py-20">
         <div className="container px-4 md:px-6">
@@ -190,60 +190,49 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-3">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
-                1
+            {[
+              {
+                step: 1,
+                title: "Post Your Fit",
+                description:
+                  "Take a photo of your outfit, add a title, description, and relevant tags.",
+                image: "/mirrored-style.svg",
+              },
+              {
+                step: 2,
+                title: "Get Feedback",
+                description:
+                  "Receive votes and comments from the community on your outfit.",
+                image: "/mobile-voting-interface.svg",
+              },
+              {
+                step: 3,
+                title: "Earn & Grow",
+                description:
+                  "Earn style points, join challenges, and build your fashion influence.",
+                image: "/earners.svg",
+              },
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center space-y-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
+                  {item.step}
+                </div>
+                <h3 className="text-black text-xl font-bold">{item.title}</h3>
+                <p className="text-center text-gray-500">{item.description}</p>
+                <div className="relative w-full aspect-square max-w-[300px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-contain p-4"
+                    sizes="(max-width: 768px) 100vw, 300px"
+                  />
+                </div>
               </div>
-              <h3 className="text-black text-xl font-bold">Post Your Fit</h3>
-              <p className="text-center text-gray-500">
-                Take a photo of your outfit, add a title, description, and
-                relevant tags.
-              </p>
-              <Image
-                src="/mirrored-style.jpg"
-                alt="Post Your Fit"
-                width={500}
-                height={500}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
-                2
-              </div>
-              <h3 className="text-black text-xl font-bold">Get Feedback</h3>
-              <p className="text-center text-gray-500">
-                Receive votes and comments from the community on your outfit.
-              </p>
-              <Image
-                src="/mobile-voting-interface.png"
-                alt="Get Feedback"
-                width={250}
-                height={250}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-2xl font-bold text-pink-500">
-                3
-              </div>
-              <h3 className="text-black text-xl font-bold">Earn & Grow</h3>
-              <p className="text-center text-gray-500">
-                Earn style points, join challenges, and build your fashion
-                influence.
-              </p>
-              <Image
-                src="/stylized-leaderboard.jpg"
-                alt="Earn & Grow"
-                width={500}
-                height={500}
-                className="rounded-lg"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </section>
-
 
       {/* Pricing Section */}
 
@@ -256,7 +245,8 @@ export default function Home() {
             Choose Your Style Journey
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Start for free or upgrade to Premium for unlimited access and monetization opportunities.
+            Start for free or upgrade to Premium for unlimited access and
+            monetization opportunities.
           </p>
         </div>
 
@@ -265,7 +255,9 @@ export default function Home() {
           <div className="flex flex-col rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-gray-900">Free</h3>
-              <p className="text-gray-500">Perfect for casual style enthusiasts</p>
+              <p className="text-gray-500">
+                Perfect for casual style enthusiasts
+              </p>
             </div>
             <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
               <span className="text-2xl font-extrabold text-pink-600">$0</span>
@@ -279,7 +271,10 @@ export default function Home() {
                 "Earn style points",
                 "Appear on leaderboards",
               ].map((item, i) => (
-                <li key={i} className="flex items-start text-gray-700 font-medium">
+                <li
+                  key={i}
+                  className="flex items-start text-gray-700 font-medium"
+                >
                   <Check className="mr-2 h-5 w-5 text-green-500" />
                   {item}
                 </li>
@@ -304,7 +299,9 @@ export default function Home() {
               <p className="text-gray-500">For serious style influencers</p>
             </div>
             <div className="mt-4 flex items-baseline text-gray-900 space-x-1">
-              <span className="text-2xl font-extrabold text-pink-600">$4.99</span>
+              <span className="text-2xl font-extrabold text-pink-600">
+                $4.99
+              </span>
               <span className="font-medium text-pink-400">/month</span>
             </div>
             <ul className="mt-6 space-y-4 text-left">
@@ -315,7 +312,10 @@ export default function Home() {
                 "All free features included",
                 "Premium badge on profile",
               ].map((item, i) => (
-                <li key={i} className="flex items-start text-gray-700 font-medium">
+                <li
+                  key={i}
+                  className="flex items-start text-gray-700 font-medium"
+                >
                   <Check className="mr-2 h-5 w-5 text-green-500" />
                   {item}
                 </li>
@@ -331,7 +331,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* App Preview */}
       <section className="bg-gradient-to-b from-white to-pink-50 py-20 font-sans">
@@ -377,7 +376,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="bg-pink-500 py-20 text-white">
