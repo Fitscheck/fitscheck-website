@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "FitsCheck - Share Your Outfit Fits",
   description:
     "Post your outfit fits, engage in challenges, and interact with other fashion enthusiasts through likes, shares, comments, and voting.",
+  icons: {
+    icon: [
+      {
+        url: "/fitslogo.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/fitslogo.svg",
+    apple: "/fitslogo.svg",
+  },
   keywords: [
     "fashion",
     "outfit",
@@ -32,8 +42,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-      {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          {children}
         </ThemeProvider>
       </body>
     </html>
