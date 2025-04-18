@@ -40,8 +40,8 @@ export default function Navbar() {
           <Link href="/" className={isActive("/") ? "text-pink-500 font-semibold" : "hover:text-pink-500"}>
             Home
           </Link>
-          <Link href="#features" className="hover:text-pink-500" onClick={() => handleNavClick("features")}>Features</Link>
-          <Link href="#pricing" className="hover:text-pink-500" onClick={() => handleNavClick("pricing")}>Pricing</Link>
+          <Link href="/#features" className="hover:text-pink-500" onClick={() => handleNavClick("features")}>Features</Link>
+          <Link href="/#pricing" className="hover:text-pink-500" onClick={() => handleNavClick("pricing")}>Pricing</Link>
         </nav>
 
         {/* Buttons */}
