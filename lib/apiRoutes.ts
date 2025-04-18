@@ -1,5 +1,5 @@
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://fitscheck-backend.onrender.com";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "https://fitscheck-backend.onrender.com"
 
 export const API_ROUTES = {
   AUTH: {
@@ -12,5 +12,11 @@ export const API_ROUTES = {
     UPDATE_PROFILE: `${BASE_URL}/api/users/profile`,
     FOLLOW: (userId: string) => `${BASE_URL}/api/users/${userId}/follow`,
     UNFOLLOW: (userId: string) => `${BASE_URL}/api/users/${userId}/follow`,
+  },
+  SUBSCRIPTIONS: {
+    INDEX: `${BASE_URL}/api/subscriptions`,
+    CREATE: `${BASE_URL}/api/subscriptions`,
+    UPDATE: (id: string) => `${BASE_URL}/api/subscriptions/${id}`,
+    DELETE: (id: string) => `${BASE_URL}/api/subscriptions/${id}`,
   },
 }
