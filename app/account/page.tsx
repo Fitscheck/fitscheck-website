@@ -3,7 +3,18 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Bell, CreditCard, LogOut, Settings, User, Shield, ChevronRight, CheckCircle2, Clock } from "lucide-react"
+import {
+  Bell,
+  CreditCard,
+  LogOut,
+  Settings,
+  User,
+  Shield,
+  ChevronRight,
+  CheckCircle2,
+  Clock,
+  Receipt,
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -80,7 +91,7 @@ export default function AccountPage() {
               <CardContent className="p-0">
                 <nav className="flex flex-col">
                   <button
-                    onClick={() => document.querySelector('[data-value="subscription"]')?.click()}
+                    onClick={() => (document.querySelector('[data-value="subscription"]') as HTMLElement)?.click()}
                     className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left hover:bg-gray-50"
                   >
                     <div className="flex items-center gap-3">
@@ -90,7 +101,7 @@ export default function AccountPage() {
                     <ChevronRight className="h-4 w-4 text-gray-400" />
                   </button>
                   <button
-                    onClick={() => document.querySelector('[data-value="notifications"]')?.click()}
+                    onClick={() => (document.querySelector('[data-value="notifications"]') as HTMLElement)?.click()}
                     className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left hover:bg-gray-50"
                   >
                     <div className="flex items-center gap-3">
@@ -100,7 +111,7 @@ export default function AccountPage() {
                     <ChevronRight className="h-4 w-4 text-gray-400" />
                   </button>
                   <button
-                    onClick={() => document.querySelector('[data-value="security"]')?.click()}
+                    onClick={() => (document.querySelector('[data-value="security"]') as HTMLElement)?.click()}
                     className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left hover:bg-gray-50"
                   >
                     <div className="flex items-center gap-3">
@@ -110,7 +121,7 @@ export default function AccountPage() {
                     <ChevronRight className="h-4 w-4 text-gray-400" />
                   </button>
                   <button
-                    onClick={() => document.querySelector('[data-value="settings"]')?.click()}
+                    onClick={() => (document.querySelector('[data-value="settings"]') as HTMLElement)?.click()}
                     className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-gray-50"
                   >
                     <div className="flex items-center gap-3">
@@ -180,20 +191,19 @@ export default function AccountPage() {
                           </div>
 
                           <div className="flex justify-between">
-                            <div>
+                            {/* <div>
                               <h3 className="font-medium">Payment Method</h3>
                               <p className="text-sm text-gray-500">Visa ending in 4242</p>
-                            </div>
-                            <Button
+                            </div> */}
+                            {/* <Button
                               variant="outline"
                               size="sm"
                               onClick={() => {
-                                // In a real app, this would open a payment method update form
-                                alert("This would open a payment method update form in a real application.")
+                                router.push("/account/billing")
                               }}
                             >
                               Update
-                            </Button>
+                            </Button> */}
                           </div>
 
                           <div className="flex justify-between">
@@ -205,10 +215,10 @@ export default function AccountPage() {
                               variant="outline"
                               size="sm"
                               onClick={() => {
-                                // In a real app, this would show billing history
-                                alert("This would show your billing history in a real application.")
+                                router.push("/account/billing")
                               }}
                             >
+                              <Receipt className="mr-2 h-4 w-4" />
                               View
                             </Button>
                           </div>
