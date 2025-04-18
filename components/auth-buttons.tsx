@@ -14,27 +14,16 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { User } from "lucide-react"
 import { useAuth } from "@/lib/hooks/useAuth"
-import { logout } from "@/lib/auth"
 
 export function AuthButtons() {
-  const { isAuthenticated: isLoggedIn } = useAuth()
+  const { isAuthenticated, isLoading, logout } = useAuth()
   const router = useRouter()
-  const [isLoggingOut, setIsLoggingOut] = useState(false)
 
-  const handleLogout = async () => {
-    setIsLoggingOut(true)
-    try {
-      await logout()
-      toast.success("Logged out successfully")
-      router.push("/")
-    } catch {
-      toast.error("Logout failed")
-    } finally {
-      setIsLoggingOut(false)
-    }
+  if (isLoading) {
+    return <div className="w-20 h-6 animate-pulse rounded bg-gray-100" />
   }
 
-  if (isLoggedIn) {
+  if (isAuthenticated) {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -60,11 +49,15 @@ export function AuthButtons() {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            disabled={isLoggingOut}
-            onClick={handleLogout}
+            onClick={async () => {
+              await logout()
+              toast.success("Logged out successfully")
+
+              router.push("/")
+            }}
             className="cursor-pointer w-full px-2 py-1.5 text-sm hover:text-red-500"
           >
-            {isLoggingOut ? "Logging out..." : "Log Out"}
+            Log Out
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -89,3 +82,4 @@ export function AuthButtons() {
     </div>
   )
 }
+

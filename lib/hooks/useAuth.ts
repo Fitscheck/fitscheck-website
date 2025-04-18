@@ -3,21 +3,31 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
-export function useAuth({ redirectTo }: { redirectTo?: string } = {}) {
+export function useAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token")
-    const authed = !!token
-    setIsAuthenticated(authed)
-    setLoading(false)
+    setIsAuthenticated(!!token)
+    setIsLoading(false)
 
-    if (!authed && redirectTo) {
-      router.replace(redirectTo)
+    const handleStorageChange = () => {
+      const token = localStorage.getItem("auth_token")
+      setIsAuthenticated(!!token)
     }
-  }, [redirectTo, router])
 
-  return { isAuthenticated, loading }
+    window.addEventListener("storage", handleStorageChange)
+    return () => window.removeEventListener("storage", handleStorageChange)
+  }, [])
+
+  const logout = async () => {
+    localStorage.removeItem("auth_token")
+    localStorage.removeItem("premium_subscription")
+    setIsAuthenticated(false)
+    router.push("/") // ✅ ensures redirect after logout
+  }
+
+  return { isAuthenticated, isLoading, logout }
 }
