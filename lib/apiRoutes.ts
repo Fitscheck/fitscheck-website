@@ -14,7 +14,7 @@ export const API_ROUTES = {
     UNFOLLOW: (userId: string) => `${BASE_URL}/api/users/${userId}/follow`,
   },
   SUBSCRIPTIONS: {
-    INDEX: `${BASE_URL}/api/subscriptions`,
+    LIST: `${BASE_URL}/api/subscriptions`,
     CREATE: `${BASE_URL}/api/subscriptions`,
     UPDATE: (id: string) => `${BASE_URL}/api/subscriptions/${id}`,
     DELETE: (id: string) => `${BASE_URL}/api/subscriptions/${id}`,

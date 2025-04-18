@@ -60,9 +60,10 @@ export default function AdminDashboard() {
             "X-User-Id": userId,
           },
         })
-
+    
         const data = await res.json()
-
+        console.log("Profile data:", data)
+    
         if (!res.ok || data.role !== "admin") {
           toast.error("Unauthorized access")
           router.push("/")
@@ -71,9 +72,11 @@ export default function AdminDashboard() {
         }
       } catch (err) {
         toast.error("Failed to verify access")
+        console.error(err)
         router.push("/")
       }
     }
+    
 
     checkAdmin()
   }, [router])
