@@ -69,90 +69,33 @@ export default function AccountPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <div className="container flex-1 px-4 py-8 md:px-6">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">My Account</h1>
-          <p className="text-gray-500">Manage your account settings and subscription</p>
-        </div>
+     
+      <div className="container flex-1 px-4 py-8 md:px-6 mt-8">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+  <div>
+    <h1 className="text-2xl font-bold">Welcome back, John Doe</h1>
+    <p className="text-sm text-gray-500">john.doe@example.com</p>
+  </div>
+  <Button
+    variant="outline"
+    className="mt-4 md:mt-0 text-red-500 hover:bg-red-50 hover:text-red-600"
+    onClick={handleLogout}
+  >
+    <LogOut className="mr-2 h-4 w-4" />
+    Log Out
+  </Button>
+</div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {/* Sidebar */}
-          <div className="md:col-span-1">
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-3 space-y-0">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100">
-                  <User className="h-5 w-5 text-pink-500" />
-                </div>
-                <div>
-                  <CardTitle>John Doe</CardTitle>
-                  <CardDescription>john.doe@example.com</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent className="p-0">
-                <nav className="flex flex-col">
-                  <button
-                    onClick={() => (document.querySelector('[data-value="subscription"]') as HTMLElement)?.click()}
-                    className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left hover:bg-gray-50"
-                  >
-                    <div className="flex items-center gap-3">
-                      <CreditCard className="h-5 w-5 text-gray-500" />
-                      <span>Subscription</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-gray-400" />
-                  </button>
-                  <button
-                    onClick={() => (document.querySelector('[data-value="notifications"]') as HTMLElement)?.click()}
-                    className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left hover:bg-gray-50"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Bell className="h-5 w-5 text-gray-500" />
-                      <span>Notifications</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-gray-400" />
-                  </button>
-                  <button
-                    onClick={() => (document.querySelector('[data-value="security"]') as HTMLElement)?.click()}
-                    className="flex w-full items-center justify-between border-b border-gray-100 px-4 py-3 text-left hover:bg-gray-50"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Shield className="h-5 w-5 text-gray-500" />
-                      <span>Security</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-gray-400" />
-                  </button>
-                  <button
-                    onClick={() => (document.querySelector('[data-value="settings"]') as HTMLElement)?.click()}
-                    className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-gray-50"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Settings className="h-5 w-5 text-gray-500" />
-                      <span>Settings</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-gray-400" />
-                  </button>
-                </nav>
-              </CardContent>
-              <CardFooter className="border-t p-4">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start gap-2 text-red-500 hover:bg-red-50 hover:text-red-600"
-                  onClick={handleLogout}
-                >
-                  <LogOut className="h-4 w-4" />
-                  <span>Log Out</span>
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
+      
 
           {/* Main Content */}
           <div className="md:col-span-2">
             <Tabs defaultValue="subscription" className="space-y-6">
-              <TabsList className="grid w-full grid-cols-4">
+              <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="subscription">Subscription</TabsTrigger>
                 <TabsTrigger value="notifications">Notifications</TabsTrigger>
                 <TabsTrigger value="security">Security</TabsTrigger>
-                <TabsTrigger value="settings">Settings</TabsTrigger>
+                {/* <TabsTrigger value="settings">Settings</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="subscription" className="space-y-6">
@@ -348,7 +291,7 @@ export default function AccountPage() {
                     <CardDescription>Manage your account security preferences</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="flex items-center justify-between">
+                    {/* <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Two-Factor Authentication</h3>
                         <p className="text-sm text-gray-500">Add an extra layer of security to your account</p>
@@ -362,7 +305,7 @@ export default function AccountPage() {
                       >
                         Enable
                       </Button>
-                    </div>
+                    </div> */}
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Change Email</h3>
@@ -378,7 +321,7 @@ export default function AccountPage() {
                         Update
                       </Button>
                     </div>
-                    <div className="flex items-center justify-between">
+                    {/* <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Connected Accounts</h3>
                         <p className="text-sm text-gray-500">Manage social accounts connected to your profile</p>
@@ -392,7 +335,7 @@ export default function AccountPage() {
                       >
                         Manage
                       </Button>
-                    </div>
+                    </div> */}
                   </CardContent>
                   <CardFooter className="border-t p-4">
                     <Button
@@ -413,7 +356,7 @@ export default function AccountPage() {
                 </Card>
               </TabsContent>
 
-              <TabsContent value="settings" className="space-y-6">
+              {/* <TabsContent value="settings" className="space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle>Account Settings</CardTitle>
@@ -469,11 +412,12 @@ export default function AccountPage() {
                     </Button>
                   </CardFooter>
                 </Card>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </div>
-        </div>
-      </div>
+          </div>
+
+
 
       <Footer />
     </div>
