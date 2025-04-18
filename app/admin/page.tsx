@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
@@ -32,6 +32,55 @@ import {
 } from "@/components/ui/dialog"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import toast from "react-hot-toast"
+
+export default function AdminDashboard() {
+  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(true)
+  const [view, setView] = useState<"grid" | "list">("grid")
+  const [searchQuery, setSearchQuery] = useState("")
+  const [statusFilter, setStatusFilter] = useState<string | null>(null)
+  const [selectedChallenge, setSelectedChallenge] = useState<(typeof challenges)[0] | null>(null)
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
+
+  useEffect(() => {
+    const token = localStorage.getItem("auth_token")
+    const userId = localStorage.getItem("user_id")
+
+    if (!token || !userId) {
+      router.push("/")
+      return
+    }
+
+    const checkAdmin = async () => {
+      try {
+        const res = await fetch("/api/profile", {
+          headers: {
+            Authorization: token,
+            "X-User-Id": userId,
+          },
+        })
+
+        const data = await res.json()
+
+        if (!res.ok || data.role !== "admin") {
+          toast.error("Unauthorized access")
+          router.push("/")
+        } else {
+          setIsLoading(false)
+        }
+      } catch (err) {
+        toast.error("Failed to verify access")
+        router.push("/")
+      }
+    }
+
+    checkAdmin()
+  }, [router])
+
+  if (isLoading) {
+    return <div className="p-8 text-center">Checking access...</div>
+  }
 
 // Sample data for challenges
 const challenges = [
@@ -81,14 +130,6 @@ const challenges = [
     description: "One color, head to toe - show us your best monochromatic outfit!",
   },
 ]
-
-export default function AdminDashboard() {
-  const router = useRouter()
-  const [view, setView] = useState<"grid" | "list">("grid")
-  const [searchQuery, setSearchQuery] = useState("")
-  const [statusFilter, setStatusFilter] = useState<string | null>(null)
-  const [selectedChallenge, setSelectedChallenge] = useState<(typeof challenges)[0] | null>(null)
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
   // Filter challenges based on search query and status filter
   const filteredChallenges = challenges.filter((challenge) => {
