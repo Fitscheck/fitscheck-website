@@ -62,7 +62,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+              <div className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-medium text-pink-600">
                 Features
               </div>
               <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+              <div className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-medium text-pink-600">
                 How It Works
               </div>
               <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -337,7 +337,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-pink-100 px-3 py-1 text-sm text-pink-500">
+              <div className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-medium text-pink-600">
                 App Preview
               </div>
               <h2 className="text-black text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

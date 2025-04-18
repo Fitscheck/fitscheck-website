@@ -16,6 +16,7 @@ export default function ReportPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [reportType, setReportType] = useState("")
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("")
   const [description, setDescription] = useState("")
 
@@ -62,7 +63,17 @@ export default function ReportPage() {
                     </SelectContent>
                   </Select>
                 </div>
-
+                <div className="space-y-2">
+                  <Label htmlFor="name">Your Name</Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="John Doe"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Your Email</Label>
                   <Input
