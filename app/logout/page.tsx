@@ -2,19 +2,22 @@
 
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
+import toast from "react-hot-toast"
 
 export default function LogoutPage() {
   const router = useRouter()
 
   useEffect(() => {
-    // Simulate logout process
-    setTimeout(() => {
-      // In a real app, you would clear tokens, cookies, etc.
-      console.log("User logged out")
+    // Clear auth token
+    localStorage.removeItem("auth_token")
 
-      // Redirect to home page
+    // Show success toast
+    toast.success("Logged out successfully")
+
+    // Redirect to homepage
+    setTimeout(() => {
       router.push("/")
-    }, 500)
+    }, 1000)
   }, [router])
 
   return (

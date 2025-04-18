@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-
+import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: "FitsCheck - Share Your Outfit Fits",
   description:
@@ -48,6 +48,7 @@ export default function RootLayout({
           enableSystem={false}
         >
           {children}
+          <Toaster position="top-center" />
         </ThemeProvider>
       </body>
     </html>

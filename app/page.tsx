@@ -1,18 +1,30 @@
+// Home.tsx
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Check, Star, Trophy, Users, Vote } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ImageCarousel from "@/components/imageCarousel";
 
 export default function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("auth_token");
+    setIsLoggedIn(!!token);
+  }, []);
+
   const slides = [
     { src: "/slide1.jpg", alt: "First Slide" },
     { src: "/slide2.jpeg", alt: "Second Slide" },
     { src: "/slide3.jpg", alt: "Third Slide" },
-    { src: "/slide4.jpg", alt: "fourth Slide" },
-    { src: "/slide5.jpg", alt: "fifth Slide" },
+    { src: "/slide4.jpg", alt: "Fourth Slide" },
+    { src: "/slide5.jpg", alt: "Fifth Slide" },
   ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -24,22 +36,30 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2 text-center md:text-start">
                 <h1 className="text-black text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  Share Your <span className="text-pink-500">Fits</span>, Get
-                  Feedback, Earn Points
+                  Share Your <span className="text-pink-500">Fits</span>, Get Feedback, Earn Points
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  FitsCheck is the social fashion platform where you can
-                  showcase your outfits, receive community feedback, and
-                  participate in style challenges.
+                  FitsCheck is the social fashion platform where you can showcase your outfits, receive community feedback, and participate in style challenges.
                 </p>
               </div>
               <div className="flex flex-col gap-2 md:flex-row">
-                <Link
-                  href="/login"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-pink-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-500"
-                >
-                  Get Started
-                </Link>
+                {!isLoggedIn ? (
+                  <>
+                    <Link
+                      href="/login"
+                      className="inline-flex h-10 items-center justify-center rounded-md bg-pink-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-500"
+                    >
+                      Get Started
+                    </Link>
+                  </>
+                ) : (
+                  <Link
+                    href="/account"
+                    className="inline-flex h-10 items-center justify-center rounded-md bg-pink-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-pink-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pink-500"
+                  >
+                    Go to Account
+                  </Link>
+                )}
                 <Link
                   href="#features"
                   className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 text-black bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import toast from "react-hot-toast"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -14,6 +16,7 @@ import { User } from "lucide-react"
 
 export function AuthButtons() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const checkAuth = () => {
@@ -22,8 +25,10 @@ export function AuthButtons() {
     }
 
     checkAuth()
-    const interval = setInterval(checkAuth, 1000)
+    const handleStorageChange = () => checkAuth()
+    window.addEventListener("storage", handleStorageChange)
 
+    // Dev shortcut: Ctrl + L to toggle login
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === "l") {
         setIsLoggedIn((prev) => {
@@ -37,9 +42,10 @@ export function AuthButtons() {
     }
 
     window.addEventListener("keydown", handleKeyDown)
+
     return () => {
+      window.removeEventListener("storage", handleStorageChange)
       window.removeEventListener("keydown", handleKeyDown)
-      clearInterval(interval)
     }
   }, [])
 
@@ -58,14 +64,25 @@ export function AuthButtons() {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="rounded-xl shadow-lg border border-gray-100 animate-fadeIn">
           <DropdownMenuItem asChild>
-            <Link href="/account" className="w-full px-2 py-1.5 text-sm hover:text-pink-600">My Account</Link>
+            <Link href="/account" className="w-full px-2 py-1.5 text-sm hover:text-pink-600">
+              My Account
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/premium" className="w-full px-2 py-1.5 text-sm hover:text-pink-600">Upgrade to Premium</Link>
+            <Link href="/premium" className="w-full px-2 py-1.5 text-sm hover:text-pink-600">
+              Upgrade to Premium
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
-            <Link href="/logout" className="w-full px-2 py-1.5 text-sm hover:text-red-500">Log Out</Link>
+          <DropdownMenuItem
+            onClick={() => {
+              localStorage.removeItem("auth_token")
+              toast.success("Logged out successfully")
+              router.push("/")
+            }}
+            className="cursor-pointer w-full px-2 py-1.5 text-sm hover:text-red-500"
+          >
+            Log Out
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
