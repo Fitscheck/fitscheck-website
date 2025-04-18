@@ -17,12 +17,12 @@ export default function PremiumPage() {
   // In a real app, these would be fetched from your backend
   const pricingPlans = {
     monthly: {
-      price: "$4.99",
+      price: "$2.99",
       period: "month",
       stripePriceId: "price_monthly_123456",
     },
     annual: {
-      price: "$49.99",
+      price: "$29.99",
       period: "year",
       stripePriceId: "price_annual_123456",
     },
