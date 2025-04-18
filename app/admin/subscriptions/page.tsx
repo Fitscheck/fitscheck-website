@@ -46,6 +46,8 @@ import {
   createSubscription,
   deleteSubscription,
 } from "@/lib/subscription"
+import toast from "react-hot-toast"
+
 
 const normalizeFeatures = (rawFeatures: Record<string, any>) => {
   const featureMap: Record<string, { name: string; type: "boolean" | "string" }> = {
@@ -72,6 +74,8 @@ export default function SubscriptionManagement() {
   const [isSaving, setIsSaving] = useState(false)
   const [isAddingPlan, setIsAddingPlan] = useState(false)
   const [newPlan, setNewPlan] = useState(getDefaultNewPlan())
+  const [planToDelete, setPlanToDelete] = useState<any | null>(null)
+
 
   function getDefaultNewPlan() {
     return {
@@ -211,11 +215,45 @@ export default function SubscriptionManagement() {
     if (!confirm("Are you sure you want to delete this plan?")) return
     try {
       await deleteSubscription(id)
-      setPlans(plans.filter((p) => p.id !== id))
+  
+      // Try matching against both _id and id
+      setPlans((prev) =>
+        prev.filter((plan) => plan._id !== id && plan.id !== id)
+      )
+  
+      toast.success("Subscription plan deleted successfully", {
+        style: {
+          borderRadius: "8px",
+          background: "#fff",
+          color: "#333",
+          padding: "12px 16px",
+          fontSize: "14px",
+        },
+        iconTheme: {
+          primary: "#ec4899", // Tailwind pink-500
+          secondary: "#fff",
+        },
+      })
     } catch (err) {
       console.error("❌ Failed to delete plan", err)
+  
+      toast.error("Failed to delete the plan", {
+        style: {
+          borderRadius: "8px",
+          background: "#fff",
+          color: "#333",
+          padding: "12px 16px",
+          fontSize: "14px",
+        },
+        iconTheme: {
+          primary: "#f87171", // Tailwind red-400
+          secondary: "#fff",
+        },
+      })
     }
   }
+  
+  
   const handleAddPlan = () => {
     setIsAddingPlan(true)
     setNewPlan(getDefaultNewPlan())
@@ -233,6 +271,7 @@ export default function SubscriptionManagement() {
     })
   }
 
+  
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -522,10 +561,12 @@ export default function SubscriptionManagement() {
                               <Edit className="h-4 w-4" />
                               <span className="sr-only">Edit</span>
                             </Button>
-                            <Button variant="ghost" size="sm">
-                              <Trash2 className="h-4 w-4 text-red-500" />
-                              <span className="sr-only">Delete</span>
-                            </Button>
+                           <Button variant="ghost" size="sm" onClick={() => setPlanToDelete(plan)}>
+  <Trash2 className="h-4 w-4 text-red-500" />
+  <span className="sr-only">Delete</span>
+</Button>
+
+
                           </div>
                         </TableCell>
                       </TableRow>
@@ -692,7 +733,51 @@ export default function SubscriptionManagement() {
           </TabsContent>
         </Tabs>
       </div>
-
+      {planToDelete && (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg p-6 w-full max-w-sm shadow-lg animate-fadeIn">
+        <h2 className="text-lg font-semibold mb-2">Delete Plan</h2>
+        <p className="text-sm text-gray-600 mb-4">
+          Are you sure you want to delete <strong>{planToDelete.name}</strong>? This action cannot be undone.
+        </p>
+        <div className="flex justify-end gap-2">
+          <Button variant="outline" onClick={() => setPlanToDelete(null)}>
+            Cancel
+          </Button>
+          <Button
+            className="bg-red-500 hover:bg-red-600 text-white"
+            onClick={async () => {
+              try {
+                await deleteSubscription(planToDelete._id || planToDelete.id)
+                setPlans((prev) =>
+                  prev.filter((p) => p._id !== planToDelete._id && p.id !== planToDelete.id)
+                )
+                toast.success("Subscription plan deleted successfully", {
+                  style: {
+                    borderRadius: "8px",
+                    background: "#fff",
+                    color: "#333",
+                    padding: "12px 16px",
+                    fontSize: "14px",
+                  },
+                  iconTheme: {
+                    primary: "#ec4899",
+                    secondary: "#fff",
+                  },
+                })
+              } catch (err) {
+                toast.error("Failed to delete the plan")
+              } finally {
+                setPlanToDelete(null)
+              }
+            }}
+          >
+            Delete
+          </Button>
+        </div>
+      </div>
+    </div>
+  )}
       <Footer />
     </div>
   )
