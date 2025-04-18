@@ -7,4 +7,10 @@ export const API_ROUTES = {
     VERIFY_MAGIC_CODE: `${BASE_URL}/api/auth/verify-code`,
     LOGOUT: `${BASE_URL}/api/auth/logout`,
   },
+  USERS: {
+    GET_PROFILE: (userId: string) => `${BASE_URL}/api/users/${userId}`,
+    UPDATE_PROFILE: `${BASE_URL}/api/users/profile`,
+    FOLLOW: (userId: string) => `${BASE_URL}/api/users/${userId}/follow`,
+    UNFOLLOW: (userId: string) => `${BASE_URL}/api/users/${userId}/follow`,
+  },
 }

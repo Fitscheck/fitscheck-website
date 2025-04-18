@@ -50,11 +50,11 @@ export default function Footer() {
                   Log In
                 </Link> */}
               </li>
-              <li>
+              {/* <li>
                 <Link href="/premium" className="hover:text-white">
                   Premium
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="space-y-4">
@@ -75,11 +75,11 @@ export default function Footer() {
                   Cookie Policy
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/gdpr" className="hover:text-white">
                   GDPR
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="space-y-4">

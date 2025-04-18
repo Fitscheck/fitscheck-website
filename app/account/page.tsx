@@ -30,34 +30,50 @@ export default function AccountPage() {
   const router = useRouter()
   const [isPremium, setIsPremium] = useState(false)
 
-  // Simulate checking subscription status
+  const [user, setUser] = useState<{ username: string; email: string; isPremium: boolean } | null>(null)
+
   useEffect(() => {
-    // In a real app, you would fetch this from an API
-    const checkSubscription = () => {
-      const hasPremium = localStorage.getItem("premium_subscription")
-      setIsPremium(!!hasPremium)
-    }
-
-    checkSubscription()
-
-    // For demo purposes, let's add a way to toggle premium status with a key combination
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.key === "p") {
-        setIsPremium((prev) => {
-          const newState = !prev
-          if (newState) {
-            localStorage.setItem("premium_subscription", "active")
-          } else {
-            localStorage.removeItem("premium_subscription")
-          }
-          return newState
-        })
+    const fetchProfile = async () => {
+      const token = localStorage.getItem("auth_token");
+      const userId = localStorage.getItem("user_id");
+  
+      console.log("📦 FETCHING PROFILE: ", { token, userId }); // ✅ Add this
+  
+      if (!token || !userId) return;
+  
+      try {
+        const res = await fetch("/api/profile", {
+          method: "GET",
+          headers: {
+            Authorization: token,
+            "X-User-Id": userId,
+          },
+        });
+  
+        const data = await res.json();
+        console.log("📨 PROFILE RESPONSE:", data); // ✅ See if response comes
+  
+        if (!res.ok) {
+          toast.error(data.message || "Failed to fetch profile");
+          return;
+        }
+  
+        setUser({
+          username: data.username,
+          email: data.email,
+          isPremium: data.isPremium,
+        });
+        setIsPremium(data.isPremium);
+      } catch (error) {
+        console.error("❌ Profile fetch error:", error);
+        toast.error("Failed to fetch profile");
       }
-    }
-
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
+    };
+  
+    fetchProfile();
+  }, []);
+  
+  
   const handleLogout = async () => {
     try {
       await logout()
@@ -77,9 +93,10 @@ export default function AccountPage() {
       <div className="container flex-1 px-4 py-8 md:px-6 mt-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-bold">Welcome back, John Doe</h1>
-            <p className="text-sm text-gray-500">john.doe@example.com</p>
+            <h1 className="text-2xl font-bold">Welcome back, {user?.username || "..."}</h1>
+            <p className="text-sm text-gray-500">{user?.email || ""}</p>
           </div>
+
           <Button
             variant="outline"
             className="mt-4 md:mt-0 text-red-500 hover:bg-red-50 hover:text-red-600"
