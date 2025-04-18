@@ -36,24 +36,22 @@ export default function LoginPage() {
 
   const handleVerifyCode = async (e: React.FormEvent) => {
     e.preventDefault()
-    setError("")
     setIsVerifying(true)
-
+    setError("") // clear old errors
+  
     try {
-      const { token, user } = await verifyMagicCode(email, code)
-
-      // Store in localStorage or cookie
-      localStorage.setItem("auth_token", token)
-      localStorage.setItem("user", JSON.stringify(user))
-
+      const res = await verifyMagicCode(email, code)
+      localStorage.setItem("auth_token", res.token)
       router.push("/account")
     } catch (err: any) {
-      setError(err.message || "Invalid code")
+      const message = err?.response?.data?.error || "Something went wrong"
+      setError(message) // ✅ show error
     } finally {
       setIsVerifying(false)
     }
   }
-
+  
+  
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
