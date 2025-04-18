@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
@@ -10,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { requestMagicCode, verifyMagicCode } from "@/lib/auth"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -18,32 +17,41 @@ export default function LoginPage() {
   const [isSendingCode, setIsSendingCode] = useState(false)
   const [isCodeSent, setIsCodeSent] = useState(false)
   const [isVerifying, setIsVerifying] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSendCode = (e: React.FormEvent) => {
+  const handleSendCode = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError("")
     setIsSendingCode(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSendingCode(false)
+    try {
+      await requestMagicCode(email)
       setIsCodeSent(true)
-    }, 1500)
+    } catch (err: any) {
+      setError(err.message || "Failed to send code")
+    } finally {
+      setIsSendingCode(false)
+    }
   }
 
-  const handleVerifyCode = (e: React.FormEvent) => {
+  const handleVerifyCode = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError("")
     setIsVerifying(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsVerifying(false)
+    try {
+      const { token, user } = await verifyMagicCode(email, code)
 
-      // Set auth token in localStorage for demo purposes
-      localStorage.setItem("auth_token", "demo_token")
+      // Store in localStorage or cookie
+      localStorage.setItem("auth_token", token)
+      localStorage.setItem("user", JSON.stringify(user))
 
-      // Redirect to account page instead of home
       router.push("/account")
-    }, 1500)
+    } catch (err: any) {
+      setError(err.message || "Invalid code")
+    } finally {
+      setIsVerifying(false)
+    }
   }
 
   return (
@@ -56,6 +64,10 @@ export default function LoginPage() {
             <h1 className="text-3xl font-bold">Welcome to FitsCheck</h1>
             <p className="text-gray-500">Enter your email to continue</p>
           </div>
+
+          {error && (
+            <div className="text-sm text-red-500 text-center">{error}</div>
+          )}
 
           <div className="w-full">
             {!isCodeSent ? (
