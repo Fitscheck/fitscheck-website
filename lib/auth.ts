@@ -1,8 +1,9 @@
-import { api } from "./api"; // Your Axios instance
+import { api } from "./api"; 
 import { API_ROUTES } from "./apiRoutes";
+import { useAuthStore } from "./store/useAuthStore";
+import { AxiosError } from "axios";
 
 interface AuthResponse {
-  token: string;
   user: {
     _id: string;
     email: string;
@@ -15,46 +16,54 @@ interface AuthResponse {
   message: string;
 }
 
-export async function requestMagicCode(email: string): Promise<{ message: string }> {
+export type AuthError = {
+  message: string;
+  status: number;
+};
+
+export async function requestMagicCode(
+  email: string
+): Promise<{ message: string }> {
   const res = await api.post(API_ROUTES.AUTH.REQUEST_MAGIC_CODE, { email });
   return res.data;
 }
 
+// Add try-catch blocks
 export async function verifyMagicCode(
   email: string,
   code: string,
   inviteCode?: string
 ): Promise<AuthResponse> {
-  const res = await api.post(API_ROUTES.AUTH.VERIFY_MAGIC_CODE, {
-    email,
-    code,
-    inviteCode,
-  });
-  return res.data;
+  try {
+    const res = await api.post(API_ROUTES.AUTH.VERIFY_MAGIC_CODE, {
+      email,
+      code,
+      inviteCode,
+    });
+
+    if (res.data.user) {
+      useAuthStore.getState().setUser(res.data.user);
+    }
+
+    return res.data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw {
+        message: error.response?.data?.message || "Authentication failed",
+        status: error.response?.status || 500,
+      } as AuthError;
+    }
+    throw error;
+  }
 }
 
 export async function logout(): Promise<{ message: string }> {
-  const token = localStorage.getItem("auth_token")
-  if (!token) {
-    return { message: "No token to log out with." }
-  }
-
   try {
-    const res = await api.post(API_ROUTES.AUTH.LOGOUT, null, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-
-    // Clear localStorage after successful logout
-    localStorage.removeItem("auth_token")
-    localStorage.removeItem("premium_subscription")
-
-    return res.data
+    const res = await api.post(API_ROUTES.AUTH.LOGOUT);
+    useAuthStore.getState().logout();
+    return res.data;
   } catch (err) {
-    // Still remove token on failure to avoid getting stuck
-    localStorage.removeItem("auth_token")
-    localStorage.removeItem("premium_subscription")
-    throw err
+    useAuthStore.getState().logout();
+    throw err;
   }
 }

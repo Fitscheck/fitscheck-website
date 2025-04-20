@@ -1,18 +1,24 @@
-import axios, { InternalAxiosRequestConfig } from "axios";
+import axios from "axios";
+import { useAuthStore } from "./store/useAuthStore";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://fitscheck-backend.onrender.com",
+  baseURL:
+    process.env.NEXT_PUBLIC_API_BASE_URL ||
+    "https://fitscheck-backend.onrender.com",
   withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
-api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-    const token = typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
-  
-    if (token && config.headers) {
-      config.headers.Authorization = `Bearer ${token}`;
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      useAuthStore.getState().logout();
     }
-  
-    return config;
-  });
-  
+    return Promise.reject(error);
+  }
+);
 
 export { api };
