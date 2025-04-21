@@ -6,19 +6,21 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Check, Instagram, Twitter } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { useWaitlist } from "@/lib/hooks/useWaitlist"
+import { toast } from "react-hot-toast"
 
 export default function WaitlistPage() {
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const { joinWaitlist} = useWaitlist()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
 
@@ -28,15 +30,22 @@ export default function WaitlistPage() {
       return
     }
 
-    setIsSubmitting(true)
+    try {
+      setIsSubmitting(true)
 
-    // Simulate API call to add email to waitlist
-    setTimeout(() => {
-      setIsSubmitting(false)
+      await joinWaitlist(email)
       setIsSubmitted(true)
-      // In a real app, you would send this email to your backend
-      console.log("Email submitted to waitlist:", email)
-    }, 1500)
+      toast.success("Your email has been submitted successfully!")
+
+      setEmail("") // Clear the email input
+    } catch (error) {
+      toast.error("An unknown error occurred. Please try again later.")
+
+    } finally {
+      setIsSubmitting(false)
+    }
+
+
   }
 
   return (
@@ -48,7 +57,7 @@ export default function WaitlistPage() {
         <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-white py-20 md:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col items-center md:items-start text-center md:text-start justify-center space-y-4">
                 <div className="inline-flex items-center rounded-full border border-pink-200 bg-pink-50 px-3 py-1 text-sm text-pink-500">
                   <span className="font-medium">Coming Soon</span>
                   <div className="ml-1 h-2 w-2 rounded-full bg-pink-500"></div>
@@ -116,7 +125,7 @@ export default function WaitlistPage() {
               <div className="flex items-center justify-center">
                 <div className="relative h-[500px] w-[300px] overflow-hidden rounded-xl shadow-2xl">
                   <Image
-                    src="/fashion-app-outfits.png"
+                    src="/fashion-app-feed.png"
                     alt="FitsCheck App Preview"
                     fill
                     className="object-cover"
