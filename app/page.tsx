@@ -15,11 +15,11 @@ export default function Home() {
   const { isAuthenticated: isLoggedIn } = useAuth()
   
   const slides = [
-    { src: "/slide1.jpg", alt: "First Slide" },
-    { src: "/slide2.jpeg", alt: "Second Slide" },
-    { src: "/slide3.jpg", alt: "Third Slide" },
-    { src: "/slide4.jpg", alt: "Fourth Slide" },
-    { src: "/slide5.jpg", alt: "Fifth Slide" },
+    { src: "/slide1.webp", alt: "First Slide" },
+    { src: "/slide2.webp", alt: "Second Slide" },
+    { src: "/slide3.webp", alt: "Third Slide" },
+    { src: "/slide4.webp", alt: "Fourth Slide" },
+    { src: "/slide5.webp", alt: "Fifth Slide" },
   ];
 
   return (
