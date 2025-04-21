@@ -33,9 +33,10 @@ export default function WaitlistPage() {
     try {
       setIsSubmitting(true)
 
-      await joinWaitlist(email)
+      const response = await joinWaitlist(email)
       setIsSubmitted(true)
-      toast.success("Your email has been submitted successfully!")
+      
+      toast.success(response.message || "Your email has been submitted successfully!")
 
       setEmail("") // Clear the email input
     } catch (error) {

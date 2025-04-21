@@ -15,7 +15,6 @@ export const useWaitlist = () => {
       setIsSuccess(false); 
       
       const response = await api.post(API_ROUTES.WAITLIST.JOIN, { email });
-      console.log('Waitlist response:', response.data);
       setIsSuccess(true);
       return response.data;
     } catch (err) {
