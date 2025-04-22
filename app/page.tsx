@@ -360,7 +360,7 @@ export default function WaitlistPage() {
                   </div>
                 )}
               </div>
-              <div className="flex items-center justify-center gap-4 pt-4">
+              {/* <div className="flex items-center justify-center gap-4 pt-4">
                 <Link href="#" className="text-pink-100 hover:text-white">
                   <Twitter className="h-6 w-6" />
                   <span className="sr-only">Twitter</span>
@@ -369,7 +369,7 @@ export default function WaitlistPage() {
                   <Instagram className="h-6 w-6" />
                   <span className="sr-only">Instagram</span>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
