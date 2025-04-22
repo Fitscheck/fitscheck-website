@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           <Link
-            href="/"
+            href="/home"
             className={
               isActive("/")
                 ? "text-pink-500 font-semibold"
