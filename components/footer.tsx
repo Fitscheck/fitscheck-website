@@ -4,8 +4,8 @@ import { Instagram, Twitter, Facebook } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="container px-4 py-12 md:px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container px-4 py-2 md:px-6">
+        {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-white">FitsCheck</h3>
             <p className="max-w-xs text-sm text-gray-400">
@@ -45,16 +45,6 @@ export default function Footer() {
                   Pricing
                 </Link>
               </li>
-              <li>
-                {/* <Link href="/login" className="hover:text-white">
-                  Log In
-                </Link> */}
-              </li>
-              {/* <li>
-                <Link href="/premium" className="hover:text-white">
-                  Premium
-                </Link>
-              </li> */}
             </ul>
           </div>
           <div className="space-y-4">
@@ -75,11 +65,6 @@ export default function Footer() {
                   Cookie Policy
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/gdpr" className="hover:text-white">
-                  GDPR
-                </Link>
-              </li> */}
             </ul>
           </div>
           <div className="space-y-4">
@@ -102,7 +87,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-sm">
           <p>© {new Date().getFullYear()} FitsCheck. All rights reserved.</p>
         </div>

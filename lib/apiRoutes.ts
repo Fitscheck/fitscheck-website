@@ -19,4 +19,8 @@ export const API_ROUTES = {
     UPDATE: (id: string) => `${BASE_URL}/api/subscriptions/${id}`,
     DELETE: (id: string) => `${BASE_URL}/api/subscriptions/${id}`,
   },
+  WAITLIST: {
+    JOIN: `${BASE_URL}/api/waitlist`,
+  },
 }
+// 

@@ -47,9 +47,9 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+        {/* <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           <Link
-            href="/"
+            href="/home"
             className={
               isActive("/")
                 ? "text-pink-500 font-semibold"
@@ -72,14 +72,14 @@ export default function Navbar() {
           >
             Pricing
           </Link>
-        </nav>
+        </nav> */}
 
         {/* Buttons */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* <div className="hidden md:flex items-center gap-4">
           <AuthButtons />
-        </div>
+        </div> */}
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="flex items-center justify-center md:hidden h-10 w-10 rounded-md hover:bg-gray-100 transition"
@@ -90,7 +90,7 @@ export default function Navbar() {
             <Menu className="h-6 w-6" />
           )}
           <span className="sr-only">Toggle menu</span>
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile Nav Menu */}
