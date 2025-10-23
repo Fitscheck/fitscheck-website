@@ -286,7 +286,7 @@ export default function WaitlistPage() {
               <div className="rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-medium">When will FitsCheck launch?</h3>
                 <p className="mt-2 text-gray-500">
-                  We're planning to launch the beta version in Summer 2025, with a full public release in Autumn 2025.
+                  We're planning to launch the beta version in December 2025, with a full public release in Autumn 2025.
                 </p>
               </div>
               <div className="rounded-lg border border-gray-200 bg-white p-6">
