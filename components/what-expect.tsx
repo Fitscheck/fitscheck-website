@@ -37,12 +37,12 @@ export default function WhatToExpectSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" style={{ fontFamily: "Satoshi Variable" }}>
           {/* Card 1 - This or That Voting */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
               <Image 
                 src="/thisorthat.png" 
                 alt="This or That Voting" 
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover rounded-2xl object-center"
               />
             </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
@@ -53,12 +53,12 @@ export default function WhatToExpectSection() {
 
           {/* Card 2 - Shop This Look */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
               <Image 
                 src="/shop.png" 
                 alt="Shop This Look" 
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover rounded-2xl object-center"
               />
             </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
@@ -69,12 +69,12 @@ export default function WhatToExpectSection() {
 
           {/* Card 3 - Fashion Tips & Style */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
               <Image 
                 src="/style.png" 
                 alt="Fashion Tips & Style" 
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover rounded-2xl object-center"
               />
             </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
@@ -85,12 +85,12 @@ export default function WhatToExpectSection() {
 
           {/* Card 4 - Style Points & Leaderboards */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
               <Image 
                 src="/points.png" 
                 alt="Style Points & Leaderboards" 
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover rounded-2xl object-center"
               />
             </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
