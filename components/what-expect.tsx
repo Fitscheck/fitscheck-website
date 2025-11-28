@@ -69,7 +69,14 @@ export default function WhatToExpectSection() {
 
           {/* Card 3 - Fashion Tips & Style */}
           <div className="flex flex-col">
-            <div className="bg-white rounded-2xl h-64 md:h-80 mb-6"></div>
+            <div className="rounded-2xl w-full aspect-[2816/1504] mb-6 overflow-hidden relative">
+              <Image 
+                src="/style.png" 
+                alt="Fashion Tips & Style" 
+                fill
+                className="object-cover rounded-2xl"
+              />
+            </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               {features[2].title}
             </h3>
@@ -78,7 +85,14 @@ export default function WhatToExpectSection() {
 
           {/* Card 4 - Style Points & Leaderboards */}
           <div className="flex flex-col">
-            <div className="bg-white rounded-2xl h-64 md:h-80 mb-6"></div>
+            <div className="rounded-2xl w-full aspect-[2752/1536] mb-6 overflow-hidden relative">
+              <Image 
+                src="/points.png" 
+                alt="Style Points & Leaderboards" 
+                fill
+                className="object-cover rounded-2xl"
+              />
+            </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               {features[3].title}
             </h3>
