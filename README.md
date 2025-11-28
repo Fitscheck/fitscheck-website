@@ -80,6 +80,56 @@ fitscheck-web
 
 5. Open your browser and visit `http://localhost:3000` to see the application in action.
 
+## Deployment
+
+This project is configured for deployment on [Vercel](https://vercel.com), the recommended platform for Next.js applications.
+
+### Deploying to Vercel
+
+#### Option 1: Deploy via Vercel Dashboard (Recommended)
+
+1. Push your code to a GitHub, GitLab, or Bitbucket repository
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click "Add New Project"
+4. Import your repository
+5. Vercel will automatically detect Next.js and configure the build settings
+6. Add environment variables if needed:
+   - `NEXT_PUBLIC_API_BASE_URL` - Your API base URL (optional, defaults to `https://fitscheck-backend-5v13.onrender.com`)
+7. Click "Deploy"
+
+#### Option 2: Deploy via Vercel CLI
+
+1. Install Vercel CLI globally:
+   ```bash
+   npm install -g vercel
+   ```
+
+2. Login to Vercel:
+   ```bash
+   vercel login
+   ```
+
+3. Deploy to production:
+   ```bash
+   vercel --prod
+   ```
+
+4. Set environment variables (if needed):
+   ```bash
+   vercel env add NEXT_PUBLIC_API_BASE_URL
+   ```
+
+### Environment Variables
+
+The following environment variables can be configured in Vercel:
+
+- `NEXT_PUBLIC_API_BASE_URL` - The base URL for your API backend (optional)
+
+To set environment variables in Vercel:
+1. Go to your project settings in Vercel dashboard
+2. Navigate to "Environment Variables"
+3. Add your variables for Production, Preview, and Development environments
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
