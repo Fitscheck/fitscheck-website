@@ -1,6 +1,17 @@
-export const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ||
-  'https://fitscheck-backend-5v13.onrender.com'
+// Get base URL with logging for debugging
+const getBaseURL = () => {
+  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-backend-5v13.onrender.com';
+  
+  // Log in development to help debug
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    console.log('API Routes Base URL:', baseURL);
+    console.log('NEXT_PUBLIC_API_BASE_URL:', process.env.NEXT_PUBLIC_API_BASE_URL || 'NOT SET - using default');
+  }
+  
+  return baseURL;
+};
+
+export const BASE_URL = getBaseURL();
 
 export const API_ROUTES = {
   // AUTH: {

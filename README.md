@@ -129,6 +129,39 @@ To set environment variables in Vercel:
 1. Go to your project settings in Vercel dashboard
 2. Navigate to "Environment Variables"
 3. Add your variables for Production, Preview, and Development environments
+4. **IMPORTANT**: After adding or updating environment variables, you must redeploy your project for the changes to take effect
+
+### Troubleshooting API Connection Issues
+
+If the admin panel or waitlist form is not connecting to the backend API:
+
+1. **Verify Environment Variable is Set**:
+   - Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+   - Ensure `NEXT_PUBLIC_API_BASE_URL` is set for Production, Preview, and Development
+   - The value should be your backend API URL (e.g., `https://fitscheck-backend-5v13.onrender.com`)
+
+2. **Redeploy After Setting Environment Variables**:
+   - Environment variables are embedded at build time in Next.js
+   - After adding/updating env vars, go to Deployments tab and click "Redeploy" on the latest deployment
+   - Or push a new commit to trigger a new deployment
+
+3. **Check Browser Console**:
+   - Open browser DevTools (F12) → Console tab
+   - Look for API errors or network failures
+   - Check if the API base URL is correct in the error messages
+
+4. **Verify CORS Settings**:
+   - Ensure your backend API allows requests from your Vercel domain
+   - Add your Vercel domain (e.g., `https://your-app.vercel.app`) to the backend's CORS allowed origins
+
+5. **Test API Endpoint**:
+   - Try accessing your API endpoint directly in a browser or using curl
+   - Example: `curl https://fitscheck-backend-5v13.onrender.com/api/waitlist`
+
+6. **Check Network Tab**:
+   - Open browser DevTools → Network tab
+   - Try submitting the waitlist form or logging in
+   - Check if requests are being made and what the response status is
 
 ## Contributing
 

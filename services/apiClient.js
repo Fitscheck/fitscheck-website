@@ -1,7 +1,15 @@
 // Base API URL configuration
 const getBaseURL = () => {
   // Use Next.js environment variables
-  return process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-backend-5v13.onrender.com';
+  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-backend-5v13.onrender.com';
+  
+  // Log in development to help debug
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    console.log('API Client Base URL:', baseURL);
+    console.log('NEXT_PUBLIC_API_BASE_URL:', process.env.NEXT_PUBLIC_API_BASE_URL);
+  }
+  
+  return baseURL;
 };
 
 export const API_BASE_URL = getBaseURL();
@@ -106,6 +114,11 @@ export const apiRequest = async (endpoint, options = {}) => {
     console.log('Headers:', { ...headers, Authorization: headers.Authorization ? 'Bearer ***' : 'Not set' });
   }
 
+  // Log request details in development
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    console.log('API Request:', { method: fetchOptions.method || 'GET', url, hasToken: !!token });
+  }
+
   try {
     const response = await fetch(url, {
       ...fetchOptions,
@@ -151,7 +164,19 @@ export const apiRequest = async (endpoint, options = {}) => {
 
     return data;
   } catch (error) {
-    console.error('API Request Error:', error);
+    // Enhanced error logging
+    console.error('API Request Error:', {
+      url,
+      method: fetchOptions.method || 'GET',
+      error: error.message,
+      stack: error.stack,
+    });
+    
+    // Provide more helpful error messages
+    if (error.name === 'TypeError' && error.message.includes('fetch')) {
+      throw new Error('Network error: Unable to connect to the server. Please check your internet connection and ensure the API is accessible.');
+    }
+    
     throw error;
   }
 };
