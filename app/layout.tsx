@@ -16,35 +16,66 @@ export const whyteInktrap = localFont({
   variable: '--font-whyte-inktrap'
 })
 
-const metadata: Metadata = {
-  title: "FitsCheck - Share Your Outfit Fits",
+export const metadata: Metadata = {
+  title: {
+    default: "FitsCheck - Make Fashion Decisions with Community Voting",
+    template: "%s | FitsCheck"
+  },
   description:
-    "Post your outfit fits, engage in challenges, and interact with other fashion enthusiasts through likes, shares, comments, and voting.",
+    "Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, share affiliate links, earn style points, and compete on global leaderboards.",
   icons: {
     icon: [
       {
-        url: "/fitslogo.svg",
-        type: "image/svg+xml",
+        url: "/FitsIcon.png",
+        type: "image/png",
       },
     ],
-    shortcut: "/fitslogo.svg",
-    apple: "/fitslogo.svg",
+    shortcut: "/FitsIcon.png",
+    apple: "/FitsIcon.png",
   },
   keywords: [
-    "fashion",
-    "outfit",
-    "social media",
-    "style",
-    "clothing",
+    "fashion app",
+    "style decisions",
+    "outfit voting",
     "fashion community",
+    "affiliate links",
+    "fashion influencer",
+    "style tips",
+    "fashion leaderboard",
+    "this or that fashion",
+    "shop this look",
   ],
   authors: [{ name: "FitsCheck Team" }],
+  creator: "FitsCheck",
+  publisher: "FitsCheck",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "FitsCheck - Share Your Outfit Fits",
-    description: "Share your style with the world through FitsCheck",
+    title: "FitsCheck - Make Fashion Decisions with Community Voting",
+    description: "Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content.",
     type: "website",
     locale: "en_US",
     siteName: "FitsCheck",
+    images: [
+      {
+        url: "/hero1.webp",
+        width: 1200,
+        height: 630,
+        alt: "FitsCheck - Fashion Decision Making App",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FitsCheck - Make Fashion Decisions with Community Voting",
+    description: "Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content.",
+    images: ["/hero1.webp"],
+  },
+  metadataBase: new URL("https://fitscheck.com"),
+  alternates: {
+    canonical: "/",
   },
 };
 

@@ -35,51 +35,49 @@ export default function Navbar() {
 
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/fitslogo.svg"
+            src="/FitsCheck.svg"
             alt="FitsCheck Logo"
-            width={32}
-            height={32}
-            className="w-8 h-8"
+            width={120}
+            height={24}
+            className="h-6 w-auto"
           />
-          <span className="text-2xl font-extrabold text-pink-500 tracking-tight">
-            FitsCheck
-          </span>
         </Link>
 
         {/* Desktop Nav */}
-        {/* <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           <Link
-            href="/home"
+            href="/"
             className={
               isActive("/")
-                ? "text-pink-500 font-semibold"
-                : "hover:text-pink-500"
+                ? "text-[#003366] font-semibold"
+                : "hover:text-[#003366] text-gray-700"
             }
           >
             Home
           </Link>
           <Link
             href="/#features"
-            className="hover:text-pink-500"
-            onClick={() => handleNavClick("features")}
+            className="hover:text-[#003366] text-gray-700"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("features");
+            }}
           >
             Features
           </Link>
           <Link
-            href="/#pricing"
-            className="hover:text-pink-500"
-            onClick={() => handleNavClick("pricing")}
+            href="/#faq"
+            className="hover:text-[#003366] text-gray-700"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("faq");
+            }}
           >
-            Pricing
+            FAQ
           </Link>
-        </nav> */}
+        </nav>
 
-        {/* Buttons */}
-        {/* <div className="hidden md:flex items-center gap-4">
-          <AuthButtons />
-        </div> */}
-
-        {/* Mobile Menu Button
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="flex items-center justify-center md:hidden h-10 w-10 rounded-md hover:bg-gray-100 transition"
@@ -90,7 +88,7 @@ export default function Navbar() {
             <Menu className="h-6 w-6" />
           )}
           <span className="sr-only">Toggle menu</span>
-        </button> */}
+        </button>
       </div>
 
       {/* Mobile Nav Menu */}
@@ -102,32 +100,34 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
               className={`text-sm font-medium ${
                 isActive("/")
-                  ? "text-pink-500"
-                  : "text-gray-600 hover:text-pink-500"
+                  ? "text-[#003366] font-semibold"
+                  : "text-gray-600 hover:text-[#003366]"
               }`}
             >
               Home
             </Link>
             <Link
               href="#features"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-medium text-gray-600 hover:text-pink-500"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                handleNavClick("features");
+              }}
+              className="text-sm font-medium text-gray-600 hover:text-[#003366]"
             >
               Features
             </Link>
             <Link
-              href="#pricing"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-medium text-gray-600 hover:text-pink-500"
+              href="#faq"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                handleNavClick("faq");
+              }}
+              className="text-sm font-medium text-gray-600 hover:text-[#003366]"
             >
-              Pricing
+              FAQ
             </Link>
-            {/* <Link href="/admin" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-gray-600 hover:text-pink-500">
-              Admin
-            </Link> */}
-            <div className="pt-2">
-              <AuthButtons />
-            </div>
           </div>
         </div>
       )}
