@@ -46,7 +46,7 @@ export default function Waitlist() {
         </div>
       </section>
 
-      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-waitlist text-black py-20 lg:py-[118px]">
+      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-waitlist text-black pt-20 lg:pt-[118px] pb-0">
         <div className="relative w-full md:min-h-[400px]">
           <PhoneImages isLarge={true} />
           <PhoneImages isLarge={false} />
@@ -60,7 +60,7 @@ export default function Waitlist() {
           <WaitlistForm />
         </div>
       </section>
-      <section className="py-10 lg:py-[118px]">
+      <section className="pt-0 pb-10 lg:pb-[118px]">
         <JoinersCarousel/>
       </section>
       <WhatToExpectSection/>

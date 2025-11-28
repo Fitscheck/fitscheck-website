@@ -56,7 +56,7 @@ export default function WaitlistForm() {
         </div>
 
         {/* Main Content: Form + Phone Mockups */}
-        <div className="flex items-center justify-center gap-8 lg:gap-12 flex-col lg:flex-row mb-16">
+        <div className="flex items-center justify-center gap-8 lg:gap-12 flex-col lg:flex-row">
           {/* Center Form */}
           <div className="w-full max-w-xl flex-1">
             <form onSubmit={handleSubmit} className="space-y-6">
