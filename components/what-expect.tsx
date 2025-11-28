@@ -16,7 +16,7 @@ export default function WhatToExpectSection() {
     },
     {
       title: "Style Points & Leaderboards",
-      description: "Earn style points for your posts and engagement. Compete on the global leaderboard or see how you rank among friends you're following. Climb the ranks and showcase your fashion influence.",
+      description: "Earn style points for your posts and engagement. Compete on the global leaderboard or see how you rank among friends you're following.",
     },
   ]
 
@@ -37,7 +37,7 @@ export default function WhatToExpectSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" style={{ fontFamily: "Satoshi Variable" }}>
           {/* Card 1 - This or That Voting */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full aspect-[868/548] mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
               <Image 
                 src="/thisorthat.png" 
                 alt="This or That Voting" 
@@ -48,12 +48,12 @@ export default function WhatToExpectSection() {
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               {features[0].title}
             </h3>
-            <p className="text-lg sm:text-[20px] text-gray-500 leading-relaxed" >{features[0].description}</p>
+            <p className="text-lg sm:text-[20px] text-[#A3A3A3] leading-relaxed" >{features[0].description}</p>
           </div>
 
           {/* Card 2 - Shop This Look */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full aspect-[2816/1504] mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
               <Image 
                 src="/shop.png" 
                 alt="Shop This Look" 
@@ -69,7 +69,7 @@ export default function WhatToExpectSection() {
 
           {/* Card 3 - Fashion Tips & Style */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full aspect-[2816/1504] mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
               <Image 
                 src="/style.png" 
                 alt="Fashion Tips & Style" 
@@ -85,7 +85,7 @@ export default function WhatToExpectSection() {
 
           {/* Card 4 - Style Points & Leaderboards */}
           <div className="flex flex-col">
-            <div className="rounded-2xl w-full aspect-[2752/1536] mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full h-64 md:h-80 mb-6 overflow-hidden relative">
               <Image 
                 src="/points.png" 
                 alt="Style Points & Leaderboards" 
