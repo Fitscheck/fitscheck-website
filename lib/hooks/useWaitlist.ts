@@ -8,13 +8,13 @@ export const useWaitlist = () => {
   const [err, setErr] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const joinWaitlist = async (email: string) => {
+  const joinWaitlist = async (fullName: string, email: string) => {
     try {
       setLoading(true);
       setErr(null);
       setIsSuccess(false); 
       
-      const response = await api.post(API_ROUTES.WAITLIST.JOIN, { email });
+      const response = await api.post(API_ROUTES.WAITLIST.JOIN, { fullName, email });
       setIsSuccess(true);
       return response.data;
     } catch (err) {

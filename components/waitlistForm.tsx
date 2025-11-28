@@ -4,18 +4,23 @@ import type React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { UserRound, Mail } from "lucide-react";
+import { useWaitlist } from "@/lib/hooks/useWaitlist";
 
 export default function WaitlistForm() {
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { joinWaitlist, loading, err, isSuccess } = useWaitlist()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    setFullName("")
-    setEmail("")
-    setTimeout(() => setIsSubmitted(false), 3000)
+    try {
+      await joinWaitlist(fullName, email)
+      setFullName("")
+      setEmail("")
+    } catch (error) {
+      // Error is handled by the hook
+      console.error("Failed to join waitlist:", error)
+    }
   }
 
 
@@ -88,15 +93,21 @@ export default function WaitlistForm() {
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full bg-[#003366] hover:bg-[#003366]/90 text-primary-foreground font-bold py-8 rounded-full text-lg"
-                
+                disabled={loading}
+                className="w-full bg-[#003366] hover:bg-[#003366]/90 text-primary-foreground font-bold py-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitted ? "Added to Waitlist!" : "Join Waitlist"}
+                {loading ? "Adding..." : isSuccess ? "Added to Waitlist!" : "Join Waitlist"}
               </Button>
 
-              {isSubmitted && (
+              {isSuccess && (
                 <p className="text-center text-green-600 text-sm font-medium animate-fade-in">
                   Thanks for joining! We'll be in touch soon.
+                </p>
+              )}
+
+              {err && (
+                <p className="text-center text-red-600 text-sm font-medium animate-fade-in">
+                  {err}
                 </p>
               )}
             </form>

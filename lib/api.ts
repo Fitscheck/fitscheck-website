@@ -4,7 +4,7 @@ import { useAuthStore } from "./store/useAuthStore";
 const api = axios.create({
   baseURL:
     process.env.NEXT_PUBLIC_API_BASE_URL ||
-    "https://fitscheck-backend.onrender.com",
+    "https://fitscheck-backend-5v13.onrender.com",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
