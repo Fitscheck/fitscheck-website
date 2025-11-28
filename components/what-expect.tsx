@@ -37,7 +37,7 @@ export default function WhatToExpectSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" style={{ fontFamily: "Satoshi Variable" }}>
           {/* Card 1 - This or That Voting */}
           <div className="flex flex-col">
-            <div className="bg-white rounded-2xl h-64 md:h-80 mb-6 overflow-hidden relative">
+            <div className="rounded-2xl w-full aspect-[868/548] mb-6 overflow-hidden relative">
               <Image 
                 src="/thisorthat.png" 
                 alt="This or That Voting" 
@@ -53,7 +53,14 @@ export default function WhatToExpectSection() {
 
           {/* Card 2 - Shop This Look */}
           <div className="flex flex-col">
-            <div className="bg-white rounded-2xl h-64 md:h-80 mb-6"></div>
+            <div className="rounded-2xl w-full aspect-[2816/1504] mb-6 overflow-hidden relative">
+              <Image 
+                src="/shop.png" 
+                alt="Shop This Look" 
+                fill
+                className="object-cover rounded-2xl"
+              />
+            </div>
             <h3 className="text-2xl font-bold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               {features[1].title}
             </h3>
