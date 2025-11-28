@@ -10,16 +10,16 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     question: "When will Fitscheck launch?",
-    answer: "We're planning to launch the beta version in Summer 2025, with a full public release in Autumn 2025.",
+    answer: "We're planning to launch the beta version in December 2025, with a full public release in Autumn 2025.",
   },
   {
     question: "Will the app be free to use?",
     answer:
-      "Yes, Styliq will be completely free to use for all members. We may offer optional premium features in the future.",
+      "Yes, FitsCheck will be completely free to use for all members.",
   },
   {
-    question: "What platforms will Styliq be available on?",
-    answer: "Styliq will be available on both iOS and Android, as well as web browsers for desktop access.",
+    question: "What platforms will FitsCheck be available on?",
+    answer: "FitsCheck will be available on both iOS and Android, as well as web browsers for desktop access.",
   },
   {
     question: "Will waitlist members get early access?",

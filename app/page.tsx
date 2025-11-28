@@ -27,7 +27,7 @@ export default function Waitlist() {
       <section className="h-screen bg-[url('/hero1.webp')] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
           <div className="relative w-[187px] h-[37px] md:w-[190px] md:h-[45px] ">
-            <Image src="/styliq.webp" alt="Styliq" fill className="object-contain" priority />
+            <Image src="/FitsCheck.svg" alt="FitsCheck" fill className="object-contain" priority />
           </div>
         </div>
         {/* Scroll Indicator with Bouncing Mouse */}

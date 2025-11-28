@@ -23,7 +23,7 @@ export default function WhatToExpectSection() {
             What to Expect
           </h2>
           <p className="text-xl text-[#A3A3A3] font-body" style={{ fontFamily: "Satoshi Variable" }}>
-            Styliq will revolutionize how you share and discover fashion.
+          FitsCheck will revolutionize how you share and discover fashion.
           </p>
         </div>
 
