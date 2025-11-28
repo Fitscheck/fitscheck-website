@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { adminService } from '../../services/adminService'
-import NotificationModal from '../NotificationModal'
+import { adminService } from '../../../../services/adminService'
+import NotificationModal from '../../components/NotificationModal'
 import './ReportsPage.css'
 
 const ProfileReportsPage = () => {

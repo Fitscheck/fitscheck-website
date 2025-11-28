@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import Cropper from 'react-easy-crop'
-import { adminService } from '../../services/adminService'
-import ConfirmationModal from '../ConfirmationModal'
-import NotificationModal from '../NotificationModal'
+import { adminService } from '../../../../services/adminService'
+import ConfirmationModal from '../../components/ConfirmationModal'
+import NotificationModal from '../../components/NotificationModal'
 import './ChallengesPage.css'
 
 const ChallengesPage = () => {

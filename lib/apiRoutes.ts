@@ -1,5 +1,6 @@
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  'https://fitscheck-backend-5v13.onrender.com'
 
 export const API_ROUTES = {
   // AUTH: {

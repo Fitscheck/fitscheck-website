@@ -1,17 +1,7 @@
 // Base API URL configuration
 const getBaseURL = () => {
-  if (import.meta?.env?.DEV) {
-    // Development - can use localhost or local IP
-    const USE_LOCAL_IP = false; // Set to true when testing on local network
-    const LOCAL_IP = '192.168.1.243'; // Your computer's local IP address
-    
-    if (USE_LOCAL_IP) {
-      return `http://${LOCAL_IP}:3000`;
-    }
-    return 'http://localhost:3000';
-  }
-  // Production URL
-  return import.meta?.env?.VITE_API_URL || 'https://api.fitscheck.com';
+  // Use Next.js environment variables
+  return process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-backend-5v13.onrender.com';
 };
 
 export const API_BASE_URL = getBaseURL();
