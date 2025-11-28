@@ -35,8 +35,8 @@ export default function WaitlistForm() {
             Waitlist
           </h1>
           <p className="text-lg sm:text-[20px] text-[#A3A3A3] max-w-2xl mx-auto leading-relaxed font-medium">
-            Be the first to know when our social fashion platform launches.
-            Share your style, get feedback, and join style challenges.
+            Perfect for content creators, influencers, fashion enthusiasts, and anyone who loves fashion. 
+            Get crowd-sourced style decisions, share your affiliate links, earn style points, and compete on global and friends leaderboards.
           </p>
         </div>
 
