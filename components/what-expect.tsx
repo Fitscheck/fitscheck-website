@@ -21,7 +21,7 @@ export default function WhatToExpectSection() {
   ]
 
   return (
-    <section className="w-full bg-[#FEFBD7] py-10  md:py-[118pX] px-6">
+    <section id="features" className="w-full bg-[#FEFBD7] py-10  md:py-[118pX] px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-16">

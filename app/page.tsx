@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Navbar from '@/components/navbar'
 import WaitlistForm from '@/components/waitlistForm'
 import JoinersCarousel from '@/components/joiners-carousel'
 import WhatToExpectSection from '@/components/what-expect'
@@ -24,6 +25,7 @@ const PhoneImages = ({ isLarge }: { isLarge: boolean }) => {
 export default function Waitlist() {
   return (
     <>
+      <Navbar />
       <section className="h-screen bg-[url('/hero1.webp')] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
           <div className="relative w-[187px] h-[37px] md:w-[190px] md:h-[45px] ">
@@ -44,7 +46,7 @@ export default function Waitlist() {
         </div>
       </section>
 
-      <section className="lg:min-h-screen flex flex-col items-center bg-waitlist text-black py-20 lg:py-[118px]">
+      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-waitlist text-black py-20 lg:py-[118px]">
         <div className="relative w-full md:min-h-[400px]">
           <PhoneImages isLarge={true} />
           <PhoneImages isLarge={false} />
@@ -62,7 +64,10 @@ export default function Waitlist() {
         <JoinersCarousel/>
       </section>
       <WhatToExpectSection/>
-      <FAQSection/>
+
+      <section id="faq">
+        <FAQSection/>
+      </section>
       <Footer/>
 
     </>

@@ -16,15 +16,33 @@ export default function Navbar() {
   const router = useRouter();
 
   const handleNavClick = (id: string) => {
+    setIsMenuOpen(false);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (pathname !== "/") {
+      router.push("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleWaitlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
     if (pathname === "/") {
-      // Already on home, just scroll
-      const section = document.getElementById(id);
+      const section = document.getElementById("waitlist");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Navigate to home with hash
-      router.push(`/#${id}`);
+      handleNavClick("waitlist");
     }
   };
 
@@ -47,6 +65,7 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           <Link
             href="/"
+            onClick={handleHomeClick}
             className={
               isActive("/")
                 ? "text-[#003366] font-semibold"
@@ -55,8 +74,31 @@ export default function Navbar() {
           >
             Home
           </Link>
+          {pathname === "/" ? (
+            <Link
+              href="#waitlist"
+              className="hover:text-[#003366] text-gray-700"
+              onClick={(e) => {
+                e.preventDefault();
+                handleWaitlistClick(e);
+              }}
+            >
+              Waitlist
+            </Link>
+          ) : (
+            <Link
+              href="#waitlist"
+              className="text-[#003366] font-semibold"
+              onClick={(e) => {
+                e.preventDefault();
+                handleWaitlistClick(e);
+              }}
+            >
+              Waitlist
+            </Link>
+          )}
           <Link
-            href="/#features"
+            href="#features"
             className="hover:text-[#003366] text-gray-700"
             onClick={(e) => {
               e.preventDefault();
@@ -66,7 +108,7 @@ export default function Navbar() {
             Features
           </Link>
           <Link
-            href="/#faq"
+            href="#faq"
             className="hover:text-[#003366] text-gray-700"
             onClick={(e) => {
               e.preventDefault();
@@ -97,7 +139,7 @@ export default function Navbar() {
           <div className="container flex flex-col gap-4 p-4">
             <Link
               href="/"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={handleHomeClick}
               className={`text-sm font-medium ${
                 isActive("/")
                   ? "text-[#003366] font-semibold"
@@ -107,10 +149,23 @@ export default function Navbar() {
               Home
             </Link>
             <Link
+              href="#waitlist"
+              onClick={(e) => {
+                e.preventDefault();
+                handleWaitlistClick(e);
+              }}
+              className={`text-sm font-medium ${
+                pathname !== "/"
+                  ? "text-[#003366] font-semibold"
+                  : "text-gray-600 hover:text-[#003366]"
+              }`}
+            >
+              Waitlist
+            </Link>
+            <Link
               href="#features"
               onClick={(e) => {
                 e.preventDefault();
-                setIsMenuOpen(false);
                 handleNavClick("features");
               }}
               className="text-sm font-medium text-gray-600 hover:text-[#003366]"
@@ -121,7 +176,6 @@ export default function Navbar() {
               href="#faq"
               onClick={(e) => {
                 e.preventDefault();
-                setIsMenuOpen(false);
                 handleNavClick("faq");
               }}
               className="text-sm font-medium text-gray-600 hover:text-[#003366]"
