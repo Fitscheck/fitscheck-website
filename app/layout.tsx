@@ -2,7 +2,21 @@ import { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";
-export const metadata: Metadata = {
+import localFont from "next/font/local";
+
+export const whyteInktrap = localFont({
+  src: [
+
+    {
+      path: '../public/fonts/WhyteInktrap-Super.woff',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-whyte-inktrap'
+})
+
+const metadata: Metadata = {
   title: "FitsCheck - Share Your Outfit Fits",
   description:
     "Post your outfit fits, engage in challenges, and interact with other fashion enthusiasts through likes, shares, comments, and voting.",
@@ -34,14 +48,25 @@ export const metadata: Metadata = {
   },
 };
 
+const satoshi = localFont({
+  src: [ 
+    {
+      path: '../public/fonts/Satoshi-Light.woff',
+      weight: '100',
+      style: 'normal',
+    }
+   ],
+  variable: '--font-satoshi', 
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
+    <html lang="en" className={`${whyteInktrap.variable} ${satoshi.variable}`} suppressHydrationWarning>
+      <body >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
