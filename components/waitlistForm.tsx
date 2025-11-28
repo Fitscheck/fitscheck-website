@@ -13,13 +13,23 @@ export default function WaitlistForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!fullName.trim() || !email.trim()) {
+      return
+    }
+
+    if (loading) {
+      return
+    }
+
     try {
-      await joinWaitlist(fullName, email)
+      await joinWaitlist(fullName.trim(), email.trim())
+      // Only clear form if successful
       setFullName("")
       setEmail("")
     } catch (error) {
-      // Error is handled by the hook
-      console.error("Failed to join waitlist:", error)
+      // Error is handled by the hook - it will display the error message
+      // Form fields are kept so user can fix and resubmit
     }
   }
 
@@ -93,23 +103,30 @@ export default function WaitlistForm() {
               {/* Submit Button */}
               <Button
                 type="submit"
-                disabled={loading}
+                disabled={loading || isSuccess}
                 className="w-full bg-[#003366] hover:bg-[#003366]/90 text-primary-foreground font-bold py-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? "Adding..." : isSuccess ? "Added to Waitlist!" : "Join Waitlist"}
+                {loading ? "Adding..." : isSuccess ? "Added to Waitlist! ✓" : "Join Waitlist"}
               </Button>
 
-              {isSuccess && (
-                <p className="text-center text-green-600 text-sm font-medium animate-fade-in">
-                  Thanks for joining! We'll be in touch soon.
-                </p>
-              )}
+              {/* Messages */}
+              <div className="min-h-[60px] flex items-center justify-center">
+                {isSuccess && (
+                  <div className="w-full p-4 bg-green-50 border-2 border-green-200 rounded-lg animate-fade-in">
+                    <p className="text-center text-green-700 text-base font-semibold">
+                      🎉 Thanks for joining! We'll be in touch soon.
+                    </p>
+                  </div>
+                )}
 
-              {err && (
-                <p className="text-center text-red-600 text-sm font-medium animate-fade-in">
-                  {err}
-                </p>
-              )}
+                {err && !isSuccess && (
+                  <div className="w-full p-4 bg-red-50 border-2 border-red-200 rounded-lg animate-fade-in">
+                    <p className="text-center text-red-700 text-base font-semibold">
+                      {err}
+                    </p>
+                  </div>
+                )}
+              </div>
             </form>
           </div>
         </div>

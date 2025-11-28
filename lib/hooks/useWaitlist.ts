@@ -17,10 +17,29 @@ export const useWaitlist = () => {
       const response = await api.post(API_ROUTES.WAITLIST.JOIN, { fullName, email });
       setIsSuccess(true);
       return response.data;
-    } catch (err) {
+    } catch (err: any) {
+      // Handle different error scenarios
+      let errorMessage = 'Something went wrong. Please try again.';
+      
+      if (err.response) {
+        // Server responded with error status
+        const status = err.response.status;
+        const data = err.response.data;
         
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const errorMessage = (err as any).response?.data?.message || 'Something went wrong';
+        if (status === 400) {
+          errorMessage = data?.message || 'Please check your information and try again.';
+        } else if (status === 409 || status === 422) {
+          errorMessage = data?.message || 'You are already on the waitlist!';
+        } else if (status >= 500) {
+          errorMessage = 'Server error. Please try again later.';
+        } else {
+          errorMessage = data?.message || data?.error || errorMessage;
+        }
+      } else if (err.request) {
+        // Request was made but no response received
+        errorMessage = 'Unable to connect to the server. Please check your connection.';
+      }
+      
       setErr(errorMessage);
       throw new Error(errorMessage);
     } finally {
