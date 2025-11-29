@@ -90,3 +90,28 @@
   }
 
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #003366 0%, #F8E71C 100%);
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #002244 0%, #E6D500 100%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #003366 #f1f1f1;
+}

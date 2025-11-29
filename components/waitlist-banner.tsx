@@ -12,15 +12,17 @@ export default function WaitlistBanner() {
 
     return (
         <StickyBanner className="bg-gradient-to-r from-[#003366] to-[#F8E71C]">
-            <div className="container mx-auto flex items-center justify-between">
-                <p className="text-sm font-medium text-white drop-shadow-md">
-                    🚀 Launching Soon! Join the waitlist for early access
+            <div className="flex items-center justify-center gap-3 sm:gap-4 w-full">
+                <p className="text-xs sm:text-sm md:text-base font-medium text-white drop-shadow-md leading-tight">
+                    <span className="hidden sm:inline">🚀 Launching Soon! Join the waitlist for early access</span>
+                    <span className="sm:hidden">🚀 Join waitlist for early access</span>
                 </p>
                 <button
                     onClick={scrollToWaitlist}
-                    className="ml-4 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-[#003366] transition hover:bg-gray-100"
+                    className="shrink-0 rounded-full bg-white px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-semibold text-[#003366] transition hover:bg-gray-100 hover:scale-105 shadow-sm"
                 >
-                    Join Waitlist →
+                    <span className="hidden sm:inline">Join Waitlist →</span>
+                    <span className="sm:hidden">Join →</span>
                 </button>
             </div>
         </StickyBanner>
