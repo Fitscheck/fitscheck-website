@@ -58,7 +58,9 @@ export default function Waitlist() {
       <section className=" mb-6">
         <JoinersCarousel />
       </section>
-      <WhatToExpectSection />
+
+      <section id="features" className="w-full bg-[#FEFBD7]" style={{ fontFamily: "var(--font-satoshi)" }}><WhatToExpectSection />
+      </section>
 
       <section id="faq">
         <FAQSection />
