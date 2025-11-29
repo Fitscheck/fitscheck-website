@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Navbar from '@/components/navbar'
+import WaitlistBanner from '@/components/waitlist-banner'
 import WaitlistForm from '@/components/waitlistForm'
 import JoinersCarousel from '@/components/joiners-carousel'
 import WhatToExpectSection from '@/components/what-expect'
@@ -25,8 +25,8 @@ const PhoneImages = ({ isLarge }: { isLarge: boolean }) => {
 export default function Waitlist() {
   return (
     <>
-      <Navbar />
-      <section className="h-screen bg-[url('/new_hero.png')] bg-cover bg-center bg-no-repeat">
+      <WaitlistBanner />
+      <section className="h-screen bg-[url('/hero/hero_img.webp')] bg-cover bg-center bg-no-repeat">
         {/* Scroll Indicator with Bouncing Mouse */}
         <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <div className="flex flex-col items-center gap-2">

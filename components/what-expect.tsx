@@ -29,7 +29,7 @@ export default function WhatToExpectSection() {
             What to Expect
           </h2>
           <p className="text-xl text-[#A3A3A3] font-body" style={{ fontFamily: "Satoshi Variable" }}>
-          The social platform where fashion meets decision-making and monetization.
+            The social platform where fashion meets decision-making and monetization.
           </p>
         </div>
 
@@ -38,9 +38,9 @@ export default function WhatToExpectSection() {
           {/* Card 1 - This or That Voting */}
           <div className="flex flex-col">
             <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
-              <Image 
-                src="/thisorthat.png" 
-                alt="This or That Voting" 
+              <Image
+                src="/features/thisorthat.webp"
+                alt="This or That Voting"
                 fill
                 className="object-cover rounded-2xl object-center"
               />
@@ -54,9 +54,9 @@ export default function WhatToExpectSection() {
           {/* Card 2 - Shop This Look */}
           <div className="flex flex-col">
             <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
-              <Image 
-                src="/shop.png" 
-                alt="Shop This Look" 
+              <Image
+                src="/features/shop.webp"
+                alt="Shop This Look"
                 fill
                 className="object-cover rounded-2xl object-center"
               />
@@ -70,9 +70,9 @@ export default function WhatToExpectSection() {
           {/* Card 3 - Fashion Tips & Style */}
           <div className="flex flex-col">
             <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
-              <Image 
-                src="/style.png" 
-                alt="Fashion Tips & Style" 
+              <Image
+                src="/features/style.webp"
+                alt="Fashion Tips & Style"
                 fill
                 className="object-cover rounded-2xl object-center"
               />
@@ -86,9 +86,9 @@ export default function WhatToExpectSection() {
           {/* Card 4 - Style Points & Leaderboards */}
           <div className="flex flex-col">
             <div className="rounded-2xl w-full aspect-[4/3] mb-6 overflow-hidden relative">
-              <Image 
-                src="/points.png" 
-                alt="Style Points & Leaderboards" 
+              <Image
+                src="/features/points.webp"
+                alt="Style Points & Leaderboards"
                 fill
                 className="object-cover rounded-2xl object-center"
               />
