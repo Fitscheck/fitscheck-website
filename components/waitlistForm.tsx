@@ -42,7 +42,7 @@ export default function WaitlistForm() {
         {/* Header */}
         <div className="text-center mb-12" >
           <h1
-            className="text-3xl md:text-4xl lg:text-[96px] text-[#003366] lg:leading-[96px] lg:tracking-[-6%] font-extrabold "
+            className="text-3xl md:text-4xl lg:text-6xl text-[#003366] lg:leading-[72px] lg:tracking-[-6%] font-extrabold "
             style={{ fontFamily: "var(--font-whyte-inktrap)" }}
           >
             Join the <span className="text-[#F8E71C]">FitsCheck</span>
