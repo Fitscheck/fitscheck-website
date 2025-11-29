@@ -81,7 +81,7 @@ export default function FoundingCreatorPage() {
             <div className="p-6 rounded-lg border border-gray-200 bg-gray-50/50">
               <h3 className="text-xl font-semibold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>Grow Faster Than Instagram</h3>
               <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
-                This is a niche community built ONLY for fashion — not a crowded algorithm.
+                This is a niche community built ONLY for fashion; not a crowded algorithm.
               </p>
             </div>
             
@@ -174,7 +174,7 @@ export default function FoundingCreatorPage() {
               'Earn style points',
               'Climb global and friends leaderboards',
               'Build your following in a fashion-focused community',
-              'Tag your favorite brands',
+              // 'Tag your favorite brands',
               'Discover new creators'
             ].map((feature, index) => (
               <div 
