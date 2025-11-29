@@ -53,7 +53,7 @@ export default function Navbar() {
 
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/FitsCheck.svg"
+            src="/branding/FitsCheck.svg"
             alt="FitsCheck Logo"
             width={120}
             height={24}
@@ -140,11 +140,10 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={handleHomeClick}
-              className={`text-sm font-medium ${
-                isActive("/")
+              className={`text-sm font-medium ${isActive("/")
                   ? "text-[#003366] font-semibold"
                   : "text-gray-600 hover:text-[#003366]"
-              }`}
+                }`}
             >
               Home
             </Link>
@@ -154,11 +153,10 @@ export default function Navbar() {
                 e.preventDefault();
                 handleWaitlistClick(e);
               }}
-              className={`text-sm font-medium ${
-                pathname !== "/"
+              className={`text-sm font-medium ${pathname !== "/"
                   ? "text-[#003366] font-semibold"
                   : "text-gray-600 hover:text-[#003366]"
-              }`}
+                }`}
             >
               Waitlist
             </Link>

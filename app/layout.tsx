@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/FitsIcon.png",
+        url: "/branding/FitsIcon.png",
         type: "image/png",
       },
     ],
-    shortcut: "/FitsIcon.png",
-    apple: "/FitsIcon.png",
+    shortcut: "/branding/FitsIcon.png",
+    apple: "/branding/FitsIcon.png",
   },
   keywords: [
     "fashion app",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "FitsCheck",
     images: [
       {
-        url: "/hero1.webp",
+        url: "/branding/og.png",
         width: 1200,
         height: 630,
         alt: "FitsCheck - Fashion Decision Making App",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FitsCheck - Make Fashion Decisions with Community Voting",
     description: "Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content.",
-    images: ["/hero1.webp"],
+    images: ["/branding/twitter-og.png"],
   },
   metadataBase: new URL("https://fitscheck.com"),
   alternates: {
@@ -80,14 +80,14 @@ export const metadata: Metadata = {
 };
 
 const satoshi = localFont({
-  src: [ 
+  src: [
     {
       path: '../public/fonts/Satoshi-Light.woff',
       weight: '100',
       style: 'normal',
     }
-   ],
-  variable: '--font-satoshi', 
+  ],
+  variable: '--font-satoshi',
 })
 
 export default function RootLayout({

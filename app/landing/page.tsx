@@ -148,7 +148,7 @@ export default function LandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#FEFBD7] to-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/new_hero.png')] bg-cover bg-center bg-no-repeat opacity-10"></div>
@@ -162,7 +162,7 @@ export default function LandingPage() {
               </div>
 
               <div className="space-y-4">
-                <h1 
+                <h1
                   className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-[#003366] leading-tight"
                   style={{ fontFamily: "var(--font-whyte-inktrap)" }}
                 >
@@ -170,22 +170,22 @@ export default function LandingPage() {
                   <span className="text-[#F8E71C]">FitsCheck</span>
                 </h1>
                 <p className="text-lg md:text-xl text-[#A3A3A3] max-w-2xl mx-auto lg:mx-0 leading-relaxed" style={{ fontFamily: "Satoshi Variable" }}>
-                  Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, 
+                  Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions,
                   share your affiliate links, earn style points, and compete on global and friends leaderboards.
                 </p>
               </div>
 
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-[#003366] hover:bg-[#003366]/90 text-white px-8 py-6 rounded-full text-lg font-bold"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download for iOS
                 </Button>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   variant="outline"
                   className="border-2 border-[#003366] text-[#003366] hover:bg-[#003366] hover:text-white px-8 py-6 rounded-full text-lg font-bold"
                 >
@@ -215,29 +215,29 @@ export default function LandingPage() {
             <div className="relative flex items-center justify-center">
               <div className="relative w-full max-w-md">
                 <div className="absolute -left-8 top-1/4 hidden lg:block">
-                  <Image 
-                    src="/phone1.webp" 
-                    alt="FitsCheck App" 
-                    width={200} 
-                    height={400} 
+                  <Image
+                    src="/mockups/phone1.webp"
+                    alt="FitsCheck App"
+                    width={200}
+                    height={400}
                     className="object-contain drop-shadow-2xl"
                   />
                 </div>
                 <div className="relative z-10">
-                  <Image 
-                    src="/phone2.webp" 
-                    alt="FitsCheck App" 
-                    width={300} 
-                    height={600} 
+                  <Image
+                    src="/mockups/phone2.webp"
+                    alt="FitsCheck App"
+                    width={300}
+                    height={600}
                     className="object-contain drop-shadow-2xl mx-auto"
                   />
                 </div>
                 <div className="absolute -right-8 top-1/3 hidden lg:block">
-                  <Image 
-                    src="/phone1.webp" 
-                    alt="FitsCheck App" 
-                    width={200} 
-                    height={400} 
+                  <Image
+                    src="/mockups/phone1.webp"
+                    alt="FitsCheck App"
+                    width={200}
+                    height={400}
                     className="object-contain drop-shadow-2xl"
                   />
                 </div>
@@ -256,7 +256,7 @@ export default function LandingPage() {
       <section className="py-20 lg:py-[118px] bg-[#F0F7FF]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 
+            <h2
               className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#003366] mb-4"
               style={{ fontFamily: "var(--font-whyte-inktrap)" }}
             >
@@ -314,7 +314,7 @@ export default function LandingPage() {
       <section className="py-20 lg:py-[118px] bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 
+            <h2
               className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#003366] mb-4"
               style={{ fontFamily: "var(--font-whyte-inktrap)" }}
             >
@@ -378,7 +378,7 @@ export default function LandingPage() {
       <section className="py-20 lg:py-[118px] bg-[#F0F7FF]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 
+            <h2
               className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#003366] mb-4"
               style={{ fontFamily: "var(--font-whyte-inktrap)" }}
             >
@@ -430,7 +430,7 @@ export default function LandingPage() {
       <section className="py-20 lg:py-[118px] bg-gradient-to-b from-[#003366] to-[#002244] text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 
+            <h2
               className="text-3xl md:text-4xl lg:text-7xl font-bold mb-4"
               style={{ fontFamily: "var(--font-whyte-inktrap)" }}
             >
@@ -439,17 +439,17 @@ export default function LandingPage() {
             <p className="text-xl text-white/80 max-w-2xl mx-auto" style={{ fontFamily: "Satoshi Variable" }}>
               Join thousands of fashion enthusiasts making better style decisions and monetizing their content.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-[#F8E71C] hover:bg-[#F8E71C]/90 text-[#003366] px-8 py-6 rounded-full text-lg font-bold"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download for iOS
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-[#003366] px-8 py-6 rounded-full text-lg font-bold"
               >
                 <Download className="mr-2 h-5 w-5" />
