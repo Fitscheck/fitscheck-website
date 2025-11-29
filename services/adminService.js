@@ -114,6 +114,13 @@ export const adminService = {
     });
   },
 
+  assignBadge: async (userId, badge) => {
+    return apiRequest(`/api/admin/users/${userId}/badge`, {
+      method: 'POST',
+      body: JSON.stringify({ badge }),
+    });
+  },
+
   // Reports - routes are at /api/reports (singular: profile, post, comment)
   getProfileReports: async (status = 'all', page = 1, limit = 50, userId = null) => {
     const params = new URLSearchParams()

@@ -17,6 +17,9 @@ const UsersPage = () => {
   const [updatingUserStatus, setUpdatingUserStatus] = useState(null) // Track which user's status is being updated
   const [statusModal, setStatusModal] = useState({ isOpen: false, action: null, userId: null }) // 'activate' or 'deactivate'
   const [notification, setNotification] = useState({ isOpen: false, message: '', type: 'info' })
+  const [showBadgeModal, setShowBadgeModal] = useState(false)
+  const [selectedBadge, setSelectedBadge] = useState('')
+  const [isAssigningBadge, setIsAssigningBadge] = useState(false)
 
   // Fetch users on mount and when page changes
   useEffect(() => {
@@ -129,6 +132,45 @@ const UsersPage = () => {
     }
   }
 
+  const handleAssignBadge = async () => {
+    if (!selectedUser) return
+
+    setIsAssigningBadge(true)
+    try {
+      const badgeValue = selectedBadge === 'none' ? null : selectedBadge
+      await adminService.assignBadge(selectedUser.id, badgeValue)
+      
+      // Refresh users list to get updated badge
+      await fetchUsers()
+      
+      // Update selected user with new badge (optimistic update)
+      setSelectedUser({
+        ...selectedUser,
+        badge: badgeValue
+      })
+      
+      setSelectedBadge('')
+      setShowBadgeModal(false)
+      
+      // Show success message
+      const badgeText = badgeValue || 'removed'
+      setNotification({ 
+        isOpen: true, 
+        message: `Successfully assigned badge "${badgeText}"`,
+        type: 'success' 
+      })
+    } catch (err) {
+      console.error('Error assigning badge:', err)
+      setNotification({ 
+        isOpen: true, 
+        message: err.message || 'Failed to assign badge', 
+        type: 'error' 
+      })
+    } finally {
+      setIsAssigningBadge(false)
+    }
+  }
+
   return (
     <div className="users-page">
       <div className="page-header">
@@ -166,6 +208,7 @@ const UsersPage = () => {
                 <th>User</th>
                 <th>Email</th>
                 <th>Style Points</th>
+                <th>Badge</th>
                 <th>Posts</th>
                 <th>Followers</th>
                 <th>Following</th>
@@ -216,6 +259,26 @@ const UsersPage = () => {
                     <td>
                       <span className="style-points">{user.stylePoints || 0}</span>
                     </td>
+                    <td>
+                      {user.badge ? (
+                        <span 
+                          className="badge-display"
+                          style={{
+                            padding: '4px 12px',
+                            borderRadius: '12px',
+                            fontSize: '12px',
+                            fontWeight: 600,
+                            backgroundColor: '#003366',
+                            color: 'white',
+                            display: 'inline-block'
+                          }}
+                        >
+                          {user.badge}
+                        </span>
+                      ) : (
+                        <span style={{ color: '#999', fontStyle: 'italic' }}>None</span>
+                      )}
+                    </td>
                     <td>{user.posts || 0}</td>
                     <td>{user.followers || 0}</td>
                     <td>{user.following || user.stats?.following || 0}</td>
@@ -247,6 +310,34 @@ const UsersPage = () => {
                           style={{ margin: 0 }}
                         >
                           Add Points
+                        </button>
+                        <button
+                          className="btn-badge"
+                          onClick={() => {
+                            setSelectedUser(user)
+                            setSelectedBadge(user.badge || 'none')
+                            setShowBadgeModal(true)
+                          }}
+                          style={{
+                            background: '#9c27b0',
+                            color: 'white',
+                            border: 'none',
+                            padding: '8px 16px',
+                            borderRadius: '6px',
+                            fontSize: '13px',
+                            fontWeight: 500,
+                            cursor: 'pointer',
+                            transition: 'background 0.2s',
+                            margin: 0
+                          }}
+                          onMouseOver={(e) => {
+                            e.target.style.background = '#7b1fa2'
+                          }}
+                          onMouseOut={(e) => {
+                            e.target.style.background = '#9c27b0'
+                          }}
+                        >
+                          Assign Badge
                         </button>
                         {(user.isActive !== false && user.active !== false) ? (
                           <button
@@ -437,6 +528,103 @@ const UsersPage = () => {
         cancelText="Cancel"
         type={statusModal.action === 'deactivate' ? 'danger' : 'default'}
       />
+      {/* Assign Badge Modal */}
+      {showBadgeModal && selectedUser && (
+        <div className="modal-overlay" onClick={() => setShowBadgeModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Assign Badge</h2>
+              <button className="modal-close" onClick={() => setShowBadgeModal(false)}>×</button>
+            </div>
+            <div className="modal-body">
+              <div className="user-info-modal">
+                {selectedUser.profilePictureUrl ? (
+                  <img 
+                    src={selectedUser.profilePictureUrl} 
+                    alt={selectedUser.fullName || selectedUser.name}
+                    className="user-avatar large"
+                    style={{ borderRadius: '50%', width: '64px', height: '64px', objectFit: 'cover' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none'
+                      e.target.nextSibling.style.display = 'flex'
+                    }}
+                  />
+                ) : null}
+                <div 
+                  className="user-avatar large" 
+                  style={{ display: selectedUser.profilePictureUrl ? 'none' : 'flex' }}
+                >
+                  {(selectedUser.fullName || selectedUser.name || 'U').charAt(0).toUpperCase()}
+                </div>
+                <div>
+                  <div className="user-name">{selectedUser.fullName || selectedUser.name || 'Unknown'}</div>
+                  <div className="user-username">
+                    {selectedUser.username ? `@${selectedUser.username}` : 'unknown'}
+                  </div>
+                  <div className="current-points">
+                    Current Badge: {selectedUser.badge || 'None'}
+                  </div>
+                </div>
+              </div>
+              <div className="form-group">
+                <label>Select Badge</label>
+                <select
+                  value={selectedBadge}
+                  onChange={(e) => setSelectedBadge(e.target.value)}
+                  disabled={isAssigningBadge}
+                  style={{
+                    width: '100%',
+                    padding: '12px',
+                    border: '2px solid #e0e0e0',
+                    borderRadius: '8px',
+                    fontSize: '15px',
+                    fontFamily: 'inherit',
+                    transition: 'border-color 0.2s',
+                    backgroundColor: 'white',
+                    cursor: isAssigningBadge ? 'not-allowed' : 'pointer'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#003366'
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e0e0e0'
+                  }}
+                >
+                  <option value="none">None (Remove Badge)</option>
+                  <option value="Founding Creator">Founding Creator</option>
+                  <option value="Early Creator">Early Creator</option>
+                  <option value="Verified Creator">Verified Creator</option>
+                </select>
+                <small style={{ fontSize: '12px', color: '#666', marginTop: '4px', display: 'block' }}>
+                  Select a badge to assign to this user, or "None" to remove the current badge
+                </small>
+              </div>
+              <div className="modal-actions">
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={() => {
+                    setShowBadgeModal(false)
+                    setSelectedBadge('')
+                    setSelectedUser(null)
+                  }}
+                  disabled={isAssigningBadge}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="btn-primary"
+                  onClick={handleAssignBadge}
+                  disabled={isAssigningBadge}
+                >
+                  {isAssigningBadge ? 'Assigning...' : 'Assign Badge'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <NotificationModal
         isOpen={notification.isOpen}
         onClose={() => setNotification({ isOpen: false, message: '', type: 'info' })}
