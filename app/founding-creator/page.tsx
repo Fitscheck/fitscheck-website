@@ -30,7 +30,7 @@ export default function FoundingCreatorPage() {
             className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed mb-8"
             style={{ fontFamily: "var(--font-satoshi)" }}
           >
-            We're building a new fashion-only platform designed for creators, influencers, affiliates, and everyday style lovers. If you love posting outfits, giving style advice, or sharing affiliate links — this is your new home.
+            We're building a new fashion-only platform designed for creators, influencers, affiliates, and everyday style lovers. If you love posting outfits, giving style advice, or sharing affiliate links, this is your new home.
           </p>
           
           <div className="mt-8 inline-block px-6 py-2 bg-[#F8E71C]/20 text-white rounded-full text-sm border border-[#F8E71C]/30">
