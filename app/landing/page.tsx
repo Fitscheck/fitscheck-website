@@ -151,7 +151,7 @@ export default function LandingPage() {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#FEFBD7] to-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/hero1.webp')] bg-cover bg-center bg-no-repeat opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/new_hero.png')] bg-cover bg-center bg-no-repeat opacity-10"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             {/* Left Content */}
