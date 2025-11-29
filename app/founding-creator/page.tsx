@@ -71,9 +71,9 @@ export default function FoundingCreatorPage() {
             
             {/* Benefit 2 */}
             <div className="p-6 rounded-lg border border-gray-200 bg-gray-50/50">
-              <h3 className="text-xl font-semibold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>Guaranteed Home Page Feature</h3>
+              <h3 className="text-xl font-semibold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>Priority Support & Direct Access</h3>
               <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
-                Your posts will be highlighted during launch week.
+                Get priority customer support and direct access to our team for feedback and feature requests.
               </p>
             </div>
             
