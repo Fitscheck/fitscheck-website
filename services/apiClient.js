@@ -1,15 +1,13 @@
 // Base API URL configuration
 const getBaseURL = () => {
-  // Use Next.js environment variables
-  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-backend-5v13.onrender.com';
-  
-  // Log in development to help debug
-  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
-    console.log('API Client Base URL:', baseURL);
-    console.log('NEXT_PUBLIC_API_BASE_URL:', process.env.NEXT_PUBLIC_API_BASE_URL);
+  // In browser, use relative path to Next.js API routes
+  // This avoids CORS issues since requests go through same origin
+  if (typeof window !== 'undefined') {
+    return '/api';
   }
   
-  return baseURL;
+  // On server side, use the backend URL directly
+  return process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-backend-5v13.onrender.com';
 };
 
 export const API_BASE_URL = getBaseURL();
