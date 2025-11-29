@@ -1,17 +1,17 @@
 import axios from "axios";
 import { useAuthStore } from "./store/useAuthStore";
 
-// Use relative URL to go through Next.js API proxy (avoids CORS)
-// The Next.js API routes will proxy to the backend
+// Get base URL with fallback
 const getBaseURL = () => {
-  // In browser, use relative path to Next.js API routes
-  // This avoids CORS issues since requests go through same origin
-  if (typeof window !== 'undefined') {
-    return '/api';
+  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://fitscheck-backend-5v13.onrender.com";
+  
+  // Log in development to help debug
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    console.log('API Base URL:', baseURL);
+    console.log('NEXT_PUBLIC_API_BASE_URL:', process.env.NEXT_PUBLIC_API_BASE_URL);
   }
   
-  // On server side, use the backend URL directly
-  return process.env.NEXT_PUBLIC_API_BASE_URL || "https://fitscheck-backend-5v13.onrender.com";
+  return baseURL;
 };
 
 const api = axios.create({
