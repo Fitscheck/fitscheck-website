@@ -6,14 +6,24 @@ import localFont from "next/font/local";
 
 export const whyteInktrap = localFont({
   src: [
-
     {
-      path: '../public/fonts/WhyteInktrap-Super.woff',
-      weight: '900',
+      path: '../public/fonts/WhyteInktrap-Black.ttf',
+      weight: '950',
       style: 'normal',
     },
   ],
   variable: '--font-whyte-inktrap'
+})
+
+export const satoshi = localFont({
+  src: [
+    {
+      path: '../public/fonts/Satoshi-Regular.otf',
+      weight: '500',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-satoshi',
 })
 
 export const metadata: Metadata = {
@@ -78,17 +88,6 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 };
-
-const satoshi = localFont({
-  src: [
-    {
-      path: '../public/fonts/Satoshi-Light.woff',
-      weight: '100',
-      style: 'normal',
-    }
-  ],
-  variable: '--font-satoshi',
-})
 
 export default function RootLayout({
   children,

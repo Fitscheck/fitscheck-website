@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { UserRound, Mail } from "lucide-react";
+import Image from "next/image";
 import { useWaitlist } from "@/lib/hooks/useWaitlist";
 
 export default function WaitlistForm() {
@@ -13,7 +13,7 @@ export default function WaitlistForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!fullName.trim() || !email.trim()) {
       return
     }
@@ -24,51 +24,46 @@ export default function WaitlistForm() {
 
     try {
       await joinWaitlist(fullName.trim(), email.trim())
-      // Only clear form if successful
       setFullName("")
       setEmail("")
     } catch (error) {
-      // Error is handled by the hook - it will display the error message
-      // Form fields are kept so user can fix and resubmit
     }
   }
 
 
   return (
-    <div>
-      <div className="max-w-7xl mx-auto px-4"
-      style={{ fontFamily: "Satoshi Variable" }}
-      >
-        {/* Header */}
-        <div className="text-center mb-12" >
+    <div className="relative w-full">
+      <div className="absolute left-0 top-[119px] hidden lg:block pointer-events-none">
+        <Image src="/mockups/phone_mockup.svg" alt="Phone Mockup" width={200} height={400} className="object-contain" />
+      </div>
+      <div className="absolute right-0 top-[119px] hidden lg:block pointer-events-none">
+        <Image src="/mockups/phone_mockup2.svg" alt="Phone Mockup" width={200} height={400} className="object-contain" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4" style={{ fontFamily: "var(--font-satoshi)" }}>
+        <div className="text-center mb-12">
           <h1
-            className="text-3xl md:text-4xl lg:text-7xl text-[#003366] lg:leading-[84px] lg:tracking-[-6%] font-extrabold "
-            style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] tracking-[-0.06em] font-black mb-6 text-[#003366]"
+            style={{ fontFamily: "var(--font-whyte-inktrap)", fontWeight: 950 }}
           >
-            Join the <span className="text-[#F8E71C]">FitsCheck</span>
+            Join the
             <br />
-            Waitlist
+            <span className="text-[#F8E71C]">FitsCheck</span> Waitlist
           </h1>
-          <p className="text-lg sm:text-[20px] text-[#A3A3A3] max-w-2xl mx-auto leading-relaxed font-medium">
-            Perfect for content creators, influencers, fashion enthusiasts, and anyone who loves fashion. 
-            Get crowd-sourced style decisions, share your affiliate links, earn style points, and compete on global and friends leaderboards.
+          <p className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[1.2] font-medium text-[#A3A3A3] max-w-3xl mx-auto">
+            Be the first to know when our social fashion platform launches. <br /> Share your style, get feedback, and join style challenges.
           </p>
         </div>
 
-        {/* Main Content: Form + Phone Mockups */}
-        <div className="flex items-center justify-center gap-8 lg:gap-12 flex-col lg:flex-row">
-          {/* Center Form */}
-          <div className="w-full max-w-xl flex-1">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Full Name */}
+        <div className="flex items-center justify-center">
+          <div className="w-full max-w-xl">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div>
-                <label
-                  className="block text-[#003366] font-bold text-base  md:text-xl mb-3"
-                >
+                <label className="block text-[#003366] font-bold text-xl mb-[7px]">
                   Full Name
                 </label>
                 <div className="flex items-center gap-3 px-4 py-3 bg-white border-2 border-gray-200 rounded-lg">
-                  <UserRound className="text-[#003366] text-xl"/>
+                  <Image src="/icon/user-icon.svg" alt="User" width={20} height={20} />
                   <input
                     type="text"
                     placeholder="Enter Name"
@@ -80,15 +75,12 @@ export default function WaitlistForm() {
                 </div>
               </div>
 
-              {/* Email */}
               <div>
-                <label
-                  className="lock text-[#003366] font-bold text-base md:text-xl mb-4"
-                >
+                <label className="block text-[#003366] font-bold text-xl mb-[7px]">
                   Email
                 </label>
                 <div className="flex items-center gap-3 px-4 py-3 bg-white border-2 border-gray-200 rounded-lg">
-                  <Mail className="text-[#003366] text-xl" />
+                  <Image src="/icon/mail-icon.svg" alt="Mail" width={20} height={20} />
                   <input
                     type="email"
                     placeholder="hello@example.com"
@@ -100,16 +92,14 @@ export default function WaitlistForm() {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <Button
                 type="submit"
                 disabled={loading || isSuccess}
-                className="w-full bg-[#003366] hover:bg-[#003366]/90 text-primary-foreground font-bold py-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#003366] hover:bg-[#003366]/90 text-primary-foreground font-bold py-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed !mt-10"
               >
                 {loading ? "Adding..." : isSuccess ? "Added to Waitlist! ✓" : "Join Waitlist"}
               </Button>
 
-              {/* Messages */}
               <div className="min-h-[60px] flex items-center justify-center">
                 {isSuccess && (
                   <div className="w-full p-4 bg-green-50 border-2 border-green-200 rounded-lg animate-fade-in">
@@ -134,3 +124,4 @@ export default function WaitlistForm() {
     </div>
   );
 }
+

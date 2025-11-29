@@ -7,21 +7,6 @@ import WhatToExpectSection from '@/components/what-expect'
 import FAQSection from '@/components/faq'
 import Footer from '@/components/footer'
 
-const PhoneImages = ({ isLarge }: { isLarge: boolean }) => {
-  const width = isLarge ? 200 : 100;
-  const height = isLarge ? 400 : 200;
-  return (
-    <div className={isLarge ? "hidden lg:block" : "hidden md:block lg:hidden"}>
-      <div className="absolute left-0 top-[70%] -translate-y-1/2">
-        <Image src="/mockups/phone_mockup.svg" alt="Phone 1" width={width} height={height} className="object-contain" />
-      </div>
-      <div className="absolute right-0 top-[70%] -translate-y-1/2">
-        <Image src="/mockups/phone_mockup2.svg" alt="Phone 2" width={width} height={height} className="object-contain" />
-      </div>
-    </div>
-  );
-};
-
 export default function Waitlist() {
   return (
     <>
@@ -66,20 +51,10 @@ export default function Waitlist() {
         </div>
       </section>
 
-      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-waitlist text-black pt-20 lg:pt-[118px] pb-0">
-        <div className="relative w-full md:min-h-[400px]">
-          <PhoneImages isLarge={true} />
-          <PhoneImages isLarge={false} />
-          <div className="md:hidden absolute right-0 top-[30%] translate-y-full">
-            <Image src="/mockups/phone_mockup2.svg" alt="Phone 2" width={100} height={200} className="object-contain" />
-          </div>
-          <div className="md:hidden absolute left-0 top-[40%] translate-y-full">
-            <Image src="/mockups/phone_mockup.svg" alt="Phone 1" width={100} height={200} className="object-contain" />
-          </div>
-
-          <WaitlistForm />
-        </div>
+      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-[#F9FAFB] text-black mt-20 lg:mt-[118px] mb-0 lg:mb-[118px]">
+        <WaitlistForm />
       </section>
+
       <section className="pt-0 pb-10 lg:pb-[118px]">
         <JoinersCarousel />
       </section>
