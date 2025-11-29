@@ -131,7 +131,7 @@ export default function LandingPage() {
         "name": "Will waitlist members get early access?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Waitlist members will get priority early access to the beta version and exclusive perks."
+          "text": "Waitlist members will get an early creators badge and access to the beta version."
         }
       }
     ]

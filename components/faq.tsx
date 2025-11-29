@@ -10,7 +10,7 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     question: "When will Fitscheck launch?",
-    answer: "We're planning to launch the beta version in December 2025, with a full public release in Autumn 2025.",
+    answer: "We'll be launching the beta version for founding creators and early access in December 2025, with a full public release in January 2026.",
   },
   {
     question: "Will the app be free to use?",
@@ -19,11 +19,11 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "What platforms will FitsCheck be available on?",
-    answer: "FitsCheck will be available on both iOS and Android, as well as web browsers for desktop access.",
+    answer: "FitsCheck will be available on both iOS and Android. Web browser access for desktop is coming soon.",
   },
   {
     question: "Will waitlist members get early access?",
-    answer: "Waitlist members will get priority early access to the beta version and exclusive perks.",
+    answer: "Waitlist members will get an early creators badge and access to the beta version.",
   },
 ]
 

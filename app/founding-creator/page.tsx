@@ -3,12 +3,12 @@
 import React from 'react'
 import FoundingCreatorForm from '@/components/founding-creator-form'
 import Footer from '@/components/footer'
-import Navbar from '@/components/navbar'
+import FoundingCreatorBanner from '@/components/founding-creator-banner'
 
 export default function FoundingCreatorPage() {
   return (
     <>
-      <Navbar />
+      <FoundingCreatorBanner />
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#003366]">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
