@@ -1,15 +1,28 @@
 "use client"
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useWaitlist } from "@/lib/hooks/useWaitlist";
+import { toast } from "sonner";
 
 export default function WaitlistForm() {
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const { joinWaitlist, loading, err, isSuccess } = useWaitlist()
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("🎉 Thanks for joining! We'll be in touch soon.");
+    }
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (err) {
+      toast.error(err);
+    }
+  }, [err]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -99,24 +112,6 @@ export default function WaitlistForm() {
               >
                 {loading ? "Adding..." : isSuccess ? "Added to Waitlist! ✓" : "Join Waitlist"}
               </Button>
-
-              <div className="min-h-[60px] flex items-center justify-center">
-                {isSuccess && (
-                  <div className="w-full p-4 bg-green-50 border-2 border-green-200 rounded-lg animate-fade-in">
-                    <p className="text-center text-green-700 text-base font-semibold">
-                      🎉 Thanks for joining! We'll be in touch soon.
-                    </p>
-                  </div>
-                )}
-
-                {err && !isSuccess && (
-                  <div className="w-full p-4 bg-red-50 border-2 border-red-200 rounded-lg animate-fade-in">
-                    <p className="text-center text-red-700 text-base font-semibold">
-                      {err}
-                    </p>
-                  </div>
-                )}
-              </div>
             </form>
           </div>
         </div>
@@ -124,4 +119,5 @@ export default function WaitlistForm() {
     </div>
   );
 }
+
 

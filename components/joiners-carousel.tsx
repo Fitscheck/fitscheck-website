@@ -1,32 +1,33 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 const joiners = [
-    { name: "Lionel Emmanuel", color: "bg-[#FF5D5D]", initials: "LE" },
-    { name: "Elijah Victor", color: "bg-[#868EFF]", initials: "EV" },
-    { name: "Mercy Johnson", color: "bg-[#00FFFF]", initials: "MJ" },
-    { name: "Ummi Nash", color: "bg-[#C8A2FF]", initials: "UN" },
-    { name: "James Thompson", color: "bg-[#A8E6CF]", initials: "JT" },
-    { name: "Elizabeth Bennett", color: "bg-[#FF007F]", initials: "EB" },
-    { name: "William Harrison", color: "bg-yellow-400", initials: "WH" },
-    { name: "Charlotte Edwards", color: "bg-indigo-500", initials: "CE" },
-    { name: "Thomas Morris", color: "bg-orange-500", initials: "TM" },
-    { name: "Amelia Walker", color: "bg-violet-500", initials: "AW" },
-    { name: "Oliver Clarke", color: "bg-[#FF5D5D]", initials: "OC" },
-    { name: "Victoria Hughes", color: "bg-[#868EFF]", initials: "VH" },
-    { name: "Henry Baker", color: "bg-[#00FFFF]", initials: "HB" },
-    { name: "Grace Foster", color: "bg-[#C8A2FF]", initials: "GF" },
-    { name: "Samuel Gray", color: "bg-[#A8E6CF]", initials: "SG" },
-    { name: "Sophie Lewis", color: "bg-[#FF007F]", initials: "SL" },
-    { name: "Edward Coleman", color: "bg-yellow-400", initials: "EC" },
-    { name: "Lily Mills", color: "bg-indigo-500", initials: "LM" },
-    { name: "Daniel Parker", color: "bg-orange-500", initials: "DP" },
-    { name: "Hannah Scott", color: "bg-violet-500", initials: "HS" },
-    { name: "Matthew Reed", color: "bg-[#FF5D5D]", initials: "MR" },
-    { name: "Emma Turner", color: "bg-[#868EFF]", initials: "ET" },
-    { name: "Christopher Ward", color: "bg-[#00FFFF]", initials: "CW" },
-    { name: "Abigail Brooks", color: "bg-[#C8A2FF]", initials: "AB" },
+    { name: "Alena Carder", color: "bg-[#FF5D5D]", avatar: "/avatar/avatar1.svg" },
+    { name: "Zain Siphron", color: "bg-[#868EFF]", avatar: "/avatar/avatar3.svg" },
+    { name: "Corey Levin", color: "bg-[#00FFFF]", avatar: "/avatar/avatar9.svg" },
+    { name: "Tatiana Baptista", color: "bg-[#C8A2FF]", avatar: "/avatar/avatar4.svg" },
+    { name: "Kianna Schleifer", color: "bg-[#A8E6CF]", avatar: "/avatar/avatar5.svg" },
+    { name: "Jaylon Vaccaro", color: "bg-[#FF007F]", avatar: "/avatar/avatar6.svg" },
+    { name: "Marcus Ekstrom", color: "bg-yellow-400", avatar: "/avatar/avatar7.svg" },
+    { name: "Chance Dorwart", color: "bg-indigo-500", avatar: "/avatar/avatar3.svg" },
+    { name: "Thomas Morris", color: "bg-orange-500", avatar: "/avatar/avatar9.svg" },
+    { name: "Amelia Walker", color: "bg-violet-500", avatar: "/avatar/avatar2.svg" },
+    { name: "Oliver Clarke", color: "bg-[#FF5D5D]", avatar: "/avatar/avatar7.svg" },
+    { name: "Victoria Hughes", color: "bg-[#868EFF]", avatar: "/avatar/avatar8.svg" },
+    { name: "Henry Baker", color: "bg-[#00FFFF]", avatar: "/avatar/avatar9.svg" },
+    { name: "Grace Foster", color: "bg-[#C8A2FF]", avatar: "/avatar/avatar1.svg" },
+    { name: "Samuel Gray", color: "bg-[#A8E6CF]", avatar: "/avatar/avatar3.svg" },
+    { name: "Sophie Lewis", color: "bg-[#FF007F]", avatar: "/avatar/avatar2.svg" },
+    { name: "Edward Coleman", color: "bg-yellow-400", avatar: "/avatar/avatar7.svg" },
+    { name: "Lily Mills", color: "bg-indigo-500", avatar: "/avatar/avatar5.svg" },
+    { name: "Daniel Parker", color: "bg-orange-500", avatar: "/avatar/avatar9.svg" },
+    { name: "Hannah Scott", color: "bg-violet-500", avatar: "/avatar/avatar6.svg" },
+    { name: "Matthew Reed", color: "bg-[#FF5D5D]", avatar: "/avatar/avatar3.svg" },
+    { name: "Emma Turner", color: "bg-[#868EFF]", avatar: "/avatar/avatar4.svg" },
+    { name: "Christopher Ward", color: "bg-[#00FFFF]", avatar: "/avatar/avatar7.svg" },
+    { name: "Abigail Brooks", color: "bg-[#C8A2FF]", avatar: "/avatar/avatar8.svg" },
 ]
 
 export default function JoinersCarousel() {
@@ -40,8 +41,7 @@ export default function JoinersCarousel() {
     }, [])
 
     return (
-        <div className="space-y-4" style={{ fontFamily: "Satoshi Variable" }}>
-            {/* Left moving carousel */}
+        <div className="space-y-4" style={{ fontFamily: "var(--font-satoshi)" }}>
             <div className="overflow-hidden">
                 <div
                     className="flex gap-3 sm:gap-4"
@@ -53,18 +53,21 @@ export default function JoinersCarousel() {
                     {[...joiners, ...joiners].map((joiner, idx) => (
                         <div
                             key={idx}
-                            className={`${joiner.color} rounded-full px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-white font-bold text-sm sm:text-base flex items-center gap-2 flex-shrink-0`}
+                            className={`${joiner.color} rounded-full px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-white font-bold text-sm sm:text-base flex items-center gap-2 sm:gap-3 flex-shrink-0`}
                         >
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/30 rounded-full flex items-center justify-center text-xs font-bold">
-                                {joiner.initials[0]}
-                            </div>
+                            <Image
+                                src={joiner.avatar}
+                                alt={joiner.name}
+                                width={32}
+                                height={32}
+                                className="rounded-full flex-shrink-0"
+                            />
                             {joiner.name}
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Right moving carousel */}
             <div className="overflow-hidden">
                 <div
                     className="flex gap-3 sm:gap-4"
@@ -76,11 +79,15 @@ export default function JoinersCarousel() {
                     {[...joiners, ...joiners].map((joiner, idx) => (
                         <div
                             key={idx}
-                            className={`${joiner.color} rounded-full px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-white font-bold text-sm sm:text-base flex items-center gap-2 flex-shrink-0`}
+                            className={`${joiner.color} rounded-full px-4 py-3 sm:px-6 sm:py-4 whitespace-nowrap text-white font-bold text-sm sm:text-base flex items-center gap-2 sm:gap-3 flex-shrink-0`}
                         >
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/30 rounded-full flex items-center justify-center text-xs font-bold">
-                                {joiner.initials[0]}
-                            </div>
+                            <Image
+                                src={joiner.avatar}
+                                alt={joiner.name}
+                                width={32}
+                                height={32}
+                                className="rounded-full flex-shrink-0"
+                            />
                             {joiner.name}
                         </div>
                     ))}

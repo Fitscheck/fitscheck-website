@@ -51,11 +51,11 @@ export default function Waitlist() {
         </div>
       </section>
 
-      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-[#F9FAFB] text-black mt-20 lg:mt-[118px] mb-0 lg:mb-[118px]">
+      <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-[#F9FAFB] text-black mt-20 lg:mt-[118px] mb-10 lg:mb-[118px]">
         <WaitlistForm />
       </section>
 
-      <section className="pt-0 pb-10 lg:pb-[118px]">
+      <section className=" mb-6">
         <JoinersCarousel />
       </section>
       <WhatToExpectSection />
