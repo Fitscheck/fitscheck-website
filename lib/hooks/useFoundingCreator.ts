@@ -8,7 +8,7 @@ export const useFoundingCreator = () => {
   const [err, setErr] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const apply = async (name: string, email: string, handle: string, niche: string) => {
+  const apply = async (name: string, email: string, socialHandle?: string, niche?: string) => {
     try {
       setLoading(true);
       setErr(null);
@@ -17,8 +17,8 @@ export const useFoundingCreator = () => {
       const response = await api.post(API_ROUTES.FOUNDING_CREATOR.APPLY, { 
         name, 
         email, 
-        handle, 
-        niche: niche || undefined 
+        socialHandle: socialHandle?.trim() || undefined,
+        niche: niche?.trim() || undefined 
       });
       setIsSuccess(true);
       return response.data;
@@ -32,13 +32,14 @@ export const useFoundingCreator = () => {
         const data = err.response.data;
         
         if (status === 400) {
-          errorMessage = data?.message || 'Please check your information and try again.';
+          // Check for the specific duplicate email error message
+          errorMessage = data?.message || data?.data?.message || 'Please check your information and try again.';
         } else if (status === 409 || status === 422) {
-          errorMessage = data?.message || 'You have already applied!';
+          errorMessage = data?.message || data?.data?.message || 'You have already applied!';
         } else if (status >= 500) {
           errorMessage = 'Server error. Please try again later.';
         } else {
-          errorMessage = data?.message || data?.error || errorMessage;
+          errorMessage = data?.message || data?.data?.message || data?.error || errorMessage;
         }
       } else if (err.request) {
         // Request was made but no response received

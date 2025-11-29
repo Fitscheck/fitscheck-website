@@ -35,7 +35,7 @@ export const API_ROUTES = {
     JOIN: `${BASE_URL}/api/waitlist`,
   },
   FOUNDING_CREATOR: {
-    APPLY: `${BASE_URL}/api/founding-creator`,
+    APPLY: `${BASE_URL}/api/founding-creators`,
   },
 }
 // 

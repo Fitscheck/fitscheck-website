@@ -16,7 +16,7 @@ export default function FoundingCreatorForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!name.trim() || !email.trim() || !handle.trim()) {
+    if (!name.trim() || !email.trim()) {
       return
     }
 
@@ -25,7 +25,12 @@ export default function FoundingCreatorForm() {
     }
 
     try {
-      await apply(name.trim(), email.trim(), handle.trim(), niche.trim())
+      await apply(
+        name.trim(), 
+        email.trim(), 
+        handle.trim() || undefined, 
+        niche.trim() || undefined
+      )
       // Clear form on successful submission
       setName("")
       setEmail("")
@@ -90,7 +95,7 @@ export default function FoundingCreatorForm() {
             className="block text-white font-semibold text-sm mb-2"
             style={{ fontFamily: "var(--font-whyte-inktrap)" }}
           >
-            Instagram / TikTok Handle
+            Instagram / TikTok Handle <span className="text-white/70 font-normal text-xs" style={{ fontFamily: "var(--font-satoshi)" }}>(optional)</span>
           </label>
           <div className="flex items-center gap-3 px-4 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus-within:border-[#F8E71C] transition-colors">
             <Instagram className="text-white text-lg flex-shrink-0" />
@@ -99,7 +104,6 @@ export default function FoundingCreatorForm() {
               placeholder="@yourhandle"
               value={handle}
               onChange={(e) => setHandle(e.target.value)}
-              required
               className="flex-1 bg-transparent outline-none text-white placeholder:text-white/60 text-sm"
               style={{ fontFamily: "var(--font-satoshi)" }}
             />
