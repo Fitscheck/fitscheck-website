@@ -35,9 +35,8 @@ export default function FAQSection() {
   }
 
   return (
-    <section className="w-full py-10 md:py-[118px] px-6 bg-[#F0F7FF]" style={{ fontFamily: "Satoshi Variable" }}>
+    <section className="w-full py-10 md:py-[118px] px-6 bg-[#F0F7FF]" style={{ fontFamily: "var(--font-satoshi)" }}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-16 text-center md:text-start">
           <h2 className="md:max-w-2xl text-3xl md:text-4xl lg:text-7xl font-bold mb-2 text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
             Frequently Asked Questions
@@ -47,7 +46,6 @@ export default function FAQSection() {
           </p>
         </div>
 
-        {/* FAQ Items */}
         <div className="space-y-4">
           {faqItems.map((item, index) => (
             <div
@@ -56,19 +54,19 @@ export default function FAQSection() {
               onClick={() => toggleExpanded(index)}
             >
               <div className="flex items-start gap-4">
-                {/* Icon */}
                 <div className="flex items-center justify-center text-lg text-[#003366] font-extrabold flex-shrink-0 border-2 border-[#003366] rounded-full h-6 w-6">
                   {expandedIndex === index ? "−" : "+"}
                 </div>
 
-                {/* Question and Answer */}
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg font-bold text-blue-900 mb-3">{item.question}</h3>
 
-                  {/* Answer - Show only when expanded */}
-                  {expandedIndex === index && (
-                    <p className="text-gray-600 leading-relaxed animate-fade-in">{item.answer}</p>
-                  )}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                  >
+                    <p className="text-gray-600 leading-relaxed">{item.answer}</p>
+                  </div>
                 </div>
               </div>
             </div>
