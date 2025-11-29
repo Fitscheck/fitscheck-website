@@ -216,7 +216,7 @@ export default function LandingPage() {
               <div className="relative w-full max-w-md">
                 <div className="absolute -left-8 top-1/4 hidden lg:block">
                   <Image
-                    src="/mockups/phone1.webp"
+                    src="/mockups/phone_mockup.svg"
                     alt="FitsCheck App"
                     width={200}
                     height={400}
@@ -225,7 +225,7 @@ export default function LandingPage() {
                 </div>
                 <div className="relative z-10">
                   <Image
-                    src="/mockups/phone2.webp"
+                    src="/mockups/phone_mockup2.svg"
                     alt="FitsCheck App"
                     width={300}
                     height={600}
@@ -234,7 +234,7 @@ export default function LandingPage() {
                 </div>
                 <div className="absolute -right-8 top-1/3 hidden lg:block">
                   <Image
-                    src="/mockups/phone1.webp"
+                    src="/mockups/phone_mockup.svg"
                     alt="FitsCheck App"
                     width={200}
                     height={400}

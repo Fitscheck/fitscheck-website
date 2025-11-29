@@ -13,10 +13,10 @@ const PhoneImages = ({ isLarge }: { isLarge: boolean }) => {
   return (
     <div className={isLarge ? "hidden lg:block" : "hidden md:block lg:hidden"}>
       <div className="absolute left-0 top-[70%] -translate-y-1/2">
-        <Image src="/mockups/phone1.webp" alt="Phone 1" width={width} height={height} className="object-contain" />
+        <Image src="/mockups/phone_mockup.svg" alt="Phone 1" width={width} height={height} className="object-contain" />
       </div>
       <div className="absolute right-0 top-[70%] -translate-y-1/2">
-        <Image src="/mockups/phone2.webp" alt="Phone 2" width={width} height={height} className="object-contain" />
+        <Image src="/mockups/phone_mockup2.svg" alt="Phone 2" width={width} height={height} className="object-contain" />
       </div>
     </div>
   );
@@ -71,10 +71,10 @@ export default function Waitlist() {
           <PhoneImages isLarge={true} />
           <PhoneImages isLarge={false} />
           <div className="md:hidden absolute right-0 top-[30%] translate-y-full">
-            <Image src="/mockups/phone2.webp" alt="Phone 2" width={100} height={200} className="object-contain" />
+            <Image src="/mockups/phone_mockup2.svg" alt="Phone 2" width={100} height={200} className="object-contain" />
           </div>
           <div className="md:hidden absolute left-0 top-[40%] translate-y-full">
-            <Image src="/mockups/phone1.webp" alt="Phone 1" width={100} height={200} className="object-contain" />
+            <Image src="/mockups/phone_mockup.svg" alt="Phone 1" width={100} height={200} className="object-contain" />
           </div>
 
           <WaitlistForm />
