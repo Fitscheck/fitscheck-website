@@ -4,30 +4,48 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://fitscheck-b
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
-  return handleRequest(request, params, 'GET');
+  const resolvedParams = await params;
+  return handleRequest(request, resolvedParams, 'GET');
 }
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
-  return handleRequest(request, params, 'POST');
+  const resolvedParams = await params;
+  return handleRequest(request, resolvedParams, 'POST');
 }
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
-  return handleRequest(request, params, 'PATCH');
+  const resolvedParams = await params;
+  return handleRequest(request, resolvedParams, 'PATCH');
 }
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
-  return handleRequest(request, params, 'DELETE');
+  const resolvedParams = await params;
+  return handleRequest(request, resolvedParams, 'DELETE');
+}
+
+export async function OPTIONS(
+  request: NextRequest,
+  { params }: { params: Promise<{ path: string[] }> }
+) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  });
 }
 
 async function handleRequest(
@@ -37,9 +55,18 @@ async function handleRequest(
 ) {
   try {
     // Reconstruct the API path
+    if (!params || !params.path || params.path.length === 0) {
+      return NextResponse.json(
+        { status: 'error', message: 'Invalid API path' },
+        { status: 400 }
+      );
+    }
+    
     const path = params.path.join('/');
     const searchParams = request.nextUrl.searchParams.toString();
     const url = `${BACKEND_URL}/api/${path}${searchParams ? `?${searchParams}` : ''}`;
+    
+    console.log(`[API Proxy] ${method} ${request.nextUrl.pathname} -> ${url}`);
 
     // Get headers from request
     const headers: HeadersInit = {};
@@ -116,11 +143,18 @@ async function handleRequest(
       }
     });
   } catch (error: any) {
-    console.error(`API proxy error (${method}):`, error);
+    console.error(`[API Proxy Error] ${method} ${request.nextUrl.pathname}:`, error);
+    console.error('Error details:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name,
+    });
     return NextResponse.json(
       {
         status: 'error',
         message: error.message || 'Failed to process API request',
+        path: request.nextUrl.pathname,
+        method,
       },
       { status: 500 }
     );
