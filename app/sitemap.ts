@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/landing`,
+      url: `${baseUrl}/founding-creator`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
