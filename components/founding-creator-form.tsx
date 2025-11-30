@@ -1,10 +1,11 @@
 "use client"
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { UserRound, Mail, Instagram, Hash } from "lucide-react";
 import { useFoundingCreator } from "@/lib/hooks/useFoundingCreator";
+import { toast } from "sonner";
 
 export default function FoundingCreatorForm() {
   const [name, setName] = useState("")
@@ -13,9 +14,21 @@ export default function FoundingCreatorForm() {
   const [niche, setNiche] = useState("")
   const { apply, loading, err, isSuccess } = useFoundingCreator()
 
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Thanks for applying! We'll review your application and be in touch soon.");
+    }
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (err) {
+      toast.error(err);
+    }
+  }, [err]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!name.trim() || !email.trim()) {
       return
     }
@@ -26,26 +39,22 @@ export default function FoundingCreatorForm() {
 
     try {
       await apply(
-        name.trim(), 
-        email.trim(), 
-        handle.trim() || undefined, 
+        name.trim(),
+        email.trim(),
+        handle.trim() || undefined,
         niche.trim() || undefined
       )
-      // Clear form on successful submission
       setName("")
       setEmail("")
       setHandle("")
       setNiche("")
     } catch (error) {
-      // Error is handled by the hook - it will display the error message
-      // Form fields are kept so user can fix and resubmit
     }
   }
 
   return (
     <div id="apply" className="w-full max-w-2xl mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Name field */}
         <div>
           <label
             className="block text-white font-semibold text-sm mb-2"
@@ -54,7 +63,7 @@ export default function FoundingCreatorForm() {
             Name
           </label>
           <div className="flex items-center gap-3 px-4 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus-within:border-[#F8E71C] transition-colors">
-            <UserRound className="text-white text-lg flex-shrink-0"/>
+            <UserRound className="text-white text-lg flex-shrink-0" />
             <input
               type="text"
               placeholder="Enter your name"
@@ -67,7 +76,6 @@ export default function FoundingCreatorForm() {
           </div>
         </div>
 
-        {/* Email field */}
         <div>
           <label
             className="block text-white font-semibold text-sm mb-2"
@@ -89,7 +97,6 @@ export default function FoundingCreatorForm() {
           </div>
         </div>
 
-        {/* Instagram / TikTok handle */}
         <div>
           <label
             className="block text-white font-semibold text-sm mb-2"
@@ -110,7 +117,6 @@ export default function FoundingCreatorForm() {
           </div>
         </div>
 
-        {/* Niche (optional) */}
         <div>
           <label
             className="block text-white font-semibold text-sm mb-2"
@@ -131,7 +137,6 @@ export default function FoundingCreatorForm() {
           </div>
         </div>
 
-        {/* Submit Button */}
         <Button
           type="submit"
           disabled={loading || isSuccess}
@@ -140,25 +145,6 @@ export default function FoundingCreatorForm() {
         >
           {loading ? "Applying..." : isSuccess ? "Application Submitted!" : "Apply Now"}
         </Button>
-
-        {/* Messages */}
-        <div className="min-h-[50px] flex items-center justify-center">
-          {isSuccess && (
-            <div className="w-full p-3 bg-green-500/20 backdrop-blur-sm border border-green-400/50 rounded-lg">
-              <p className="text-center text-white text-sm" style={{ fontFamily: "var(--font-satoshi)" }}>
-                Thanks for applying! We'll review your application and be in touch soon.
-              </p>
-            </div>
-          )}
-
-          {err && !isSuccess && (
-            <div className="w-full p-3 bg-red-500/20 backdrop-blur-sm border border-red-400/50 rounded-lg">
-              <p className="text-center text-white text-sm" style={{ fontFamily: "var(--font-satoshi)" }}>
-                {err}
-              </p>
-            </div>
-          )}
-        </div>
       </form>
     </div>
   );

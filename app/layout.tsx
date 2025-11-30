@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "sonner";
 import localFont from "next/font/local";
 
 export const whyteInktrap = localFont({
@@ -97,6 +97,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  applicationName: "FitsCheck",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "FitsCheck",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   category: "Fashion",
   classification: "Social Media App",
 };
@@ -115,7 +124,7 @@ export default function RootLayout({
           enableSystem={false}
         >
           {children}
-          <Toaster position="top-center" />
+          <Toaster position="top-center" richColors />
         </ThemeProvider>
       </body>
     </html>
