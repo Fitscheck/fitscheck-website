@@ -3,6 +3,7 @@ Allow: /
 
 # Disallow admin pages
 Disallow: /admin/
+Disallow: /landing
 
 # Sitemap location
 Sitemap: https://fitscheck.com/sitemap.xml

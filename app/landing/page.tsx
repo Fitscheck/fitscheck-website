@@ -1,9 +1,17 @@
 import React from 'react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Download, Star, Users, TrendingUp, ShoppingBag, MessageSquare } from 'lucide-react'
 import Footer from '@/components/footer'
 import FAQSection from '@/components/faq'
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function LandingPage() {
   const structuredData = {
@@ -109,7 +117,7 @@ export default function LandingPage() {
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#FEFBD7] to-white overflow-hidden pt-8 md:pt-12 lg:pt-0">
         <div className="absolute inset-0 bg-[url('/new_hero.png')] bg-cover bg-center bg-no-repeat opacity-10"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <div className="grid gap-12 lg:grid-cols-2 items-start lg:items-center">
             <div className="text-center lg:text-left space-y-8">
               <div className="inline-flex items-center rounded-full border border-[#003366]/20 bg-[#003366]/5 px-4 py-2 text-sm font-medium text-[#003366]">
                 <span>Now Available on iOS & Android</span>
@@ -164,7 +172,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="relative flex items-center justify-center lg:justify-end -mb-[25vh] md:-mb-[30vh] lg:-mb-[30vh]">
+            <div className="relative -mb-[25vh] md:-mb-[30vh] lg:mb-0">
               <div className="relative w-full max-w-lg h-[50vh] md:h-[60vh] lg:h-screen lg:max-h-screen">
                 <Image
                   src="/mockups/full_mockup.svg"
