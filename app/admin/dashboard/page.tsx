@@ -6,9 +6,9 @@ import { authService } from '../../../services/authService';
 import { Trophy, Users, AlertTriangle, FileText, MessageSquare, LogOut, Menu, X } from 'lucide-react';
 import ChallengesPage from './components/challenges/ChallengesPage';
 import UsersPage from './components/UsersPage';
-import ProfileReportsPage from './components/ProfileReportsPage';
-import PostReportsPage from './components/PostReportsPage';
-import CommentReportsPage from './components/CommentReportsPage';
+import ProfileReportsPage from './components/reports/ProfileReportsPage';
+import PostReportsPage from './components/reports/PostReportsPage';
+import CommentReportsPage from './components/reports/CommentReportsPage';
 import ConfirmationModal from '../components/ConfirmationModal';
 
 type PageType = 'challenges' | 'users' | 'profile-reports' | 'post-reports' | 'comment-reports';
@@ -112,8 +112,8 @@ export default function DashboardPage() {
               <button
                 key={item.id}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activePage === item.id
-                    ? 'bg-white/10 text-white'
-                    : 'text-white/70 hover:bg-white/5 hover:text-white'
+                  ? 'bg-white/10 text-white'
+                  : 'text-white/70 hover:bg-white/5 hover:text-white'
                   } ${sidebarCollapsed ? 'justify-center' : ''}`}
                 onClick={() => handlePageChange(item.id)}
                 title={sidebarCollapsed ? item.label : ''}
