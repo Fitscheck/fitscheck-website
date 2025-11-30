@@ -1,18 +1,24 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useState } from 'react'
 import { Download, Smartphone, AlertCircle } from 'lucide-react'
 import Footer from '@/components/footer'
 import { Button } from '@/components/ui/button'
-
-export const metadata: Metadata = {
-  title: 'Delete Account',
-  description: 'Learn how to delete your FitsCheck account. Account deletion must be done through the mobile app.',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 
 export default function DeleteAccountPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [platform, setPlatform] = useState<'iOS' | 'Android' | null>(null)
+
+  const handleDownloadClick = (platformType: 'iOS' | 'Android') => {
+    setPlatform(platformType)
+    setIsModalOpen(true)
+  }
   return (
     <>
       <section className="min-h-screen bg-white py-12 md:py-20 lg:py-24">
@@ -137,6 +143,7 @@ export default function DeleteAccountPage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
                     size="lg"
+                    onClick={() => handleDownloadClick('iOS')}
                     className="bg-[#F8E71C] hover:bg-[#F8E71C]/90 text-[#003366] px-8 py-6 rounded-full text-lg font-bold"
                   >
                     <Download className="mr-2 h-5 w-5" />
@@ -144,6 +151,7 @@ export default function DeleteAccountPage() {
                   </Button>
                   <Button
                     size="lg"
+                    onClick={() => handleDownloadClick('Android')}
                     className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-[#003366] px-8 py-6 rounded-full text-lg font-bold"
                   >
                     <Download className="mr-2 h-5 w-5" />
@@ -199,6 +207,41 @@ export default function DeleteAccountPage() {
           </div>
         </div>
       </section>
+
+      {/* Coming Soon Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="sm:max-w-md bg-white border-2 border-[#003366]/20">
+          <DialogHeader>
+            <DialogTitle
+              className="text-2xl font-bold text-[#003366] text-center"
+              style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+            >
+              Coming Soon!
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-center pt-4 space-y-4">
+            <div className="flex justify-center">
+              <div className="w-20 h-20 rounded-full bg-[#FEFBD7] flex items-center justify-center">
+                <Smartphone className="h-10 w-10 text-[#003366]" />
+              </div>
+            </div>
+            <p className="text-lg text-[#003366]/80" style={{ fontFamily: "var(--font-satoshi)" }}>
+              The FitsCheck app for {platform} is coming soon! 
+            </p>
+            <p className="text-base text-[#003366]/70" style={{ fontFamily: "var(--font-satoshi)" }}>
+              Join our waitlist to be notified when the app launches.
+            </p>
+            <div className="pt-4">
+              <Button
+                onClick={() => setIsModalOpen(false)}
+                className="bg-[#003366] hover:bg-[#003366]/90 text-white px-6 py-3 rounded-full font-bold w-full"
+              >
+                Got it
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </>
