@@ -461,12 +461,9 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 lg:py-[118px] bg-white">
-        <FAQSection />
-      </section>
+      <FAQSection />
 
       <Footer />
     </>
   )
 }
-
