@@ -12,5 +12,13 @@
     <priority>1.0</priority>
   </url>
   
+  <!-- Founding Creator Page -->
+  <url>
+    <loc>https://fitscheck.com/founding-creator</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
 </urlset>
 
