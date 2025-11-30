@@ -3,25 +3,29 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '../../../services/authService';
-import ChallengesPage from './components/ChallengesPage';
+import { Trophy, Users, AlertTriangle, FileText, MessageSquare, LogOut, Menu, X } from 'lucide-react';
+import ChallengesPage from './components/challenges/ChallengesPage';
 import UsersPage from './components/UsersPage';
 import ProfileReportsPage from './components/ProfileReportsPage';
 import PostReportsPage from './components/PostReportsPage';
 import CommentReportsPage from './components/CommentReportsPage';
 import ConfirmationModal from '../components/ConfirmationModal';
-import './Dashboard.css';
+
+type PageType = 'challenges' | 'users' | 'profile-reports' | 'post-reports' | 'comment-reports';
 
 export default function DashboardPage() {
-  const [activePage, setActivePage] = useState('challenges');
+  const [activePage, setActivePage] = useState<PageType>('challenges');
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const router = useRouter();
 
   const menuItems = [
-    { id: 'challenges', label: 'Challenges', icon: '🏆' },
-    { id: 'users', label: 'Users', icon: '👥' },
-    { id: 'profile-reports', label: 'Profile Reports', icon: '🚨' },
-    { id: 'post-reports', label: 'Post Reports', icon: '📝' },
-    { id: 'comment-reports', label: 'Comment Reports', icon: '💬' },
+    { id: 'challenges' as PageType, label: 'Challenges', icon: Trophy },
+    { id: 'users' as PageType, label: 'Users', icon: Users },
+    { id: 'profile-reports' as PageType, label: 'Profile Reports', icon: AlertTriangle },
+    { id: 'post-reports' as PageType, label: 'Post Reports', icon: FileText },
+    { id: 'comment-reports' as PageType, label: 'Comment Reports', icon: MessageSquare },
   ];
 
   const handleLogout = () => {
@@ -36,6 +40,11 @@ export default function DashboardPage() {
     } catch (error) {
       console.error('Logout error:', error);
     }
+  };
+
+  const handlePageChange = (page: PageType) => {
+    setActivePage(page);
+    setSidebarOpen(false);
   };
 
   const renderPage = () => {
@@ -56,33 +65,100 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="dashboard" style={{ fontFamily: "Satoshi Variable" }}>
-      <aside className="sidebar">
-        <div className="sidebar-header">
-          <h2 className="sidebar-title">FitsCheck Admin</h2>
+    <div className="flex h-screen bg-gray-50" style={{ fontFamily: "var(--font-satoshi)" }}>
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`
+          fixed lg:static inset-y-0 left-0 z-50
+          bg-[#003366] text-white flex flex-col
+          transition-all duration-300 ease-in-out
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+          ${sidebarCollapsed ? 'lg:w-20' : 'lg:w-64'}
+          w-64
+        `}
+      >
+        <div className="p-6 border-b border-white/10 flex items-center justify-between">
+          {!sidebarCollapsed && (
+            <h2 className="text-xl font-bold" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              FitsCheck
+            </h2>
+          )}
+          <button
+            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            className="hidden lg:block text-white/70 hover:text-white transition-colors"
+          >
+            <Menu size={20} />
+          </button>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="lg:hidden text-white/70 hover:text-white transition-colors"
+          >
+            <X size={20} />
+          </button>
         </div>
-        <nav className="sidebar-nav">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              className={`nav-item ${activePage === item.id ? 'active' : ''}`}
-              onClick={() => setActivePage(item.id)}
-            >
-              <span className="nav-icon">{item.icon}</span>
-              <span className="nav-label">{item.label}</span>
-            </button>
-          ))}
+
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+          {menuItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activePage === item.id
+                    ? 'bg-white/10 text-white'
+                    : 'text-white/70 hover:bg-white/5 hover:text-white'
+                  } ${sidebarCollapsed ? 'justify-center' : ''}`}
+                onClick={() => handlePageChange(item.id)}
+                title={sidebarCollapsed ? item.label : ''}
+              >
+                <Icon size={20} className="flex-shrink-0" />
+                {!sidebarCollapsed && <span className="font-medium">{item.label}</span>}
+              </button>
+            );
+          })}
         </nav>
-        <div className="sidebar-footer">
-          <button className="logout-button" onClick={handleLogout}>
-            <span className="nav-icon">🚪</span>
-            <span className="nav-label">Logout</span>
+
+        <div className="p-4 border-t border-white/10">
+          <button
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition-colors ${sidebarCollapsed ? 'justify-center' : ''
+              }`}
+            onClick={handleLogout}
+            title={sidebarCollapsed ? 'Logout' : ''}
+          >
+            <LogOut size={20} className="flex-shrink-0" />
+            {!sidebarCollapsed && <span className="font-medium">Logout</span>}
           </button>
         </div>
       </aside>
-      <main className="dashboard-content">
-        {renderPage()}
-      </main>
+
+      {/* Main content */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Mobile header */}
+        <header className="lg:hidden bg-white border-b border-gray-200 p-4 flex items-center justify-between">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="text-gray-600 hover:text-gray-900"
+          >
+            <Menu size={24} />
+          </button>
+          <h1 className="text-lg font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            FitsCheck Admin
+          </h1>
+          <div className="w-6" /> {/* Spacer for centering */}
+        </header>
+
+        <main className="flex-1 overflow-auto">
+          {renderPage()}
+        </main>
+      </div>
+
       <ConfirmationModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
