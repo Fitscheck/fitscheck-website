@@ -30,7 +30,7 @@ export default function FoundingCreatorPage() {
             className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed mb-8"
             style={{ fontFamily: "var(--font-satoshi)" }}
           >
-            We're building a new fashion-only platform designed for creators, influencers, affiliates, and everyday style lovers. If you love posting outfits, giving style advice, or sharing affiliate links — this is your new home.
+            We're building a new fashion-only platform designed for creators, influencers, affiliates, and everyday style lovers. If you love posting outfits, giving style advice, or sharing affiliate links, this is your new home.
           </p>
           
           <div className="mt-8 inline-block px-6 py-2 bg-[#F8E71C]/20 text-white rounded-full text-sm border border-[#F8E71C]/30">
@@ -71,9 +71,9 @@ export default function FoundingCreatorPage() {
             
             {/* Benefit 2 */}
             <div className="p-6 rounded-lg border border-gray-200 bg-gray-50/50">
-              <h3 className="text-xl font-semibold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>Guaranteed Home Page Feature</h3>
+              <h3 className="text-xl font-semibold text-[#003366] mb-2" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>Priority Support & Direct Access</h3>
               <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
-                Your posts will be highlighted during launch week.
+                Get priority customer support and direct access to our team for feedback and feature requests.
               </p>
             </div>
             
