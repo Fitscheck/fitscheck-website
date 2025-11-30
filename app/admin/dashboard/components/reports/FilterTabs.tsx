@@ -9,6 +9,8 @@ interface FilterTabsProps {
         pending?: number;
         reviewed?: number;
         resolved?: number;
+        active?: number;
+        inactive?: number;
     };
 }
 
@@ -18,7 +20,9 @@ const FilterTabs: React.FC<FilterTabsProps> = ({ activeFilter, onFilterChange, c
         { id: 'pending', label: 'Pending', count: counts.pending },
         { id: 'reviewed', label: 'Reviewed', count: counts.reviewed },
         { id: 'resolved', label: 'Resolved', count: counts.resolved },
-    ];
+        { id: 'active', label: 'Active', count: counts.active },
+        { id: 'inactive', label: 'Inactive', count: counts.inactive },
+    ].filter(f => f.count !== undefined);
 
     return (
         <div className="flex gap-3 flex-wrap">
