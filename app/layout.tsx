@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | FitsCheck"
   },
   description:
-    "Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, share affiliate links, earn style points, and compete on global leaderboards.",
+    "Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, share affiliate links, earn style points, and compete on global leaderboards. Download FitsCheck for iOS and Android.",
   icons: {
     icon: [
       {
@@ -54,6 +54,8 @@ export const metadata: Metadata = {
     "fashion leaderboard",
     "this or that fashion",
     "shop this look",
+    "fashion monetization",
+    "style points"
   ],
   authors: [{ name: "FitsCheck Team" }],
   creator: "FitsCheck",
@@ -61,6 +63,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     title: "FitsCheck - Make Fashion Decisions with Community Voting",
@@ -80,13 +89,16 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FitsCheck - Make Fashion Decisions with Community Voting",
-    description: "Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content.",
+    description: "Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content. Download now!",
     images: ["/branding/twitter-og.png"],
+    creator: "@fitscheck",
   },
   metadataBase: new URL("https://fitscheck.com"),
   alternates: {
     canonical: "/",
   },
+  category: "Fashion",
+  classification: "Social Media App",
 };
 
 export default function RootLayout({
