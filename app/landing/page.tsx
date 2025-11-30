@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Download, Star, Users, TrendingUp, ShoppingBag, MessageSquare } from 'lucide-react'
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 }
 
 export default function LandingPage() {
+  // Redirect to homepage - remove this line when ready to launch
+  redirect('/')
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
