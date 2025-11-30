@@ -33,10 +33,19 @@ export interface Participant {
     user?: {
         id: string;
         fullName?: string;
+        full_name?: string;
         name?: string;
+        username?: string;
     };
     fullName?: string;
+    full_name?: string;
     name?: string;
+    username?: string;
     postId?: string;
+    post?: {
+        id: string;
+        likesCount?: number;
+        likes_count?: number;
+    };
     createdAt: string;
 }

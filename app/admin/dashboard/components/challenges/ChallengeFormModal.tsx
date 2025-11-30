@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Upload, Link as LinkIcon } from 'lucide-react';
 import { ChallengeFormData } from './types';
 
@@ -17,20 +17,38 @@ const ChallengeFormModal: React.FC<ChallengeFormModalProps> = ({
     initialData,
     title
 }) => {
-    const [formData, setFormData] = useState<ChallengeFormData>(
-        initialData || {
-            title: '',
-            description: '',
-            bannerImageUrl: '',
-            startDate: '',
-            endDate: '',
-            reward: '',
-            hashtags: '',
-        }
-    );
+    const [formData, setFormData] = useState<ChallengeFormData>({
+        title: '',
+        description: '',
+        bannerImageUrl: '',
+        startDate: '',
+        endDate: '',
+        reward: '',
+        hashtags: '',
+    });
     const [bannerFile, setBannerFile] = useState<File | null>(null);
-    const [bannerPreview, setBannerPreview] = useState<string>(initialData?.bannerImageUrl || '');
+    const [bannerPreview, setBannerPreview] = useState<string>('');
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (isOpen && initialData) {
+            setFormData(initialData);
+            setBannerPreview(initialData.bannerImageUrl || '');
+            setBannerFile(null);
+        } else if (isOpen && !initialData) {
+            setFormData({
+                title: '',
+                description: '',
+                bannerImageUrl: '',
+                startDate: '',
+                endDate: '',
+                reward: '',
+                hashtags: '',
+            });
+            setBannerPreview('');
+            setBannerFile(null);
+        }
+    }, [isOpen, initialData]);
 
     if (!isOpen) return null;
 
