@@ -1,9 +1,19 @@
 import { MetadataRoute } from 'next'
 
+// Blog post slugs - should match the slugs in blog/[slug]/page.tsx
+const blogPostSlugs = [
+  '10-tips-for-better-outfit-photos',
+  'how-to-win-style-challenges',
+  '2025-fashion-trends',
+  'outfit-ideas-for-every-occasion',
+  'how-to-style-denim',
+  'fashion-challenges-on-social-media',
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://fitscheck.com'
   
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -47,5 +57,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
   ]
+
+  // Add blog post pages
+  const blogPages: MetadataRoute.Sitemap = blogPostSlugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...blogPages]
 }
 
