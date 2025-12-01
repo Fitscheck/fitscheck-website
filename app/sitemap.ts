@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 
 // Blog post slugs - should match the slugs in blog/[slug]/page.tsx
 const blogPostSlugs = [
+  'fitscheck-vs-ai-styling-apps',
   '10-tips-for-better-outfit-photos',
   'how-to-win-style-challenges',
   '2025-fashion-trends',
