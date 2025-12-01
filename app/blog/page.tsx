@@ -30,6 +30,38 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-settle-this-or-that-outfit-debates",
+    title: "How to Settle 'This or That' Outfit Debates: The Ultimate Guide",
+    excerpt: "Struggling to choose between two outfits? Learn how FitsCheck's community voting feature helps you settle 'this or that' outfit debates with real feedback from fashion lovers.",
+    date: "2025-12-02",
+    readTime: "6 min read",
+    category: "Style Guide"
+  },
+  {
+    slug: "best-fashion-challenge-apps-for-creators",
+    title: "Best Fashion Challenge Apps for Creators: Compete, Win, and Grow",
+    excerpt: "Discover the best fashion challenge apps for creators. Learn how FitsCheck's leaderboard system and style competitions help fashion creators build their reputation and grow their following.",
+    date: "2025-12-02",
+    readTime: "7 min read",
+    category: "For Creators"
+  },
+  {
+    slug: "where-to-get-real-fashion-feedback-from-community",
+    title: "Where to Get Real Fashion Feedback from a Community (Not AI)",
+    excerpt: "Looking for authentic fashion feedback? Discover why community-powered platforms like FitsCheck provide better, more nuanced fashion advice than AI styling apps.",
+    date: "2025-12-02",
+    readTime: "6 min read",
+    category: "Community"
+  },
+  {
+    slug: "social-media-alternatives-for-fashion-creators",
+    title: "Social Media Alternatives for Fashion Creators: Beyond Instagram & TikTok",
+    excerpt: "Explore the best social media alternatives for fashion creators. Discover how FitsCheck offers specialized features for fashion content that Instagram and TikTok can't provide.",
+    date: "2025-12-02",
+    readTime: "8 min read",
+    category: "For Creators"
+  },
+  {
     slug: "fitscheck-vs-ai-styling-apps",
     title: "FitsCheck vs AI Styling Apps: Why Community Beats Algorithms",
     excerpt: "Discover why FitsCheck's community-powered platform beats AI styling apps. Get real opinions from fashion lovers, compete in challenges, and experience the social layer missing from algorithm-based apps.",
