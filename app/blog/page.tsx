@@ -33,7 +33,7 @@ const blogPosts: BlogPost[] = [
     slug: "10-tips-for-better-outfit-photos",
     title: "10 Tips for Better Outfit Photos That Get More Ratings",
     excerpt: "Learn how to take stunning outfit photos that stand out on FitsCheck. From lighting to angles, discover professional tips for capturing your best looks.",
-    date: "2025-01-15",
+    date: "2025-11-30",
     readTime: "5 min read",
     category: "Photography Tips"
   },
@@ -41,7 +41,7 @@ const blogPosts: BlogPost[] = [
     slug: "how-to-win-style-challenges",
     title: "How to Win Style Challenges: A Complete Guide",
     excerpt: "Master the art of style challenges on FitsCheck. Learn strategies for creating winning entries, engaging the community, and climbing the leaderboards.",
-    date: "2025-01-10",
+    date: "2025-11-30",
     readTime: "7 min read",
     category: "Style Challenges"
   },
@@ -49,7 +49,7 @@ const blogPosts: BlogPost[] = [
     slug: "2025-fashion-trends",
     title: "2025 Fashion Trends: What's Hot This Year",
     excerpt: "Stay ahead of the curve with our comprehensive guide to 2025 fashion trends. Discover the styles that are dominating runways and social media.",
-    date: "2025-01-05",
+    date: "2025-11-25",
     readTime: "8 min read",
     category: "Trends"
   },
@@ -57,7 +57,7 @@ const blogPosts: BlogPost[] = [
     slug: "outfit-ideas-for-every-occasion",
     title: "Outfit Ideas for Every Occasion: Your Style Guide",
     excerpt: "Never wonder what to wear again. Get inspired with outfit ideas for work, dates, parties, and casual outings. Perfect for building your FitsCheck wardrobe.",
-    date: "2024-12-28",
+    date: "2024-11-25",
     readTime: "6 min read",
     category: "Style Guide"
   },
@@ -65,7 +65,7 @@ const blogPosts: BlogPost[] = [
     slug: "how-to-style-denim",
     title: "How to Style Denim: 15 Outfit Combinations",
     excerpt: "Denim is a wardrobe staple. Learn creative ways to style jeans, jackets, and denim pieces for different occasions and seasons.",
-    date: "2024-12-20",
+    date: "2024-11-20",
     readTime: "5 min read",
     category: "Styling Tips"
   },
@@ -73,7 +73,7 @@ const blogPosts: BlogPost[] = [
     slug: "fashion-challenges-on-social-media",
     title: "Fashion Challenges on Social Media: The Ultimate Guide",
     excerpt: "Explore the world of fashion challenges on social media platforms. Learn how FitsCheck is revolutionizing style competitions and community engagement.",
-    date: "2024-12-15",
+    date: "2024-11-20",
     readTime: "6 min read",
     category: "Community"
   },
