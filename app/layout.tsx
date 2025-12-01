@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | FitsCheck"
   },
   description:
-    "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
+    "Join FitsCheck - the social fashion platform where the community votes on your outfits. Post fits, compete in challenges, climb leaderboards.",
   icons: {
     icon: [
       {
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
-    description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
+    description: "Join FitsCheck - the social fashion platform where the community votes on your outfits. Post fits, compete in challenges, climb leaderboards.",
     type: "website",
     locale: "en_US",
     siteName: "FitsCheck",
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
-    description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
+    description: "Join FitsCheck - the social fashion platform where the community votes on your outfits. Post fits, compete in challenges, climb leaderboards.",
     images: ["/branding/twitter-og.png"],
     creator: "@fitscheck",
   },

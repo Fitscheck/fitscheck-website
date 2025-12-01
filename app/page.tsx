@@ -11,7 +11,7 @@ import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
-  description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
+  description: "Join FitsCheck - the social fashion platform where the community votes on your outfits. Post fits, compete in challenges, climb leaderboards.",
   keywords: [
     "fashion community app",
     "outfit voting platform",
@@ -97,7 +97,7 @@ export default function Waitlist() {
               priority
             />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-2xl" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
-              Post Your Outfit. Let the Community Decide. Win Style Challenges.
+              The Social Platform for Outfit Ratings & Fashion Community Voting
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-lg max-w-3xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
               Join the fashion community where style meets feedback. Post your OOTD, get crowd-sourced style decisions, and compete in social fashion challenges.
