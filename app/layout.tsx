@@ -28,7 +28,7 @@ export const satoshi = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+    default: "FitsCheck - Fashion Community App & Outfit Voting Platform",
     template: "%s | FitsCheck"
   },
   description:
@@ -44,12 +44,16 @@ export const metadata: Metadata = {
     apple: "/branding/FitsIcon.png",
   },
   keywords: [
-    "outfit rating app",
-    "fit check platform",
     "fashion community app",
+    "outfit voting platform",
+    "social fashion challenges",
+    "fashion leaderboard app",
+    "this or that fashion app",
+    "crowd-sourced style decisions",
+    "fashion competition app",
+    "fit check platform",
     "outfit voting",
     "style challenges",
-    "fashion feedback app",
     "OOTD community",
     "fashion app",
     "style decisions",
@@ -60,8 +64,6 @@ export const metadata: Metadata = {
     "shop this look",
     "fashion monetization",
     "style points",
-    "outfit rating app UK",
-    "outfit rating app US",
     "best fashion community 2025",
     "TikTok style alternatives",
     "Instagram fashion community"
@@ -81,7 +83,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+    title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
     description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
     type: "website",
     locale: "en_US",
@@ -91,13 +93,13 @@ export const metadata: Metadata = {
         url: "/branding/og.png",
         width: 1200,
         height: 630,
-        alt: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+        alt: "FitsCheck - Fashion Community App & Outfit Voting Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+    title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
     description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
     images: ["/branding/twitter-og.png"],
     creator: "@fitscheck",

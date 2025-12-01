@@ -7,10 +7,11 @@ import { ArrowLeft, DollarSign, TrendingUp, Users, Award, Link2, BarChart3 } fro
 
 export const metadata: Metadata = {
   title: "For Fashion Content Creators - FitsCheck",
-  description: "FitsCheck is the perfect outfit rating app for fashion content creators. Monetize your OOTD posts, grow your fashion community, and earn commissions with affiliate links.",
+  description: "FitsCheck is the perfect fashion community app for fashion content creators. Monetize your OOTD posts, grow your fashion community, and earn commissions with affiliate links.",
   keywords: [
     "fashion content creators",
-    "outfit rating app for creators",
+    "fashion community app for creators",
+    "outfit voting platform for creators",
     "monetize fashion content",
     "fashion influencer platform",
     "OOTD monetization",
@@ -44,7 +45,7 @@ export default function ForCreatorsPage() {
     {
       icon: BarChart3,
       title: "Track Your Performance",
-      description: "Monitor your outfit ratings, engagement metrics, and earnings. See which content performs best and optimize your posting strategy.",
+      description: "Monitor your outfit voting performance, engagement metrics, and earnings. See which content performs best and optimize your posting strategy.",
     },
     {
       icon: Link2,
@@ -83,7 +84,7 @@ export default function ForCreatorsPage() {
                 For Fashion Content Creators
               </h1>
               <p className="text-xl text-[#A3A3A3] max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
-                FitsCheck is the ultimate outfit rating app for fashion content creators. Monetize your OOTD posts, grow your fashion community, and turn your passion for style into a thriving business.
+                FitsCheck is the ultimate fashion community app for fashion content creators. Monetize your OOTD posts, grow your fashion community, and turn your passion for style into a thriving business.
               </p>
             </div>
 

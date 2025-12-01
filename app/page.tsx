@@ -10,21 +10,23 @@ import FAQSection from '@/components/faq'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+  title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
   description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
   keywords: [
-    "outfit rating app",
-    "fit check platform",
     "fashion community app",
+    "outfit voting platform",
+    "social fashion challenges",
+    "fashion leaderboard app",
+    "this or that fashion app",
+    "crowd-sourced style decisions",
+    "fashion competition app",
+    "fit check platform",
     "outfit voting",
     "style challenges",
-    "fashion feedback app",
     "OOTD community",
     "fashion app",
     "style decisions",
     "fashion influencer",
-    "outfit rating app UK",
-    "outfit rating app US",
     "best fashion community 2025",
     "TikTok style alternatives",
     "Instagram fashion community"
@@ -51,7 +53,7 @@ export default function Waitlist() {
     "description": "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
     "screenshot": "https://fitscheck.com/mockups/full_mockup.svg",
     "featureList": [
-      "Outfit Rating & Voting",
+      "Outfit Voting & Community Feedback",
       "Fit Check Platform",
       "Style Challenges",
       "Fashion Community",
@@ -86,19 +88,19 @@ export default function Waitlist() {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
           <div className="text-center space-y-6">
-            <Image
+              <Image
               src="/branding/FitsCheck.svg"
-              alt="FitsCheck Logo - Outfit Rating App"
+              alt="FitsCheck Logo - Fashion Community App"
               width={200}
               height={60}
               className="w-32 sm:w-40 md:w-52 lg:w-64 h-auto drop-shadow-2xl mx-auto"
               priority
             />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-2xl" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
-              The Ultimate Outfit Rating App & Fit Check Platform
+              The Ultimate Fashion Community App & Outfit Voting Platform
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-lg max-w-3xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
-              Join the fashion community where style meets feedback. Post your OOTD, get instant outfit ratings, and compete in style challenges.
+              Join the fashion community where style meets feedback. Post your OOTD, get crowd-sourced style decisions, and compete in social fashion challenges.
             </p>
           </div>
         </div>
@@ -133,7 +135,7 @@ export default function Waitlist() {
               How It Works
             </h2>
             <p className="text-xl text-[#A3A3A3] max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
-              Join thousands of fashion enthusiasts using our outfit rating app to make better style decisions
+              Join thousands of fashion enthusiasts using our fashion community app to make crowd-sourced style decisions
             </p>
           </div>
 
@@ -158,7 +160,7 @@ export default function Waitlist() {
                 Get Instant Ratings
               </h3>
               <p className="text-lg text-[#A3A3A3]" style={{ fontFamily: "var(--font-satoshi)" }}>
-                The fashion community votes on your posts, providing real-time feedback and outfit ratings to help you make style decisions.
+                The fashion community votes on your posts, providing real-time feedback and crowd-sourced style decisions to help you make better fashion choices.
               </p>
             </div>
 
@@ -207,13 +209,13 @@ export default function Waitlist() {
             </h2>
             <div className="space-y-6 text-lg text-[#A3A3A3] leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
               <p>
-                FitsCheck is the premier outfit rating app and fit check platform designed for fashion enthusiasts, content creators, and style lovers worldwide. Our mission is to revolutionize how people make fashion decisions by connecting them with a vibrant community that provides honest, real-time feedback on their style choices.
+                FitsCheck is the premier fashion community app and outfit voting platform designed for fashion enthusiasts, content creators, and style lovers worldwide. Our mission is to revolutionize how people make fashion decisions by connecting them with a vibrant community that provides honest, crowd-sourced style decisions on their fashion choices.
               </p>
               <p>
                 Whether you're looking for outfit voting on your latest OOTD, seeking fashion feedback from experienced stylists, or wanting to participate in exciting style challenges, FitsCheck offers a comprehensive fashion community app experience. We've built a platform that combines the best aspects of social media, fashion blogging, and community engagement into one seamless application.
               </p>
               <p>
-                As an alternative to traditional fashion platforms like Instagram and TikTok, FitsCheck focuses specifically on fashion feedback and style decision-making. Our unique features include real-time outfit ratings, style challenge competitions, affiliate link integration for monetization, and global leaderboards that celebrate the most stylish creators in our community.
+                As an alternative to traditional fashion platforms like Instagram and TikTok, FitsCheck focuses specifically on crowd-sourced style decisions and community engagement. Our unique features include outfit voting, social fashion challenge competitions, affiliate link integration for monetization, and fashion leaderboards that celebrate the most stylish creators in our community.
               </p>
               <p>
                 Join thousands of fashion-forward individuals who are already using FitsCheck to elevate their style game, connect with like-minded fashion lovers, and turn their passion for fashion into a thriving community presence. Whether you're in the UK, US, or anywhere else in the world, FitsCheck is your go-to destination for fashion community engagement in 2025 and beyond.

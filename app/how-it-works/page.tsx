@@ -6,14 +6,15 @@ import Footer from '@/components/footer'
 import { ArrowLeft, Users, TrendingUp, Award, MessageSquare } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "How It Works - FitsCheck Outfit Rating App",
-  description: "Learn how FitsCheck works - the fit check platform where you post outfits, get instant ratings, join style challenges, and build your fashion community presence.",
+  title: "How It Works - FitsCheck Fashion Community App",
+  description: "Learn how FitsCheck works - the outfit voting platform where you post outfits, get crowd-sourced style decisions, join social fashion challenges, and build your fashion community presence.",
   keywords: [
     "how does fit check work",
-    "outfit rating app how it works",
-    "fashion community app features",
-    "style challenge platform",
-    "OOTD rating system"
+    "fashion community app how it works",
+    "outfit voting platform features",
+    "social fashion challenges",
+    "crowd-sourced style decisions",
+    "fashion competition app"
   ],
 }
 
@@ -34,7 +35,7 @@ export default function HowItWorksPage() {
     {
       number: 3,
       title: "Get Instant Feedback",
-      description: "The fashion community votes on your posts, providing real-time outfit ratings and style feedback. See which looks resonate most with fashion lovers and get valuable insights to improve your style decisions.",
+      description: "The fashion community votes on your posts, providing real-time crowd-sourced style decisions and feedback. See which looks resonate most with fashion lovers and get valuable insights to improve your style decisions.",
       icon: TrendingUp,
     },
     {
@@ -53,8 +54,8 @@ export default function HowItWorksPage() {
 
   const features = [
     {
-      title: "Outfit Rating System",
-      description: "Get instant feedback on your style choices through our community voting system. See real-time ratings and comments from fashion enthusiasts worldwide.",
+      title: "Outfit Voting System",
+      description: "Get instant feedback on your style choices through our community voting platform. See real-time crowd-sourced style decisions and comments from fashion enthusiasts worldwide.",
     },
     {
       title: "Fit Check Platform",
@@ -96,7 +97,7 @@ export default function HowItWorksPage() {
               How FitsCheck Works
             </h1>
             <p className="text-xl text-[#A3A3A3] text-center mb-12 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
-              Discover how our outfit rating app and fit check platform helps fashion enthusiasts make better style decisions and build their fashion community presence.
+              Discover how our fashion community app and outfit voting platform helps fashion enthusiasts make crowd-sourced style decisions and build their fashion community presence.
             </p>
 
             <div className="space-y-12 mb-16">
