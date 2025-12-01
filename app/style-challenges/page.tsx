@@ -7,7 +7,7 @@ import { ArrowLeft, Trophy, Calendar, Users, Award, TrendingUp } from 'lucide-re
 
 export const metadata: Metadata = {
   title: "Style Challenges - Fashion Competition Platform | FitsCheck",
-  description: "Participate in exciting style challenges on FitsCheck. Compete in themed fashion competitions, win style points, and showcase your creativity to the fashion community.",
+  description: "Participate in exciting style challenges on FitsCheck. Compete in themed fashion competitions where the community votes, win style points, and showcase your creativity through crowd-sourced style decisions.",
   keywords: [
     "style challenges",
     "fashion challenges",

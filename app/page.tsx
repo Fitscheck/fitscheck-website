@@ -11,7 +11,7 @@ import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: "FitsCheck - Fashion Community App & Outfit Voting Platform",
-  description: "Join FitsCheck - the social fashion platform where the community votes on your outfits. Post fits, compete in challenges, climb leaderboards.",
+  description: "Join FitsCheck - the social fashion platform where the community votes on your outfits through crowd-sourced style decisions. Post fits, compete in challenges, climb leaderboards.",
   keywords: [
     "fashion community app",
     "outfit voting platform",
@@ -50,7 +50,7 @@ export default function Waitlist() {
       "ratingValue": "4.8",
       "ratingCount": "1240"
     },
-    "description": "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
+    "description": "Join FitsCheck - the social fashion platform where the community votes on your outfits through crowd-sourced style decisions. Post fits, compete in challenges, climb leaderboards.",
     "screenshot": "https://fitscheck.com/mockups/full_mockup.svg",
     "featureList": [
       "Outfit Voting & Community Feedback",
@@ -64,11 +64,29 @@ export default function Waitlist() {
     ]
   }
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FitsCheck",
+    "url": "https://fitscheck.com",
+    "logo": "https://fitscheck.com/branding/FitsCheck.svg",
+    "description": "FitsCheck - the social fashion platform where the community votes on your outfits through crowd-sourced style decisions",
+    "sameAs": [
+      "https://www.instagram.com/fitscheckofficial",
+      "https://www.tiktok.com/@fitscheckofficial",
+      "https://x.com/fitscheckapp"
+    ]
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <WaitlistBanner />
 

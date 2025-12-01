@@ -1570,7 +1570,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://fitscheck.com/blog/${post.slug}`
-    }
+    },
+    "articleSection": post.category,
+    "inLanguage": "en-US"
   }
 
   return (

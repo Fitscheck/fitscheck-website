@@ -7,7 +7,7 @@ import { ArrowLeft, DollarSign, TrendingUp, Users, Award, Link2, BarChart3 } fro
 
 export const metadata: Metadata = {
   title: "For Fashion Content Creators - FitsCheck",
-  description: "FitsCheck is the perfect fashion community app for fashion content creators. Monetize your OOTD posts, grow your fashion community, and earn commissions with affiliate links.",
+  description: "FitsCheck is the perfect fashion community app for fashion content creators. Get crowd-sourced style decisions from community votes, monetize your OOTD posts, and earn commissions with affiliate links.",
   keywords: [
     "fashion content creators",
     "fashion community app for creators",

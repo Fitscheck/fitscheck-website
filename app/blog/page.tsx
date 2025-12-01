@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: "Fashion Blog - Style Tips & Trends | FitsCheck",
-  description: "Discover the latest fashion trends, style tips, and outfit ideas on FitsCheck's fashion blog. Learn how to improve your outfit photos and win style challenges.",
+  description: "Discover the latest fashion trends, style tips, and outfit ideas on FitsCheck's fashion blog. Learn how to get crowd-sourced style decisions from the community and win style challenges.",
   keywords: [
     "2025 fashion trends",
     "outfit ideas",
