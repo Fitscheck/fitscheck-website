@@ -28,7 +28,7 @@ export const satoshi = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "FitsCheck - Make Fashion Decisions with Community Voting",
+    default: "FitsCheck - Outfit Rating App & Fashion Community Platform",
     template: "%s | FitsCheck"
   },
   description:
@@ -81,8 +81,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "FitsCheck - Make Fashion Decisions with Community Voting",
-    description: "Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content.",
+    title: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+    description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
     type: "website",
     locale: "en_US",
     siteName: "FitsCheck",
@@ -91,14 +91,14 @@ export const metadata: Metadata = {
         url: "/branding/og.png",
         width: 1200,
         height: 630,
-        alt: "FitsCheck - Fashion Decision Making App",
+        alt: "FitsCheck - Outfit Rating App & Fashion Community Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FitsCheck - Make Fashion Decisions with Community Voting",
-    description: "Get crowd-sourced style decisions, share affiliate links, and monetize your fashion content. Download now!",
+    title: "FitsCheck - Outfit Rating App & Fashion Community Platform",
+    description: "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
     images: ["/branding/twitter-og.png"],
     creator: "@fitscheck",
   },
