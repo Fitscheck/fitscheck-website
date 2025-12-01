@@ -64,7 +64,7 @@ export default function WaitlistForm() {
             <span className="text-[#F8E71C]">FitsCheck</span> Waitlist
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-[1.2] font-medium text-[#A3A3A3] max-w-3xl mx-auto">
-            Be the first to know when our social fashion platform launches. <br /> Share your style, get feedback, and join style challenges.
+            Post your fits. Community votes. You win. <br /> Be the first to join our social fashion platform.
           </p>
         </div>
 

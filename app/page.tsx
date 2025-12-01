@@ -100,7 +100,7 @@ export default function Waitlist() {
               The Social Platform for Outfit Ratings & Fashion Community Voting
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-lg max-w-3xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
-              Join the fashion community where style meets feedback. Post your OOTD, get crowd-sourced style decisions, and compete in social fashion challenges.
+              Post your fits. Community votes. You win.
             </p>
           </div>
         </div>

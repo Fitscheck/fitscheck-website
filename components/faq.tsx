@@ -90,7 +90,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="md:max-w-xl text-xl text-[#A3A3A3]">
-            Everything you need to know about the Fitscheck waitlist and upcoming outfit rating app.
+            Everything you need to know about the Fitscheck waitlist and upcoming fashion community app.
           </p>
         </div>
 
