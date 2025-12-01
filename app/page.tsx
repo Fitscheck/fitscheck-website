@@ -97,7 +97,7 @@ export default function Waitlist() {
               priority
             />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-2xl" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
-              The Ultimate Fashion Community App & Outfit Voting Platform
+              Post Your Outfit. Let the Community Decide. Win Style Challenges.
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-lg max-w-3xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
               Join the fashion community where style meets feedback. Post your OOTD, get crowd-sourced style decisions, and compete in social fashion challenges.
