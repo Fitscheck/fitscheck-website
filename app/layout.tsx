@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | FitsCheck"
   },
   description:
-    "Perfect for content creators, influencers, and fashion enthusiasts. Get crowd-sourced style decisions, share affiliate links, earn style points, and compete on global leaderboards. Download FitsCheck for iOS and Android.",
+    "Join FitsCheck - the fashion community where you post outfits, get instant ratings, and win style challenges. Share your fits with fashion lovers worldwide.",
   icons: {
     icon: [
       {
@@ -44,18 +44,27 @@ export const metadata: Metadata = {
     apple: "/branding/FitsIcon.png",
   },
   keywords: [
+    "outfit rating app",
+    "fit check platform",
+    "fashion community app",
+    "outfit voting",
+    "style challenges",
+    "fashion feedback app",
+    "OOTD community",
     "fashion app",
     "style decisions",
-    "outfit voting",
-    "fashion community",
-    "affiliate links",
     "fashion influencer",
     "style tips",
     "fashion leaderboard",
     "this or that fashion",
     "shop this look",
     "fashion monetization",
-    "style points"
+    "style points",
+    "outfit rating app UK",
+    "outfit rating app US",
+    "best fashion community 2025",
+    "TikTok style alternatives",
+    "Instagram fashion community"
   ],
   authors: [{ name: "FitsCheck Team" }],
   creator: "FitsCheck",

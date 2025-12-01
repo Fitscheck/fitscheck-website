@@ -57,7 +57,7 @@ export default function JoinersCarousel() {
                         >
                             <Image
                                 src={joiner.avatar}
-                                alt={joiner.name}
+                                alt={`${joiner.name} - FitsCheck fashion community member`}
                                 width={32}
                                 height={32}
                                 className="rounded-full flex-shrink-0"
@@ -83,7 +83,7 @@ export default function JoinersCarousel() {
                         >
                             <Image
                                 src={joiner.avatar}
-                                alt={joiner.name}
+                                alt={`${joiner.name} - FitsCheck fashion community member`}
                                 width={32}
                                 height={32}
                                 className="rounded-full flex-shrink-0"

@@ -55,6 +55,27 @@ export default function Footer() {
           </Link>
         </div>
         
+        <nav className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 text-sm md:text-base" style={{ fontFamily: "var(--font-satoshi)" }}>
+          <Link href="/how-it-works" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            How It Works
+          </Link>
+          <Link href="/for-creators" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            For Fashion Creators
+          </Link>
+          <Link href="/style-challenges" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Style Challenges
+          </Link>
+          <Link href="/blog" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Fashion Blog
+          </Link>
+          <Link href="/founding-creator" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Become a Founding Creator
+          </Link>
+          <Link href="/privacy" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Privacy Policy
+          </Link>
+        </nav>
+        
         <div className="text-center text-xl mt-5" style={{ fontFamily: "var(--font-satoshi)" }}>
           <p>© {new Date().getFullYear()} FitsCheck. All rights reserved.</p>
         </div>

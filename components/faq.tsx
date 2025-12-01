@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface FAQItem {
   question: string
@@ -25,6 +25,18 @@ const faqItems: FAQItem[] = [
     question: "Will waitlist members get early access?",
     answer: "Waitlist members will get an early creators badge and access to the beta version.",
   },
+  {
+    question: "How does the outfit rating feature work?",
+    answer: "Users can post their OOTD (Outfit of the Day) and receive instant ratings and feedback from the fashion community through our voting system.",
+  },
+  {
+    question: "Can I monetize my fashion content on FitsCheck?",
+    answer: "Yes! Premium users can add affiliate links to their outfits and earn commissions on purchases made through their content.",
+  },
+  {
+    question: "What are style challenges?",
+    answer: "Style challenges are themed competitions where users showcase their creativity and compete for style points. Winners are featured on leaderboards.",
+  },
 ]
 
 export default function FAQSection() {
@@ -34,6 +46,42 @@ export default function FAQSection() {
     setExpandedIndex(expandedIndex === index ? -1 : index)
   }
 
+  useEffect(() => {
+    // Add FAQ schema markup
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    }
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(faqStructuredData)
+    script.id = 'faq-schema'
+    
+    // Remove existing FAQ schema if present
+    const existingScript = document.getElementById('faq-schema')
+    if (existingScript) {
+      existingScript.remove()
+    }
+    
+    document.head.appendChild(script)
+
+    return () => {
+      const scriptToRemove = document.getElementById('faq-schema')
+      if (scriptToRemove) {
+        scriptToRemove.remove()
+      }
+    }
+  }, [])
+
   return (
     <section className="w-full py-10 md:py-[118px] px-6 bg-[#F0F7FF]" style={{ fontFamily: "var(--font-satoshi)" }}>
       <div className="max-w-7xl mx-auto">
@@ -42,7 +90,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="md:max-w-xl text-xl text-[#A3A3A3]">
-            Everything you need to know about the Fitscheck waitlist and upcoming app.
+            Everything you need to know about the Fitscheck waitlist and upcoming outfit rating app.
           </p>
         </div>
 

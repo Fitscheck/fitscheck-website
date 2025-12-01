@@ -42,7 +42,7 @@ export default function WhatToExpectSection() {
             >
               <Image
                 src={feature.image}
-                alt={feature.title}
+                alt={`${feature.title} feature on FitsCheck outfit rating app - ${feature.description}`}
                 fill
                 className="object-cover object-center"
               />

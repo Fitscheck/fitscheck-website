@@ -74,6 +74,46 @@ export default function Navbar() {
           >
             Home
           </Link>
+          <Link
+            href="/how-it-works"
+            className={
+              isActive("/how-it-works")
+                ? "text-[#003366] font-semibold"
+                : "hover:text-[#003366] text-gray-700"
+            }
+          >
+            How It Works
+          </Link>
+          <Link
+            href="/for-creators"
+            className={
+              isActive("/for-creators")
+                ? "text-[#003366] font-semibold"
+                : "hover:text-[#003366] text-gray-700"
+            }
+          >
+            For Creators
+          </Link>
+          <Link
+            href="/style-challenges"
+            className={
+              isActive("/style-challenges")
+                ? "text-[#003366] font-semibold"
+                : "hover:text-[#003366] text-gray-700"
+            }
+          >
+            Style Challenges
+          </Link>
+          <Link
+            href="/blog"
+            className={
+              isActive("/blog")
+                ? "text-[#003366] font-semibold"
+                : "hover:text-[#003366] text-gray-700"
+            }
+          >
+            Blog
+          </Link>
           {pathname === "/" ? (
             <Link
               href="#waitlist"
@@ -87,36 +127,12 @@ export default function Navbar() {
             </Link>
           ) : (
             <Link
-              href="#waitlist"
-              className="text-[#003366] font-semibold"
-              onClick={(e) => {
-                e.preventDefault();
-                handleWaitlistClick(e);
-              }}
+              href="/#waitlist"
+              className="hover:text-[#003366] text-gray-700"
             >
               Waitlist
             </Link>
           )}
-          <Link
-            href="#features"
-            className="hover:text-[#003366] text-gray-700"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("features");
-            }}
-          >
-            Features
-          </Link>
-          <Link
-            href="#faq"
-            className="hover:text-[#003366] text-gray-700"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("faq");
-            }}
-          >
-            FAQ
-          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -148,38 +164,65 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="#waitlist"
-              onClick={(e) => {
-                e.preventDefault();
-                handleWaitlistClick(e);
-              }}
-              className={`text-sm font-medium ${pathname !== "/"
+              href="/how-it-works"
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-sm font-medium ${isActive("/how-it-works")
                   ? "text-[#003366] font-semibold"
                   : "text-gray-600 hover:text-[#003366]"
                 }`}
             >
-              Waitlist
+              How It Works
             </Link>
             <Link
-              href="#features"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("features");
-              }}
-              className="text-sm font-medium text-gray-600 hover:text-[#003366]"
+              href="/for-creators"
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-sm font-medium ${isActive("/for-creators")
+                  ? "text-[#003366] font-semibold"
+                  : "text-gray-600 hover:text-[#003366]"
+                }`}
             >
-              Features
+              For Creators
             </Link>
             <Link
-              href="#faq"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("faq");
-              }}
-              className="text-sm font-medium text-gray-600 hover:text-[#003366]"
+              href="/style-challenges"
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-sm font-medium ${isActive("/style-challenges")
+                  ? "text-[#003366] font-semibold"
+                  : "text-gray-600 hover:text-[#003366]"
+                }`}
             >
-              FAQ
+              Style Challenges
             </Link>
+            <Link
+              href="/blog"
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-sm font-medium ${isActive("/blog")
+                  ? "text-[#003366] font-semibold"
+                  : "text-gray-600 hover:text-[#003366]"
+                }`}
+            >
+              Blog
+            </Link>
+            {pathname === "/" ? (
+              <Link
+                href="#waitlist"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleWaitlistClick(e);
+                }}
+                className="text-sm font-medium text-gray-600 hover:text-[#003366]"
+              >
+                Waitlist
+              </Link>
+            ) : (
+              <Link
+                href="/#waitlist"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-medium text-gray-600 hover:text-[#003366]"
+              >
+                Waitlist
+              </Link>
+            )}
           </div>
         </div>
       )}
