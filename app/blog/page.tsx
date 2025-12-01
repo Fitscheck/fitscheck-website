@@ -30,6 +30,46 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: "10-ways-to-get-more-votes-on-outfit-posts",
+    title: "10 Ways to Get More Votes on Your Outfit Posts",
+    excerpt: "Learn proven strategies to increase votes on your FitsCheck outfit posts. From photo quality to community engagement, discover what makes people vote for your fits.",
+    date: "2025-12-03",
+    readTime: "7 min read",
+    category: "Tips & Tricks"
+  },
+  {
+    slug: "how-to-win-fashion-community-challenges",
+    title: "How to Win Fashion Community Challenges: A Creator's Guide",
+    excerpt: "Master the art of winning fashion community challenges on FitsCheck. Learn insider strategies from top creators who consistently win style competitions.",
+    date: "2025-12-03",
+    readTime: "8 min read",
+    category: "Style Challenges"
+  },
+  {
+    slug: "building-fashion-following-fitscheck-vs-instagram",
+    title: "Building Your Fashion Following: FitsCheck vs Instagram",
+    excerpt: "Compare strategies for building a fashion following on FitsCheck versus Instagram. Discover which platform offers better growth opportunities for fashion creators.",
+    date: "2025-12-03",
+    readTime: "9 min read",
+    category: "For Creators"
+  },
+  {
+    slug: "psychology-of-outfit-voting",
+    title: "The Psychology of Outfit Voting: What Makes People Click",
+    excerpt: "Explore the psychology behind outfit voting on FitsCheck. Understand what influences community members to vote for certain outfits and how to use this knowledge.",
+    date: "2025-12-03",
+    readTime: "6 min read",
+    category: "Community"
+  },
+  {
+    slug: "top-20-fitscheck-community-members-to-follow",
+    title: "Top 20 FitsCheck Community Members to Follow",
+    excerpt: "Discover the most inspiring fashion creators on FitsCheck. Meet the community members who consistently create amazing content and win style challenges.",
+    date: "2025-12-03",
+    readTime: "10 min read",
+    category: "Community"
+  },
+  {
     slug: "how-to-settle-this-or-that-outfit-debates",
     title: "How to Settle 'This or That' Outfit Debates: The Ultimate Guide",
     excerpt: "Struggling to choose between two outfits? Learn how FitsCheck's community voting feature helps you settle 'this or that' outfit debates with real feedback from fashion lovers.",
