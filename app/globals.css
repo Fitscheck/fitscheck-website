@@ -114,3 +114,30 @@
   scrollbar-width: thin;
   scrollbar-color: #003366 #f1f1f1;
 }
+
+/* Blog content styling */
+.blog-content {
+  color: #A3A3A3;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.blog-content h2 {
+  color: #003366;
+  font-family: var(--font-whyte-inktrap);
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  color: #A3A3A3;
+}
+
+.blog-content p:first-of-type {
+  font-size: 1.25rem;
+  color: #003366;
+  font-weight: 500;
+}
