@@ -92,7 +92,7 @@ export default function HowItWorksPage() {
           </Link>
 
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               How FitsCheck Works
             </h1>
             <p className="text-xl text-[#A3A3A3] text-center mb-12 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
