@@ -202,5 +202,19 @@ export const adminService = {
       method: 'DELETE',
     });
   },
+
+  // Waitlist
+  getWaitlistMembers: async (page = 1, limit = 50) => {
+    return apiRequest(`/api/admin/waitlist?page=${page}&limit=${limit}`, {
+      method: 'GET',
+    });
+  },
+
+  // Founding Creators
+  getFoundingCreatorApplications: async (page = 1, limit = 50) => {
+    return apiRequest(`/api/admin/founding-creators?page=${page}&limit=${limit}`, {
+      method: 'GET',
+    });
+  },
 };
 

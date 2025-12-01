@@ -3,15 +3,17 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '../../../services/authService';
-import { Trophy, Users, AlertTriangle, FileText, MessageSquare, LogOut, Menu, X } from 'lucide-react';
+import { Trophy, Users, AlertTriangle, FileText, MessageSquare, LogOut, Menu, X, List, UserCheck } from 'lucide-react';
 import ChallengesPage from './components/challenges/ChallengesPage';
 import UsersPage from './components/UsersPage';
 import ProfileReportsPage from './components/reports/ProfileReportsPage';
 import PostReportsPage from './components/reports/PostReportsPage';
 import CommentReportsPage from './components/reports/CommentReportsPage';
+import WaitlistPage from './components/WaitlistPage';
+import FoundingCreatorsPage from './components/FoundingCreatorsPage';
 import ConfirmationModal from '../components/ConfirmationModal';
 
-type PageType = 'challenges' | 'users' | 'profile-reports' | 'post-reports' | 'comment-reports';
+type PageType = 'challenges' | 'users' | 'profile-reports' | 'post-reports' | 'comment-reports' | 'waitlist' | 'founding-creators';
 
 export default function DashboardPage() {
   const [activePage, setActivePage] = useState<PageType>('challenges');
@@ -23,6 +25,8 @@ export default function DashboardPage() {
   const menuItems = [
     { id: 'challenges' as PageType, label: 'Challenges', icon: Trophy },
     { id: 'users' as PageType, label: 'Users', icon: Users },
+    { id: 'waitlist' as PageType, label: 'Waitlist', icon: List },
+    { id: 'founding-creators' as PageType, label: 'Founding Creators', icon: UserCheck },
     { id: 'profile-reports' as PageType, label: 'Profile Reports', icon: AlertTriangle },
     { id: 'post-reports' as PageType, label: 'Post Reports', icon: FileText },
     { id: 'comment-reports' as PageType, label: 'Comment Reports', icon: MessageSquare },
@@ -53,6 +57,10 @@ export default function DashboardPage() {
         return <ChallengesPage />;
       case 'users':
         return <UsersPage />;
+      case 'waitlist':
+        return <WaitlistPage />;
+      case 'founding-creators':
+        return <FoundingCreatorsPage />;
       case 'profile-reports':
         return <ProfileReportsPage />;
       case 'post-reports':
