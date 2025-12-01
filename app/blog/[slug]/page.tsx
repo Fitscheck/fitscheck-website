@@ -306,8 +306,37 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "author": {
+      "@type": "Organization",
+      "name": "FitsCheck"
+    },
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "description": post.excerpt,
+    "publisher": {
+      "@type": "Organization",
+      "name": "FitsCheck",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fitscheck.com/branding/FitsCheck.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://fitscheck.com/blog/${post.slug}`
+    }
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <div className="min-h-screen bg-gradient-to-b from-[#FEFBD7] to-white">
         <div className="container mx-auto px-4 md:px-6 py-12">
           <Link 

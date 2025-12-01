@@ -36,7 +36,7 @@ export default function Waitlist() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "FitsCheck",
-    "applicationCategory": "SocialNetworkingApplication",
+    "applicationCategory": "LifestyleApplication",
     "operatingSystem": "iOS, Android",
     "offers": {
       "@type": "Offer",
