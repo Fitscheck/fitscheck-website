@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 export const whyteInktrap = localFont({
   src: [
@@ -129,6 +130,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${whyteInktrap.variable} ${satoshi.variable}`} suppressHydrationWarning>
       <body >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DF3E0M9QVW"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DF3E0M9QVW');
+          `}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
