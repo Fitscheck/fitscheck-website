@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "3JUY592462.com.fitscheck.app",
+        "paths": [
+          "/post/*",
+          "/challenge/*",
+          "/user/*",
+          "/posts/*",
+          "/challenges/*",
+          "/users/*"
+        ]
+      }
+    ]
+  }
+}
+
