@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 const EmailSenderPage: React.FC = () => {
   const [to, setTo] = useState('');
   const [from, setFrom] = useState('');
+  const [replyTo, setReplyTo] = useState('');
   const [subject, setSubject] = useState('');
   const [htmlBody, setHtmlBody] = useState('');
   const [isSending, setIsSending] = useState(false);
@@ -50,13 +51,21 @@ const EmailSenderPage: React.FC = () => {
       return;
     }
 
+    // Validate reply-to email if provided
+    if (replyTo.trim() && !emailRegex.test(replyTo.trim())) {
+      toast.error('Invalid reply-to email format');
+      return;
+    }
+
     setIsSending(true);
     try {
-      await adminService.sendEmail(to.trim(), from.trim(), subject.trim(), htmlBody.trim());
+      const replyToValue = replyTo.trim() || undefined;
+      await adminService.sendEmail(to.trim(), from.trim(), subject.trim(), htmlBody.trim(), replyToValue);
       toast.success('Email sent successfully!');
       
       // Reset form (optional - you might want to keep the values)
       setTo('');
+      setReplyTo('');
       setSubject('');
       setHtmlBody('');
     } catch (error: any) {
@@ -105,18 +114,36 @@ const EmailSenderPage: React.FC = () => {
               />
             </div>
           </div>
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Subject <span className="text-red-500">*</span>
-            </label>
-            <Input
-              type="text"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              placeholder="Email subject"
-              disabled={isSending}
-              className="w-full"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Reply-To Email <span className="text-gray-500 text-xs">(Optional)</span>
+              </label>
+              <Input
+                type="email"
+                value={replyTo}
+                onChange={(e) => setReplyTo(e.target.value)}
+                placeholder="reply@example.com"
+                disabled={isSending}
+                className="w-full"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Email address to receive replies (defaults to sender if not specified)
+              </p>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Subject <span className="text-red-500">*</span>
+              </label>
+              <Input
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                placeholder="Email subject"
+                disabled={isSending}
+                className="w-full"
+              />
+            </div>
           </div>
         </div>
 

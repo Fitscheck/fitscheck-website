@@ -218,10 +218,14 @@ export const adminService = {
   },
 
   // Send Email
-  sendEmail: async (to, from, subject, htmlBody) => {
+  sendEmail: async (to, from, subject, htmlBody, replyTo) => {
+    const body = { to, from, subject, htmlBody };
+    if (replyTo) {
+      body.replyTo = replyTo;
+    }
     return apiRequest('/api/admin/send-email', {
       method: 'POST',
-      body: JSON.stringify({ to, from, subject, htmlBody }),
+      body: JSON.stringify(body),
     });
   },
 };
