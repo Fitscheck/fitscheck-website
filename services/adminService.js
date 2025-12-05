@@ -216,5 +216,13 @@ export const adminService = {
       method: 'GET',
     });
   },
+
+  // Send Email
+  sendEmail: async (to, from, subject, htmlBody) => {
+    return apiRequest('/api/admin/send-email', {
+      method: 'POST',
+      body: JSON.stringify({ to, from, subject, htmlBody }),
+    });
+  },
 };
 

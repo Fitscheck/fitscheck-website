@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '../../../services/authService';
-import { Trophy, Users, AlertTriangle, FileText, MessageSquare, LogOut, Menu, X, List, UserCheck } from 'lucide-react';
+import { Trophy, Users, AlertTriangle, FileText, MessageSquare, LogOut, Menu, X, List, UserCheck, Mail } from 'lucide-react';
 import ChallengesPage from './components/challenges/ChallengesPage';
 import UsersPage from './components/UsersPage';
 import ProfileReportsPage from './components/reports/ProfileReportsPage';
@@ -11,9 +11,10 @@ import PostReportsPage from './components/reports/PostReportsPage';
 import CommentReportsPage from './components/reports/CommentReportsPage';
 import WaitlistPage from './components/WaitlistPage';
 import FoundingCreatorsPage from './components/FoundingCreatorsPage';
+import EmailSenderPage from './components/EmailSenderPage';
 import ConfirmationModal from '../components/ConfirmationModal';
 
-type PageType = 'challenges' | 'users' | 'profile-reports' | 'post-reports' | 'comment-reports' | 'waitlist' | 'founding-creators';
+type PageType = 'challenges' | 'users' | 'profile-reports' | 'post-reports' | 'comment-reports' | 'waitlist' | 'founding-creators' | 'send-email';
 
 export default function DashboardPage() {
   const [activePage, setActivePage] = useState<PageType>('challenges');
@@ -27,6 +28,7 @@ export default function DashboardPage() {
     { id: 'users' as PageType, label: 'Users', icon: Users },
     { id: 'waitlist' as PageType, label: 'Waitlist', icon: List },
     { id: 'founding-creators' as PageType, label: 'Founding Creators', icon: UserCheck },
+    { id: 'send-email' as PageType, label: 'Send Email', icon: Mail },
     { id: 'profile-reports' as PageType, label: 'Profile Reports', icon: AlertTriangle },
     { id: 'post-reports' as PageType, label: 'Post Reports', icon: FileText },
     { id: 'comment-reports' as PageType, label: 'Comment Reports', icon: MessageSquare },
@@ -61,6 +63,8 @@ export default function DashboardPage() {
         return <WaitlistPage />;
       case 'founding-creators':
         return <FoundingCreatorsPage />;
+      case 'send-email':
+        return <EmailSenderPage />;
       case 'profile-reports':
         return <ProfileReportsPage />;
       case 'post-reports':
