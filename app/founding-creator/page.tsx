@@ -33,8 +33,24 @@ export default function FoundingCreatorPage() {
             We're building a new fashion-only platform designed for creators, influencers, affiliates, and everyday style lovers. If you love posting outfits, giving style advice, or sharing affiliate links, this is your new home.
           </p>
           
-          <div className="mt-8 inline-block px-6 py-2 bg-[#F8E71C]/20 text-white rounded-full text-sm border border-[#F8E71C]/30">
-            Only the First 100 Creators
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById('apply');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="inline-block px-6 py-2.5 bg-[#F8E71C] text-[#003366] rounded-full font-semibold text-base hover:bg-[#E6D500] transition-colors cursor-pointer shadow-md hover:shadow-lg"
+              style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+            >
+              Quick Apply 
+            </button>
+            
+            <div className="inline-block px-6 py-2 bg-[#F8E71C]/20 text-white rounded-full text-sm border border-[#F8E71C]/30">
+              Only the First 100 Creators
+            </div>
           </div>
         </div>
         
