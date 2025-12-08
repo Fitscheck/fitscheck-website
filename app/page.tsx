@@ -123,14 +123,14 @@ export default function Waitlist() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Link
                 href="/#waitlist"
-                className="inline-block px-8 py-4 bg-[#F8E71C] text-[#003366] rounded-full font-bold text-lg hover:bg-[#E6D500] transition-colors shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#F8E71C] text-[#003366] rounded-full font-bold text-lg hover:bg-[#E6D500] transition-colors shadow-lg"
                 style={{ fontFamily: "var(--font-whyte-inktrap)" }}
               >
                 Join the Waitlist (Free)
               </Link>
               <Link
                 href="/founding-creator"
-                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-full font-bold text-lg hover:bg-white/30 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-full font-bold text-lg hover:bg-white/30 transition-colors shadow-lg"
                 style={{ fontFamily: "var(--font-whyte-inktrap)" }}
               >
                 Become a Founding Creator

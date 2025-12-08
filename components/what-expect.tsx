@@ -10,7 +10,7 @@ export default function WhatToExpectSection() {
     },
     {
       title: "Affiliate Links",
-      description: "Premium users can add affiliate links to their outfits and earn commission on purchases.",
+      description: "You can add affiliate links to your outfits and earn commission on purchases.",
       image: "/features/shop.webp",
       imageFirst: false
     },

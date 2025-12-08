@@ -25,7 +25,7 @@ export default function ForCreatorsPage() {
     {
       icon: DollarSign,
       title: "Monetize Your Content",
-      description: "Add affiliate links to your OOTD posts and earn commissions on purchases. Premium users can include shop links, promo codes, and monetize their fashion content effectively.",
+      description: "Add affiliate links to your OOTD posts and earn commissions on purchases. You can include shop links, promo codes, and monetize their fashion content effectively.",
     },
     {
       icon: Users,
@@ -56,7 +56,7 @@ export default function ForCreatorsPage() {
 
   const features = [
     "Early access to beta features",
-    "Premium affiliate link integration",
+    "Affiliate link integration",
     "Advanced analytics and insights",
     "Priority support",
     "Featured placement opportunities",
@@ -171,7 +171,7 @@ export default function ForCreatorsPage() {
                       Apply for Founding Creator Status
                     </h3>
                     <p className="text-[#A3A3A3]" style={{ fontFamily: "var(--font-satoshi)" }}>
-                      If you're an established fashion content creator, apply to become a Founding Creator and unlock premium features from day one.
+                      If you're an established fashion content creator, apply to become a Founding Creator and unlock features from day one.
                     </p>
                   </div>
                 </div>

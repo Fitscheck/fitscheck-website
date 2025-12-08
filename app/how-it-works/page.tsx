@@ -71,7 +71,7 @@ export default function HowItWorksPage() {
     },
     {
       title: "Monetization Tools",
-      description: "Premium users can add affiliate links, promo codes, and shop links to monetize their fashion content. Earn commissions on purchases made through your posts.",
+      description: "You can add affiliate links, promo codes, and shop links to monetize their fashion content. Earn commissions on purchases made through your posts.",
     },
     {
       title: "Leaderboards",

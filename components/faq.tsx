@@ -31,7 +31,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Can I monetize my fashion content on FitsCheck?",
-    answer: "Yes! Premium users can add affiliate links to their outfits and earn commissions on purchases made through their content.",
+    answer: "Yes! You can add affiliate links to your outfits and earn commissions on purchases made through your content.",
   },
   {
     question: "What are style challenges?",
