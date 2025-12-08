@@ -47,7 +47,7 @@ export default function HowItWorksPage() {
     {
       number: 5,
       title: "Earn & Monetize",
-      description: "Build your fashion influence, earn commissions from affiliate sales, and grow your following. Premium users can add shop links, promo codes, and monetize their fashion content effectively.",
+      description: "Build your fashion influence, earn commissions from affiliate sales, and grow your following. You can also add shop links, promo codes, and monetize your fashion content effectively.",
       icon: Award,
     },
   ]

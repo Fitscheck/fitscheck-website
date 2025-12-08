@@ -62,6 +62,15 @@ export default function Footer() {
           <Link href="/for-creators" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
             For Fashion Creators
           </Link>
+          <Link href="/rate-my-outfit" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Rate My Outfit
+          </Link>
+          <Link href="/best-fit-check-apps" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Best Fit Check Apps
+          </Link>
+          <Link href="/how-to-get-better-fitscheck-photos" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
+            Photo Tips
+          </Link>
           <Link href="/style-challenges" className="text-gray-300 hover:text-[#F8E71C] transition-colors">
             Style Challenges
           </Link>
@@ -75,6 +84,10 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </nav>
+        
+        <p className="text-sm text-gray-300/80 mt-6 text-center max-w-2xl" style={{ fontFamily: "var(--font-satoshi)" }}>
+          Tag <Link href="https://www.instagram.com/fitscheckofficial" target="_blank" rel="noopener noreferrer" className="text-[#F8E71C] hover:text-white transition-colors">@fitscheckofficial</Link> with <span className="font-semibold">#fitscheck</span> to be featured when we launch.
+        </p>
         
         <div className="text-center text-xl mt-5" style={{ fontFamily: "var(--font-satoshi)" }}>
           <p>© {new Date().getFullYear()} FitsCheck. All rights reserved.</p>

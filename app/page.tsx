@@ -115,10 +115,31 @@ export default function Waitlist() {
               priority
             />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-2xl" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
-              The Social Platform for Outfit Ratings & Fashion Community Voting
+              Fit Check App for Outfit Ratings & Fashion Challenges
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-lg max-w-3xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
-              Post your fits. Community votes. You win.
+              Do a fit check before you post – upload your outfit, get community ratings, and join style challenges.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Link
+                href="/#waitlist"
+                className="inline-block px-8 py-4 bg-[#F8E71C] text-[#003366] rounded-full font-bold text-lg hover:bg-[#E6D500] transition-colors shadow-lg"
+                style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+              >
+                Join the Waitlist (Free)
+              </Link>
+              <Link
+                href="/founding-creator"
+                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-full font-bold text-lg hover:bg-white/30 transition-colors shadow-lg"
+                style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+              >
+                Become a Founding Creator
+              </Link>
+            </div>
+            <p className="text-base sm:text-lg text-white/80 drop-shadow-lg mt-4" style={{ fontFamily: "var(--font-satoshi)" }}>
+              <Link href="/founding-creator" className="underline hover:text-white transition-colors">
+                Are you a creator? Become a Founding Creator →
+              </Link>
             </p>
           </div>
         </div>
@@ -135,12 +156,82 @@ export default function Waitlist() {
         </div>
       </section>
 
+      {/* For Fashion Lovers vs Creators Section */}
+      <section className="w-full py-12 lg:py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-[#F0F7FF] rounded-2xl p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                  For Fashion Lovers
+                </h3>
+                <p className="text-lg text-[#A3A3A3] mb-6 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
+                  Post your OOTD, get honest outfit ratings, and win style challenges.
+                </p>
+                <Link
+                  href="/how-it-works"
+                  className="inline-block text-[#003366] font-semibold hover:text-[#F8E71C] transition-colors"
+                  style={{ fontFamily: "var(--font-satoshi)" }}
+                >
+                  Learn how it works →
+                </Link>
+              </div>
+              <div className="bg-[#FEFBD7] rounded-2xl p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                  For Creators
+                </h3>
+                <p className="text-lg text-[#A3A3A3] mb-6 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
+                  Lock in a Founding Creator badge, boosted visibility, and monetization with affiliate links.
+                </p>
+                <Link
+                  href="/founding-creator"
+                  className="inline-block text-[#003366] font-semibold hover:text-[#F8E71C] transition-colors"
+                  style={{ fontFamily: "var(--font-satoshi)" }}
+                >
+                  Become a Founding Creator →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="waitlist" className="lg:min-h-screen flex flex-col items-center bg-[#F9FAFB] text-black mt-20 lg:mt-[118px] mb-10 lg:mb-[118px]">
         <WaitlistForm />
       </section>
 
       <section className=" mb-6">
         <JoinersCarousel />
+      </section>
+
+      {/* Hashtag Section */}
+      <section className="w-full py-12 lg:py-16 bg-[#003366]">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              Use #FitsCheck & #OurFitCheck
+            </h2>
+            <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
+              Post your outfits on TikTok and Instagram with <span className="font-bold text-[#F8E71C]">#FitsCheck</span> and <span className="font-bold text-[#F8E71C]">#OurFitCheck</span> and join our waitlist. You'll have a chance to be featured or fast-tracked as a founding creator when we launch.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Link
+                href="/#waitlist"
+                className="inline-block px-8 py-4 bg-[#F8E71C] text-[#003366] rounded-full font-bold text-lg hover:bg-[#E6D500] transition-colors"
+                style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+              >
+                Join the Waitlist
+              </Link>
+              <Link
+                href="/founding-creator"
+                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-full font-bold text-lg hover:bg-white/30 transition-colors"
+                style={{ fontFamily: "var(--font-whyte-inktrap)" }}
+              >
+                Apply as Founding Creator
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="features" className="w-full bg-[#FEFBD7]" style={{ fontFamily: "var(--font-satoshi)" }}><WhatToExpectSection />
