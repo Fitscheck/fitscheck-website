@@ -80,7 +80,7 @@ export default function ForCreatorsPage() {
 
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#003366] mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#003366] mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 For Fashion Content Creators
               </h1>
               <p className="text-xl text-[#A3A3A3] max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -89,7 +89,7 @@ export default function ForCreatorsPage() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 md:p-12 mb-12 shadow-sm">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Why Fashion Creators Love FitsCheck
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -119,7 +119,7 @@ export default function ForCreatorsPage() {
             </div>
 
             <div className="bg-[#003366] rounded-2xl p-8 md:p-12 mb-12 text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Founding Creator Benefits
               </h2>
               <p className="text-lg text-white/80 mb-8 text-center max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -145,7 +145,7 @@ export default function ForCreatorsPage() {
             </div>
 
             <div className="bg-[#F0F7FF] rounded-2xl p-8 md:p-12 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 How to Get Started
               </h2>
               <div className="space-y-6 max-w-3xl mx-auto">
@@ -192,7 +192,7 @@ export default function ForCreatorsPage() {
             </div>
 
             <div className="text-center space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Ready to Grow Your Fashion Brand?
               </h2>
               <p className="text-lg text-[#A3A3A3] max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>

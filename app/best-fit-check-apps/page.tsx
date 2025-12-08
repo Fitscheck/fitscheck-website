@@ -143,7 +143,7 @@ export default function BestFitCheckAppsPage() {
           </Link>
 
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               Best Fit Check Apps in 2025
             </h1>
             <p className="text-xl text-[#A3A3A3] text-center mb-4 max-w-3xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -155,7 +155,7 @@ export default function BestFitCheckAppsPage() {
 
             {/* Comparison Table */}
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm mb-12 overflow-x-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Platform Comparison
               </h2>
               <div className="overflow-x-auto">
@@ -277,7 +277,7 @@ export default function BestFitCheckAppsPage() {
 
             {/* Why FitsCheck Section */}
             <div className="bg-[#F0F7FF] rounded-2xl p-8 md:p-12 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Why FitsCheck Stands Out
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -313,7 +313,7 @@ export default function BestFitCheckAppsPage() {
 
             {/* CTA Section */}
             <div className="bg-[#003366] rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Try FitsCheck – Join the Waitlist
               </h2>
               <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>

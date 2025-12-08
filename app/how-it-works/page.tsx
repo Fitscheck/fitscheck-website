@@ -93,7 +93,7 @@ export default function HowItWorksPage() {
           </Link>
 
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#003366] mb-6 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               How FitsCheck Works
             </h1>
             <p className="text-xl text-[#A3A3A3] text-center mb-12 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -129,7 +129,7 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="bg-[#F0F7FF] rounded-2xl p-8 md:p-12 mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Key Features of Our Fit Check Platform
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -147,7 +147,7 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="text-center space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Ready to Get Started?
               </h2>
               <p className="text-lg text-[#A3A3A3] max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>

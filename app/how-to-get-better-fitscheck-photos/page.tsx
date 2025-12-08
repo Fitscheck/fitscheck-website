@@ -40,7 +40,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#003366] mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#003366] mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               How to Get Better #FitsCheck Photos & More Outfit Votes
             </h1>
             <p className="text-xl text-[#A3A3A3] mb-4 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -61,7 +61,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
             <section className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <Camera className="h-8 w-8 text-[#003366]" />
-                <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   1. Master the Photography Basics
                 </h2>
               </div>
@@ -142,7 +142,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
             <section className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <Lightbulb className="h-8 w-8 text-[#003366]" />
-                <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   2. Ensure High Photo Quality
                 </h2>
               </div>
@@ -186,7 +186,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
             <section className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <Award className="h-8 w-8 text-[#003366]" />
-                <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   3. Showcase Your Outfit's Best Features
                 </h2>
               </div>
@@ -228,7 +228,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
             <section className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <Users className="h-8 w-8 text-[#003366]" />
-                <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   4. Maximize Engagement & Votes
                 </h2>
               </div>
@@ -303,7 +303,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
             <section className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <TrendingUp className="h-8 w-8 text-[#003366]" />
-                <h2 className="text-3xl md:text-4xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   5. Advanced Strategies for More Votes
                 </h2>
               </div>
@@ -359,7 +359,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
             {/* Common Mistakes to Avoid */}
             <section className="mb-12">
               <div className="bg-[#F0F7FF] rounded-2xl p-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#003366] mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   Common Mistakes to Avoid
                 </h2>
                 <ul className="space-y-4 text-[#A3A3A3] ml-6" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -442,7 +442,7 @@ export default function HowToGetBetterFitsCheckPhotosPage() {
 
             {/* CTA Section */}
             <div className="bg-[#003366] rounded-2xl p-8 md:p-12 text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                 Ready to Get More Votes on Your Outfits?
               </h2>
               <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>

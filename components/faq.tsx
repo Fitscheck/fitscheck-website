@@ -86,7 +86,7 @@ export default function FAQSection() {
     <section className="w-full py-10 md:py-[118px] px-6 bg-[#F0F7FF]" style={{ fontFamily: "var(--font-satoshi)" }}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center md:text-start">
-          <h2 className="md:max-w-2xl text-3xl md:text-4xl lg:text-7xl font-bold mb-2 text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+          <h2 className="md:max-w-2xl text-2xl md:text-3xl lg:text-5xl font-bold mb-2 text-[#003366]" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
             Frequently Asked Questions
           </h2>
           <p className="md:max-w-xl text-xl text-[#A3A3A3]">

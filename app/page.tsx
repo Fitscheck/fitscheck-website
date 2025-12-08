@@ -162,7 +162,7 @@ export default function Waitlist() {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-[#F0F7FF] rounded-2xl p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h3 className="text-xl md:text-2xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   For Fashion Lovers
                 </h3>
                 <p className="text-lg text-[#A3A3A3] mb-6 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -177,7 +177,7 @@ export default function Waitlist() {
                 </Link>
               </div>
               <div className="bg-[#FEFBD7] rounded-2xl p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+                <h3 className="text-xl md:text-2xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
                   For Creators
                 </h3>
                 <p className="text-lg text-[#A3A3A3] mb-6 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -208,7 +208,7 @@ export default function Waitlist() {
       <section className="w-full py-12 lg:py-16 bg-[#003366]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               Use #FitsCheck & #OurFitCheck
             </h2>
             <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -240,7 +240,7 @@ export default function Waitlist() {
       <section id="how-it-works" className="w-full py-20 lg:py-[118px] bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#003366] mb-4" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               How It Works
             </h2>
             <p className="text-xl text-[#A3A3A3] max-w-2xl mx-auto" style={{ fontFamily: "var(--font-satoshi)" }}>
@@ -313,7 +313,7 @@ export default function Waitlist() {
       <section id="about" className="w-full py-20 lg:py-[118px] bg-[#F0F7FF]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#003366] mb-8 text-center" style={{ fontFamily: "var(--font-whyte-inktrap)" }}>
               About FitsCheck
             </h2>
             <div className="space-y-6 text-lg text-[#A3A3A3] leading-relaxed" style={{ fontFamily: "var(--font-satoshi)" }}>
